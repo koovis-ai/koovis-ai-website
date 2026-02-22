@@ -1,14 +1,16 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
 
 export const dynamic = "force-dynamic";
 
+const BEEHIIV_API_KEY = process.env.BEEHIIV_API_KEY;
+const BEEHIIV_PUBLICATION_ID = process.env.BEEHIIV_PUBLICATION_ID;
+
 export async function POST(request: Request) {
   try {
-    if (!process.env.RESEND_API_KEY) {
-      console.error("Missing RESEND_API_KEY environment variable");
+    if (!BEEHIIV_API_KEY || !BEEHIIV_PUBLICATION_ID) {
+      console.error("Missing BEEHIIV_API_KEY or BEEHIIV_PUBLICATION_ID environment variable");
       return NextResponse.json(
-        { error: "Email service is not configured. Please contact the site administrator." },
+        { error: "Newsletter service is not configured. Please contact the site administrator." },
         { status: 503 }
       );
     }
@@ -22,15 +24,30 @@ export async function POST(request: Request) {
       );
     }
 
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    const res = await fetch(
+      `https://api.beehiiv.com/v2/publications/${BEEHIIV_PUBLICATION_ID}/subscriptions`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${BEEHIIV_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          reactivate_existing: true,
+          send_welcome_email: true,
+        }),
+      }
+    );
 
-    // Send a confirmation email to the subscriber
-    await resend.emails.send({
-      from: "Koovis AI <onboarding@resend.dev>",
-      to: [email],
-      subject: "Welcome to the Koovis AI Newsletter!",
-      text: "Thank you for subscribing to the Koovis AI newsletter. You'll receive the latest updates on AI, our products, and industry insights.",
-    });
+    if (!res.ok) {
+      const body = await res.text();
+      console.error(`Beehiiv API error: ${res.status} ${body}`);
+      return NextResponse.json(
+        { error: "Failed to subscribe." },
+        { status: 502 }
+      );
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {

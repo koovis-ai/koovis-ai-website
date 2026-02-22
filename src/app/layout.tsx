@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { geistSans, geistMono, jetbrainsMono, sourceSerif, outfit } from "@/lib/fonts";
 import { sharedMetadata, jsonLd } from "@/lib/metadata";
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -40,6 +41,7 @@ export default function RootLayout({
         <Navbar />
         <main className="min-h-screen pt-[72px]">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
