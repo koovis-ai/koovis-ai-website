@@ -13,9 +13,9 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { href: "https://linkedin.com", label: "LinkedIn" },
-  { href: "https://x.com", label: "X / Twitter" },
-  { href: "https://github.com", label: "GitHub" },
+  { href: "https://linkedin.com/company/koovis-ai", label: "LinkedIn" },
+  { href: "https://x.com/koovisai", label: "X / Twitter" },
+  { href: "https://github.com/rajsapien", label: "GitHub" },
 ];
 
 function FooterNewsletter() {

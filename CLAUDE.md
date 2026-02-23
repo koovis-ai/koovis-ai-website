@@ -44,7 +44,9 @@ npm run lint           # ESLint
 ## Documentation Sync Protocol
 
 ### Canonical Here (edit directly)
-- `PROJECT_DOC.md` — Operational reference for this project. Auto-synced to `koovis-hq/projects/koovis-ai/docs/PROJECT_DOC_WEBSITE.md` every 15 minutes.
+- `PROJECT_DOC.md` — Operational reference for this project
+
+Claude Code reads satellite repo files directly when context is needed (no auto-mirroring).
 
 ### Canonical in koovis-hq (use MCP to update)
 - **Blueprint:** `koovis-hq/projects/koovis-ai/BLUEPRINT.md` — Use MCP `update_blueprint_section()`
