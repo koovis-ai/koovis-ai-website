@@ -175,7 +175,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-5 sm:flex-row">
           <p className="font-jetbrains text-[11px] tracking-wide text-neutral-600">
-            &copy; 2025 Koovis AI LLC. Delaware, USA.
+            &copy; 2026 Koovis AI LLC. Delaware, USA.
           </p>
           <p className="font-jetbrains text-[11px] tracking-wide text-neutral-600">
             Built with precision.
