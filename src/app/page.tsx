@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import AnimateIn from "@/components/AnimateIn";
 import Button from "@/components/Button";
+import NewsletterForm from "@/components/NewsletterForm";
 import SectionLabel from "@/components/SectionLabel";
 import SectionTitle from "@/components/SectionTitle";
 import Link from "next/link";
@@ -383,6 +384,32 @@ export default function HomePage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ==================== NEWSLETTER ==================== */}
+      <section className="border-t border-white/10 bg-white/[0.02] py-16 sm:py-24 lg:py-32">
+        <div className="mx-auto max-w-2xl px-5 sm:px-6 text-center">
+          <AnimateIn>
+            <SectionLabel>Newsletter</SectionLabel>
+          </AnimateIn>
+          <AnimateIn delay={0.1}>
+            <SectionTitle as="h2" className="mt-5">
+              AI insights from the <em>trenches.</em>
+            </SectionTitle>
+          </AnimateIn>
+          <AnimateIn delay={0.2}>
+            <p className="mt-6 text-base leading-relaxed text-neutral-400">
+              Lessons from building production AI systems, founder updates, and
+              the occasional contrarian take on where the industry is headed.
+              No fluff. No spam. Just signal.
+            </p>
+          </AnimateIn>
+          <AnimateIn delay={0.3}>
+            <div className="mx-auto mt-8 max-w-md">
+              <NewsletterForm />
+            </div>
+          </AnimateIn>
         </div>
       </section>
 
