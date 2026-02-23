@@ -8,7 +8,7 @@ import SectionTitle from "@/components/SectionTitle";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Custom AI product development, architecture, and ML infrastructure — from first architecture decision to production deployment and beyond.",
+    "We build AI-powered products and systems for businesses — custom development, architecture consulting, and ML infrastructure. From first conversation to production deployment.",
 };
 
 /* ---------- DATA ---------- */
@@ -18,7 +18,7 @@ const serviceCards = [
     icon: Box,
     title: "Custom AI Product Development",
     tagline: "From problem to production, end to end.",
-    desc: "You have a problem. We build the solution — end to end. Model selection, training, API design, production deployment, and the monitoring that keeps it reliable. We\u2019ve done this across global-scale systems. Now we do it for ambitious companies like yours.",
+    desc: "You have a business problem. We build the AI-powered product or system that solves it — end to end. Model selection, training, API design, production deployment, and the monitoring that keeps it reliable. We\u2019ve done this across global-scale systems. Now we do it for businesses like yours.",
     capabilities: [
       "Model selection & training pipelines",
       "REST / gRPC API design & serving",
@@ -87,20 +87,20 @@ const processSteps = [
 const engagementModels = [
   {
     title: "Project-Based",
-    desc: "A defined scope with clear deliverables, timeline, and budget. We take your project from specification to production deployment.",
-    bestFor: "Companies with a specific AI product or feature to build.",
+    desc: "A defined scope with clear deliverables, timeline, and budget. We take your project from specification to production deployment. You get a working system, not a report.",
+    bestFor: "Businesses with a specific AI product, system, or feature to build.",
     duration: "Typically 2\u20136 months",
   },
   {
     title: "Embedded Partnership",
-    desc: "We embed with your engineering team as a long-term AI partner. We lead the ML engineering while your team handles the product around it.",
-    bestFor: "Startups building AI-first products that need ongoing ML leadership.",
+    desc: "We embed with your engineering team as a long-term AI partner. We lead the ML engineering while your team handles the product around it. Think of it as your fractional AI engineering team.",
+    bestFor: "Companies building AI-powered products that need ongoing senior ML leadership.",
     duration: "3\u201312+ month engagements",
   },
   {
     title: "Architecture Sprint",
-    desc: "A focused 2-week engagement to audit your current AI approach, identify gaps, and deliver a detailed technical roadmap with implementation recommendations.",
-    bestFor: "Teams that need expert guidance before committing to a full build.",
+    desc: "A focused 2-week engagement to audit your current AI approach, identify gaps, and deliver a detailed technical roadmap with clear next steps. Perfect before committing budget to a full build.",
+    bestFor: "Teams that need expert guidance and an honest assessment before investing further.",
     duration: "2 weeks, fixed scope",
   },
 ];
@@ -117,16 +117,17 @@ export default function ServicesPage() {
         </AnimateIn>
         <AnimateIn delay={0.1}>
           <SectionTitle className="mt-5">
-            From first architecture decision to{" "}
+            From first conversation to{" "}
             <em>production deployment</em> and beyond.
           </SectionTitle>
         </AnimateIn>
         <AnimateIn delay={0.2}>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-neutral-400">
-            We partner with ambitious companies to build AI-powered products from
-            zero to production. No handoff &mdash; we stay from architecture
-            through deployment and beyond. Every engagement starts with an honest
-            assessment: do you actually need what you think you need?
+            We partner with businesses to build AI-powered products and systems
+            from zero to production. No handoff &mdash; we stay from
+            architecture through deployment and beyond. Every engagement starts
+            with an honest assessment: do you actually need what you think you
+            need?
           </p>
         </AnimateIn>
       </section>
@@ -265,13 +266,13 @@ export default function ServicesPage() {
           <AnimateIn>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-10 text-center">
               <SectionTitle>
-                Have a project <em>in mind?</em>
+                Have a problem worth <em>solving?</em>
               </SectionTitle>
               <p className="mt-4 text-base text-neutral-400">
                 Every engagement starts with a conversation &mdash; no pressure,
-                no commitment. We&apos;ll give you an honest assessment of your
-                project, and you can decide from there. The best partnerships
-                start with clarity.
+                no commitment. Tell us about the product or system you need
+                built, and we&apos;ll give you an honest assessment. The best
+                partnerships start with clarity.
               </p>
               <div className="mt-8">
                 <Button href="/contact" size="lg">

@@ -8,7 +8,7 @@ import SectionTitle from "@/components/SectionTitle";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Meet the team behind Koovis AI. Founded by Rajesh Kolachana — building production-grade AI for ambitious companies that refuse to settle for prototypes.",
+    "Meet Rajesh Kolachana, founder of Koovis AI. 11 years of building production ML systems at Amazon and beyond — now helping businesses build AI-powered products and systems.",
 };
 
 const principles = [
@@ -74,12 +74,14 @@ export default function AboutPage() {
 
           <AnimateIn delay={0.15}>
             <p className="mt-5 text-base leading-relaxed text-neutral-400">
-              Now we bring that same standard to companies that are too early for
-              a full data science team but too ambitious for off-the-shelf
-              solutions. We partner with founders and technical leaders who
-              understand that the real competitive advantage in AI isn&apos;t the
-              model &mdash; it&apos;s the engineering that turns a model into a
-              product.
+              Now we bring that same standard to businesses that need
+              AI-powered products and systems built right &mdash; whether
+              you&apos;re a startup building your core product, a mid-market
+              company modernizing with AI, or an enterprise that needs senior
+              engineering leadership for a critical initiative. We partner with
+              founders and technical leaders who understand that the real
+              competitive advantage in AI isn&apos;t the model &mdash;
+              it&apos;s the engineering that turns a model into a product.
             </p>
           </AnimateIn>
 
@@ -243,12 +245,12 @@ export default function AboutPage() {
           <AnimateIn>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-10 text-center">
               <SectionTitle>
-                Ready to work with a team that <em>ships?</em>
+                Ready to build something that <em>works?</em>
               </SectionTitle>
               <p className="mt-4 text-base text-neutral-400">
-                We take on a limited number of engagements to ensure every client
-                gets the attention they deserve. Let&apos;s start with a
-                conversation.
+                We take on a limited number of consulting engagements to ensure
+                every client gets exceptional results. Tell us about the product
+                or system you need built.
               </p>
               <div className="mt-8">
                 <Button href="/contact" size="lg">

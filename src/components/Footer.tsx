@@ -118,9 +118,9 @@ export default function Footer() {
           </Link>
 
           <p className="text-sm leading-relaxed text-neutral-400">
-            Custom AI product development for startups.
+            We build AI-powered products and systems for businesses.
             <br />
-            From model to market.
+            From architecture to deployment.
           </p>
 
           {/* Social links */}

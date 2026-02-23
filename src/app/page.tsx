@@ -9,9 +9,9 @@ import SectionTitle from "@/components/SectionTitle";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Koovis AI — From Model to Market",
+  title: "Koovis AI — We Build AI-Powered Products & Systems for Your Business",
   description:
-    "We engineer production-grade AI systems for companies that demand more than demos. From architecture through production — no agency overhead.",
+    "We partner with businesses to build production-grade AI systems — from architecture through deployment. Senior engineering, applied directly to your hardest problems.",
   alternates: { canonical: "https://www.koovis.ai" },
 };
 
@@ -103,13 +103,23 @@ const whyUsCards = [
   },
 ];
 
-const wpFeatures = [
-  { title: "ML-Driven Signals", desc: "Advanced models that surface opportunities traditional analysis misses." },
-  { title: "Real-Time Processing", desc: "Live data ingestion and decision-making at market speed." },
-  { title: "Risk Management", desc: "Built-in position sizing, stop-loss logic, and exposure controls." },
-  { title: "Backtesting Engine", desc: "Validate strategies against historical data before going live." },
-  { title: "Adaptive Strategies", desc: "Models that evolve with changing market conditions automatically." },
-  { title: "Data Pipeline", desc: "Robust ingestion from multiple data sources with quality monitoring." },
+const whoWeWorkWith = [
+  {
+    title: "Building an AI-Powered Product",
+    desc: "You have a product vision that requires ML at its core \u2014 recommendation engines, intelligent automation, NLP systems, computer vision. You need a senior engineering partner who\u2019s built these at global scale.",
+  },
+  {
+    title: "Stuck Between Prototype and Production",
+    desc: "Your team built a model that works in a notebook. Now you need the deployment infrastructure, monitoring, and production hardening that comes from shipping ML systems serving millions of users.",
+  },
+  {
+    title: "Need AI Strategy Before Committing",
+    desc: "You\u2019re exploring AI for your business but aren\u2019t sure what\u2019s feasible, what it\u2019ll cost, or whether to build or buy. You need an honest technical assessment, not a sales pitch.",
+  },
+  {
+    title: "Scaling Without a Full ML Team",
+    desc: "You\u2019re too early to hire a dedicated data science team but too ambitious for off-the-shelf solutions. You need embedded AI engineering leadership that moves at the speed of your business.",
+  },
 ];
 
 /* ---------- PAGE ---------- */
@@ -135,20 +145,21 @@ export default function HomePage() {
 
           <AnimateIn delay={0.15}>
             <p className="mx-auto mt-6 sm:mt-8 max-w-2xl text-base sm:text-lg leading-relaxed text-neutral-400">
-              We engineer production-grade AI systems for companies that demand
-              more than demos. End-to-end — from architecture through deployment.
-              No agency overhead. No junior handoffs. Just senior engineering,
-              applied to your hardest problems.
+              We partner with businesses to design, build, and deploy
+              production-grade AI systems. End-to-end product and systems
+              development — from architecture through deployment. No agency
+              overhead. No junior handoffs. Just senior engineering, applied
+              directly to your hardest problems.
             </p>
           </AnimateIn>
 
           <AnimateIn delay={0.3}>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button href="#work-with-us" size="lg">
-                Start a Project <ArrowRight size={16} />
+                Book a Consultation <ArrowRight size={16} />
               </Button>
               <Button href="/services" variant="outline" size="lg">
-                Explore Our Work <ArrowRight size={16} />
+                See How We Work <ArrowRight size={16} />
               </Button>
             </div>
           </AnimateIn>
@@ -169,21 +180,23 @@ export default function HomePage() {
             </AnimateIn>
             <AnimateIn delay={0.2}>
               <p className="mt-6 text-base leading-relaxed text-neutral-400">
-                The AI industry has a delivery problem. Companies invest millions in
-                models that never make it to production. Prototypes get celebrated
-                while deployment pipelines remain nonexistent. The gap between
-                &ldquo;it works in a notebook&rdquo; and &ldquo;it&apos;s running
-                reliably in production&rdquo; is where most AI investments go to die.
+                Most businesses that invest in AI hit the same wall: the model
+                works in a demo but never makes it to production. Prototypes get
+                celebrated while the engineering needed to turn them into real
+                products &mdash; data pipelines, deployment infrastructure,
+                monitoring, reliability &mdash; gets underestimated or ignored.
               </p>
               <p className="mt-4 text-base leading-relaxed text-neutral-400">
-                We founded Koovis AI to close that gap — with engineering rigor
-                forged at the scale of global marketplaces, now applied to companies
-                that refuse to settle for prototypes.
+                We founded Koovis AI to solve that problem for businesses like
+                yours. We bring the engineering rigor forged at the scale of
+                global marketplaces and apply it to building the AI-powered
+                products and systems your business actually needs.
               </p>
             </AnimateIn>
             <AnimateIn delay={0.3}>
               <p className="mt-6 text-lg font-medium text-white">
-                We don&apos;t just build AI. We build AI that works when it matters.
+                We don&apos;t just build AI. We build AI-powered products and
+                systems that drive real business results.
               </p>
             </AnimateIn>
           </div>
@@ -200,16 +213,17 @@ export default function HomePage() {
             </AnimateIn>
             <AnimateIn delay={0.1}>
               <SectionTitle className="mt-5">
-                End-to-end AI engineering for companies that{" "}
-                <em>demand more.</em>
+                We build the AI-powered products and systems your{" "}
+                <em>business needs.</em>
               </SectionTitle>
             </AnimateIn>
             <AnimateIn delay={0.2}>
               <p className="mt-6 text-base leading-relaxed text-neutral-400">
-                When AI is treated as an experiment, it produces experiments. When
-                it&apos;s treated as engineering, it produces systems that drive
-                revenue, reduce costs, and create competitive advantage. We treat
-                every project as the latter.
+                Whether you need an intelligent product built from scratch, a
+                model taken from prototype to production, or a technical strategy
+                before committing &mdash; we handle it end-to-end. Every
+                engagement is engineered to drive revenue, reduce costs, or
+                create lasting competitive advantage.
               </p>
             </AnimateIn>
             <AnimateIn delay={0.3}>
@@ -329,62 +343,52 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ==================== WEALTHPILOT TEASER ==================== */}
+      {/* ==================== WHO WE WORK WITH ==================== */}
       <section className="relative border-t border-white/10 py-16 sm:py-24 lg:py-32 overflow-hidden">
         {/* Left edge cyan gradient */}
         <div className="pointer-events-none absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-accent/[0.04] to-transparent" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-            {/* Left — copy */}
-            <div className="flex flex-col justify-center">
-              <AnimateIn>
-                <SectionLabel>Flagship Product</SectionLabel>
-              </AnimateIn>
-              <AnimateIn delay={0.1}>
-                <h2 className="mt-5 font-serif text-[clamp(2.25rem,5vw,3.75rem)] font-semibold tracking-tight text-white">
-                  WealthPilot
-                </h2>
-                <p className="mt-2 font-serif text-lg italic text-neutral-400">
-                  Where machine learning meets market intelligence.
-                </p>
-              </AnimateIn>
-              <AnimateIn delay={0.2}>
-                <p className="mt-6 text-base leading-relaxed text-neutral-400">
-                  Beyond client work, we build our own AI products. WealthPilot is
-                  an intelligent quantitative trading system powered by machine
-                  learning — designed to surface opportunities that traditional
-                  analysis misses. Every algorithm is battle-tested against historical
-                  data before seeing a single live dollar.
-                </p>
-              </AnimateIn>
-              <AnimateIn delay={0.3}>
-                <div className="mt-8 flex flex-wrap items-center gap-6">
-                  <Button href="/products">
-                    Request Early Access <ArrowRight size={16} />
-                  </Button>
-                  <span className="flex items-center gap-2 text-sm text-neutral-400">
-                    <span className="pulse-dot inline-block h-2 w-2 rounded-full bg-green-400" />
-                    In active development — early access opening soon
-                  </span>
+          <AnimateIn>
+            <SectionLabel>Who We Work With</SectionLabel>
+          </AnimateIn>
+          <AnimateIn delay={0.1}>
+            <SectionTitle className="mt-5">
+              Built for businesses that refuse to settle for{" "}
+              <em>demos.</em>
+            </SectionTitle>
+          </AnimateIn>
+          <AnimateIn delay={0.2}>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-neutral-400">
+              We work best with companies that have a real problem, a clear
+              ambition, and the willingness to invest in getting it right. If
+              any of these sound like you, we should talk.
+            </p>
+          </AnimateIn>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+            {whoWeWorkWith.map((item, i) => (
+              <AnimateIn key={item.title} delay={0.1 + i * 0.08}>
+                <div className="h-full rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 transition-colors hover:border-accent/20">
+                  <div className="mb-4 h-0.5 w-10 bg-accent/60" />
+                  <h3 className="text-base font-semibold text-white">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-neutral-500">
+                    {item.desc}
+                  </p>
                 </div>
               </AnimateIn>
-            </div>
-
-            {/* Right — feature grid */}
-            <div className="grid gap-4 sm:grid-cols-2">
-              {wpFeatures.map((f, i) => (
-                <AnimateIn key={f.title} delay={0.1 + i * 0.08}>
-                  <div className="h-full rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 transition-colors hover:border-accent/20">
-                    <h3 className="text-sm font-semibold text-white">
-                      {f.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-neutral-500">{f.desc}</p>
-                  </div>
-                </AnimateIn>
-              ))}
-            </div>
+            ))}
           </div>
+
+          <AnimateIn delay={0.5}>
+            <div className="mt-10 text-center">
+              <Button href="#work-with-us" size="lg">
+                Sound Like You? Let&apos;s Talk <ArrowRight size={16} />
+              </Button>
+            </div>
+          </AnimateIn>
         </div>
       </section>
 
@@ -428,10 +432,10 @@ export default function HomePage() {
             </AnimateIn>
             <AnimateIn delay={0.2}>
               <p className="mt-6 text-base leading-relaxed text-neutral-400">
-                We work with a select number of clients at a time to ensure every
-                engagement gets the attention it deserves. Tell us about your
-                project &mdash; no obligation, no sales pitch. Just an honest
-                assessment.
+                We take on a limited number of consulting engagements at a time
+                to ensure exceptional results. Tell us about your project
+                &mdash; no obligation, no sales pitch. Just an honest
+                assessment of how we can help.
               </p>
             </AnimateIn>
           </div>
