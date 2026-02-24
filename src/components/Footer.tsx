@@ -88,12 +88,12 @@ function FooterNewsletter() {
           type="email"
           placeholder="you@company.com"
           required
-          className="flex-1 rounded-lg border border-border bg-surface px-4 py-3 text-sm text-heading placeholder:text-text-dim outline-none transition-all duration-200 focus:border-accent/50 focus:shadow-[0_0_12px_rgb(var(--color-accent-rgb)/0.15)] min-h-[44px]"
+          className="flex-1 rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-neutral-500 outline-none transition-all duration-200 focus:border-accent/50 focus:shadow-[0_0_12px_rgba(34,211,238,0.15)] min-h-[44px]"
         />
         <button
           type="submit"
           disabled={status === "loading"}
-          className="flex-shrink-0 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-heading transition-colors hover:brightness-110 disabled:opacity-50"
+          className="flex-shrink-0 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-neutral-950 transition-colors hover:brightness-110 disabled:opacity-50"
         >
           {status === "loading" ? "Subscribing..." : "Subscribe"}
         </button>
@@ -125,7 +125,7 @@ function Diamond({ size = 18 }: { size?: number }) {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border bg-bg">
+    <footer className="border-t border-white/10 bg-neutral-950">
       {/* Main grid */}
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-16 md:grid-cols-3 md:gap-8">
         {/* Column 1: Logo + tagline + social */}
@@ -133,7 +133,7 @@ export default function Footer() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5">
             <Diamond />
-            <span className="text-base font-bold tracking-[0.2em] uppercase text-heading">
+            <span className="text-base font-bold tracking-[0.2em] uppercase text-white">
               KOOVIS
             </span>
             <span className="text-base font-bold tracking-[0.2em] uppercase text-accent">
@@ -141,7 +141,7 @@ export default function Footer() {
             </span>
           </Link>
 
-          <p className="text-sm leading-relaxed text-text-muted">
+          <p className="text-sm leading-relaxed text-neutral-400">
             We build AI-powered products and systems for businesses.
             <br />
             From architecture to deployment.
@@ -155,7 +155,7 @@ export default function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 font-jetbrains text-xs uppercase tracking-wider text-text-dim transition-colors hover:text-accent"
+                  className="flex items-center gap-1.5 font-jetbrains text-xs uppercase tracking-wider text-neutral-500 transition-colors hover:text-accent"
                 >
                   {link.icon}
                   {link.label}
@@ -167,7 +167,7 @@ export default function Footer() {
 
         {/* Column 2: Navigation */}
         <div>
-          <h3 className="font-jetbrains text-[11px] font-semibold uppercase tracking-[0.2em] text-text-dim mb-5">
+          <h3 className="font-jetbrains text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-5">
             Navigation
           </h3>
           <ul className="flex flex-col gap-3">
@@ -175,7 +175,7 @@ export default function Footer() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm text-text-muted transition-colors hover:text-accent"
+                  className="text-sm text-neutral-400 transition-colors hover:text-accent"
                 >
                   {link.label}
                 </Link>
@@ -186,10 +186,10 @@ export default function Footer() {
 
         {/* Column 3: Newsletter */}
         <div>
-          <h3 className="font-jetbrains text-[11px] font-semibold uppercase tracking-[0.2em] text-text-dim mb-5">
+          <h3 className="font-jetbrains text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-5">
             Newsletter
           </h3>
-          <p className="text-sm text-text-muted mb-5">
+          <p className="text-sm text-neutral-400 mb-5">
             AI insights, product updates, and founder stories. No spam.
           </p>
           <FooterNewsletter />
@@ -197,12 +197,12 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-border">
+      <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-5 sm:flex-row">
-          <p className="font-jetbrains text-[11px] tracking-wide text-text-dim">
+          <p className="font-jetbrains text-[11px] tracking-wide text-neutral-600">
             &copy; 2026 Koovis AI LLC. Delaware, USA.
           </p>
-          <p className="font-jetbrains text-[11px] tracking-wide text-text-dim">
+          <p className="font-jetbrains text-[11px] tracking-wide text-neutral-600">
             Built with precision.
           </p>
         </div>

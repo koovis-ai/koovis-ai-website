@@ -66,7 +66,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? "bg-bg/80 backdrop-blur-xl border-b border-border shadow-lg shadow-black/10"
+          ? "bg-neutral-950/80 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/10"
           : "bg-transparent border-b border-transparent"
       }`}
     >
@@ -74,7 +74,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 sm:gap-3 group">
           <Diamond />
-          <span className="text-base sm:text-lg font-bold tracking-[0.2em] sm:tracking-[0.25em] uppercase text-heading">
+          <span className="text-base sm:text-lg font-bold tracking-[0.2em] sm:tracking-[0.25em] uppercase text-white">
             KOOVIS
           </span>
           <span className="text-base sm:text-lg font-bold tracking-[0.2em] sm:tracking-[0.25em] uppercase text-accent">
@@ -91,7 +91,7 @@ export default function Navbar() {
                 className={`relative px-4 py-2 text-sm font-medium tracking-wide uppercase transition-colors duration-200 ${
                   isActive(link.href)
                     ? "text-accent"
-                    : "text-text-muted hover:text-heading"
+                    : "text-neutral-400 hover:text-white"
                 }`}
               >
                 {link.label}
@@ -119,7 +119,7 @@ export default function Navbar() {
 
           {/* Hamburger */}
           <button
-            className="relative z-50 lg:hidden text-heading p-2 -mr-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
+            className="relative z-50 lg:hidden text-white p-2 -mr-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -158,7 +158,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-bg/95 backdrop-blur-2xl lg:hidden"
+            className="fixed inset-0 z-40 bg-neutral-950/95 backdrop-blur-2xl lg:hidden"
           >
             <nav className="flex h-full flex-col items-center justify-center gap-2">
               {navLinks.map((link, i) => (
@@ -175,7 +175,7 @@ export default function Navbar() {
                     className={`block px-6 py-4 text-xl sm:text-2xl font-semibold tracking-widest uppercase transition-colors ${
                       isActive(link.href)
                         ? "text-accent"
-                        : "text-text hover:text-heading"
+                        : "text-neutral-300 hover:text-white"
                     }`}
                   >
                     {link.label}
