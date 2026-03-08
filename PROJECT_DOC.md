@@ -129,7 +129,7 @@ Uptime monitoring is handled by koovis-hq (`monitor.py` every 15 min).
 | Resend | Outbound | API key | Send contact form emails |
 | Beehiiv API v2 | Outbound | API key + publication ID | Create newsletter subscriptions |
 | Vercel | Hosting | GitHub integration | Auto-deploy on push |
-| GitHub | Source | — | Repository: `rajsapien/koovis-ai-website` |
+| GitHub | Source | — | Repository: `koovis-ai/koovis-ai-website` |
 
 ### API Routes
 

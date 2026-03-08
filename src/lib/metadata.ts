@@ -91,7 +91,7 @@ export const jsonLd = {
     },
     sameAs: [
       "https://linkedin.com/in/rajeshkolachana",
-      "https://github.com/rajsapien",
+      "https://github.com/koovis-ai",
       "https://x.com/koovisai",
     ],
   },

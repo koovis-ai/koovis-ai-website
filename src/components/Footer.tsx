@@ -23,7 +23,7 @@ const socialLinks = [
     ),
   },
   {
-    href: "https://github.com/rajsapien",
+    href: "https://github.com/koovis-ai",
     label: "Github",
     icon: (
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">

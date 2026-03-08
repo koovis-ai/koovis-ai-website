@@ -23,7 +23,7 @@ The official website for [Koovis AI](https://www.koovis.ai) — AI product devel
 ### Installation
 
 ```bash
-git clone https://github.com/rajsapien/koovis-ai-website.git
+git clone https://github.com/koovis-ai/koovis-ai-website.git
 cd koovis-ai-website
 npm install
 ```
