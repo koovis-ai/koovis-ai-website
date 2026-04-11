@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     { url: siteConfig.url, lastModified: new Date(), priority: 1.0 },
     { url: `${siteConfig.url}/services`, lastModified: new Date(), priority: 0.9 },
+    { url: `${siteConfig.url}/case-studies`, lastModified: new Date(), priority: 0.9 },
     { url: `${siteConfig.url}/products`, lastModified: new Date(), priority: 0.8 },
     { url: `${siteConfig.url}/blog`, lastModified: new Date(), priority: 0.8 },
     { url: `${siteConfig.url}/about`, lastModified: new Date(), priority: 0.7 },

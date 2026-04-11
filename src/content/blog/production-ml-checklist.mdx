@@ -1,0 +1,137 @@
+---
+title: "From Prototype to Production: The ML Deployment Checklist"
+excerpt: "Your model works in a notebook. Now what? A practical checklist for shipping ML systems that actually run reliably in production."
+date: "2025-03-22"
+author: "Rajesh Kolachana"
+tag: "ML Ops"
+readTime: "8 min read"
+published: true
+---
+
+You've built a model. It works. Validation metrics look great. Your stakeholders are excited. Now comes the hard part: getting it into production and keeping it there.
+
+This checklist is everything I've learned from shipping dozens of ML systems at Amazon and in consulting. It's not comprehensive — every project has unique requirements — but if you can check every box on this list, you're in the top 10% of ML teams.
+
+## Phase 1: Pre-Deployment Foundations
+
+### Data Infrastructure
+
+- [ ] **Data pipeline is automated and monitored** — No manual CSV uploads. No dependency on one person to run a script. Your pipeline runs on schedule, handles failures gracefully, and alerts when something breaks.
+
+- [ ] **Data quality checks are in place** — Schema validation, null checks, range checks, distribution monitoring. If your input data changes in unexpected ways, you catch it before it reaches the model.
+
+- [ ] **Data versioning exists** — You can reproduce any training run by knowing exactly which data was used. Whether it's DVC, MLflow, or a custom solution, you track data versions alongside model versions.
+
+- [ ] **You've tested the pipeline with production data** — Training on historical CSVs is one thing. Running on live production data with all its messiness is another. Test your pipeline end-to-end with real production data before go-live.
+
+### Model Development
+
+- [ ] **Model performance is measured on held-out production data** — Your validation set should be as close to production as possible. Historical data, realistic distributions, representative of actual use cases.
+
+- [ ] **You've analyzed failure modes** — Don't just know your model's aggregate accuracy. Know where it fails. What patterns does it miss? What edge cases break it? Document failure modes and either fix them or plan mitigations.
+
+- [ ] **Model complexity is justified** — Can you achieve 90% of the performance with 10% of the complexity? If yes, start with the simpler model. You can always upgrade later. Simpler models are easier to debug, faster to serve, and cheaper to run.
+
+- [ ] **Feature engineering is reproducible** — Any feature transformations, encodings, or preprocessing steps are version-controlled and automated. No manual feature engineering that only you know how to reproduce.
+
+### Business Alignment
+
+- [ ] **Success metrics are defined and measurable** — Not "improve engagement." Something specific: "Increase click-through rate by 15%" or "Reduce support tickets by 200/week." If you can't measure it, you can't know if you've succeeded.
+
+- [ ] **Baseline performance is documented** — What's the current system's performance? If you're replacing heuristics or an existing model, measure the baseline so you can prove improvement.
+
+- [ ] **Stakeholders understand probabilistic outputs** — Your model gives probabilities, not certainties. Make sure the business side understands this. If they expect 100% accuracy, have that conversation now, not after deployment.
+
+## Phase 2: Production Infrastructure
+
+### Model Serving
+
+- [ ] **Serving infrastructure is built and load-tested** — Can your serving setup handle production traffic? Have you stress-tested it? What's the latency at p50, p95, p99? Does it autoscale?
+
+- [ ] **Fallback logic exists** — What happens if your model service goes down? Do you have a simpler fallback (heuristics, default recommendations)? Production systems fail. Plan for it.
+
+- [ ] **API contracts are versioned** — If you update your model, can old clients still work? Versioned APIs prevent breaking downstream systems when you iterate.
+
+- [ ] **Model artifacts are versioned and stored** — Every model you deploy is tagged, versioned, and stored somewhere durable (S3, model registry, artifact store). You can roll back to any previous version instantly.
+
+### Monitoring & Observability
+
+- [ ] **Prediction logging is implemented** — Log every prediction with enough context to debug later: input features, model version, timestamp, prediction, confidence score.
+
+- [ ] **Performance metrics are tracked in real-time** — Latency, throughput, error rates. If your API starts slowing down or failing, you know within minutes, not days.
+
+- [ ] **Model performance metrics are monitored** — Track business metrics (click-through rate, conversion, revenue) and model metrics (prediction distribution, confidence scores). Set up dashboards. Review them regularly.
+
+- [ ] **Alerting is configured** — Alerts for model service downtime, performance degradation, data quality issues, prediction distribution drift. Alerts go to the right people and are actionable.
+
+- [ ] **Drift detection is in place** — Monitor input feature distributions and prediction distributions. If either shifts significantly from training data, you get alerted. Drift is the silent killer of ML systems.
+
+### Operational Readiness
+
+- [ ] **Runbooks are written** — What do you do if the model crashes at 3 AM? How do you roll back? How do you redeploy? Write it down. Ops teams (or future you) will thank you.
+
+- [ ] **Rollback procedure is tested** — Don't just have a rollback plan. Test it. Can you actually revert to the previous model version under pressure? Prove it works before you need it in an emergency.
+
+- [ ] **CI/CD pipeline exists** — Model training, testing, and deployment are automated. No manual steps. No "just SSH into the server and run this script."
+
+- [ ] **Documentation is complete** — How does the model work? What features does it use? What are known limitations? How do you retrain it? Document everything so someone else can maintain it.
+
+## Phase 3: Launch & Iteration
+
+### Deployment Strategy
+
+- [ ] **You're doing a staged rollout** — Don't go from 0% to 100% traffic in one step. Start with 5%, monitor for issues, then 20%, then 50%, then 100%. Give yourself escape hatches.
+
+- [ ] **A/B testing infrastructure is ready** — Can you compare the new model to the old baseline? Measure business impact, not just model metrics. Run the experiment long enough to reach statistical significance.
+
+- [ ] **Success criteria are defined** — What does success look like? Be specific. "15% lift in CTR with p < 0.05, no degradation in downstream conversion." Define it before you launch, not after.
+
+### Post-Launch
+
+- [ ] **You're monitoring daily for the first week** — The first week after launch is when most issues surface. Review metrics daily. Check for anomalies. Be ready to roll back if something breaks.
+
+- [ ] **Feedback loops are implemented** — How do you collect ground truth labels for retraining? Do you have a process to label predictions, track outcomes, and feed that data back into your training pipeline?
+
+- [ ] **Retraining cadence is defined** — How often do you retrain? Weekly? Monthly? On-demand when drift is detected? Have a schedule and stick to it. Models degrade over time.
+
+- [ ] **Model governance is in place** — Who approves production deployments? How do you track which model version is running where? Who's on-call if it breaks? Make sure the organizational processes match the technical setup.
+
+## Phase 4: Long-Term Maintenance
+
+### Continuous Improvement
+
+- [ ] **You're tracking model degradation** — Over time, your model's performance will drift. Are you measuring this? Do you have benchmarks from launch week to compare against?
+
+- [ ] **You're revisiting assumptions regularly** — What assumptions did you make during training (data distribution, feature availability, latency requirements)? Revisit them quarterly. The world changes.
+
+- [ ] **Feature requests are prioritized based on impact** — Not every feature idea is worth implementing. Measure feature importance. Focus on high-impact improvements.
+
+- [ ] **You're running experiments continuously** — Don't just deploy and forget. Continuously test variations, new features, alternative models. Iteration compounds.
+
+### Cost Management
+
+- [ ] **You're monitoring infrastructure costs** — What does it cost to serve predictions? Are you optimizing for cost or just performance? Sometimes a slightly slower model that costs 10x less is the right tradeoff.
+
+- [ ] **You've right-sized your infrastructure** — Are you paying for 32 vCPUs when 8 would work? Are you using GPUs when CPUs are sufficient? Optimize resource usage.
+
+## The Checklist Isn't the Hardest Part
+
+Here's the secret: this checklist isn't that hard to complete. Every item is achievable with standard tools and reasonable effort.
+
+The hard part is convincing your organization that all of this work matters. Because on the surface, it looks like you're "done" when the model trains successfully. Everything on this list looks like "extra" work that's delaying the launch.
+
+But shipping a model to production without this foundation is like building a house without a foundation. It might stand up for a while, but it's going to collapse.
+
+The projects that succeed long-term are the ones that treat this checklist as non-negotiable. The projects that fail are the ones that skip it because they're in a hurry.
+
+Don't be in that much of a hurry.
+
+## Start Small, But Start Complete
+
+If this list feels overwhelming, here's my advice: start with a smaller project, but do it completely. Build the full pipeline, monitoring, rollback procedures, documentation — everything — for a simple model on a small use case.
+
+Once you've done it end-to-end once, the second project will be faster. The third project will reuse 80% of the infrastructure. By the fifth project, most of this is just templates and standard operating procedure.
+
+But you have to do it right once first. That's how you build a culture of production-grade ML instead of prototype-grade research.
+
+Your model is only 20% of the work. The other 80% is on this checklist.

@@ -291,6 +291,13 @@ export default function HomePage() {
               in real dollars, deployed across real global marketplaces.
             </p>
           </AnimateIn>
+          <AnimateIn delay={0.2}>
+            <div className="mt-6">
+              <Button href="/case-studies" variant="ghost">
+                View Detailed Case Studies <ArrowRight size={16} />
+              </Button>
+            </div>
+          </AnimateIn>
 
           <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {metrics.map((m, i) => (

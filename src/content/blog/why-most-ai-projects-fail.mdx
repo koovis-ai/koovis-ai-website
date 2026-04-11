@@ -4,8 +4,74 @@ excerpt: "The dirty secret of AI in production: models are the easy part. Pipeli
 date: "2025-02-01"
 author: "Rajesh Kolachana"
 tag: "ML Ops"
-readTime: "5 min read"
-published: false
+readTime: "7 min read"
+published: true
 ---
 
-Coming soon.
+I've seen this pattern dozens of times now: a company spends six months building an ML model that works beautifully in a Jupyter notebook. The accuracy is great. The stakeholders are thrilled. The data science team celebrates. And then… nothing happens.
+
+The model never makes it to production. Or it does, but it breaks in the first week. Or it runs for a while and then quietly degrades until someone notices the business metrics don't match the validation metrics anymore.
+
+Here's the uncomfortable truth: **most AI projects fail not because of the model, but because of everything around it.** The model is the easy part. The hard part is turning that model into a reliable system that delivers value every single day.
+
+## The Demo-to-Production Gap
+
+There's a canyon-sized gap between "the model works" and "the system works." In a notebook, you have clean data, infinite time to debug, and no users depending on you. In production, you have messy data that arrives late, system failures at 3 AM, and angry customers when predictions are wrong.
+
+Most AI projects die in this gap because teams underestimate the engineering work required to bridge it. They treat production deployment as an afterthought — something you figure out after the model is built. But by the time they realize how much work remains, they've burned their budget and political capital on research.
+
+## What Actually Causes Failure
+
+After years of shipping ML systems at Amazon and working with dozens of startups, I've identified the real failure modes:
+
+### 1. No Data Pipeline Strategy
+
+Your model is only as good as the data it receives. In production, data doesn't arrive clean and labeled in a CSV file. It arrives late, in the wrong format, with missing fields, from systems you don't control.
+
+Most projects assume data infrastructure "just works" and discover too late that building reliable pipelines is harder than building the model. Data drift, schema changes, upstream failures — these are the things that break production ML, and most teams don't even think about them until deployment.
+
+### 2. Ignoring Operational Complexity
+
+Training a model once is research. Running it reliably at scale is engineering. Production ML requires monitoring, alerting, model versioning, A/B testing infrastructure, rollback strategies, and incident response protocols.
+
+I've watched companies spend $500K on data science talent and $0 on MLOps infrastructure. Then they wonder why their brilliant model can't stay online for more than a week.
+
+### 3. Missing the Feedback Loop
+
+Your model's performance degrades over time. User behavior changes. Market conditions shift. Upstream data sources get updated. If you're not monitoring performance in production and retraining on schedule, your model's accuracy will slowly drift until it's useless.
+
+Most teams build the initial model and move on. Six months later, they're shocked to discover it doesn't work anymore. Production ML requires continuous monitoring and retraining infrastructure — not as a nice-to-have, but as table stakes.
+
+### 4. No Clear Success Metrics
+
+"Improve customer engagement" is not a success metric. It's a vague aspiration. Without clear, measurable business metrics tied to model performance, you can't tell if your AI project is working.
+
+I've seen projects celebrate 95% model accuracy while the business metric they were supposed to improve stayed flat. Accuracy is not revenue. Precision is not profit. If you can't draw a straight line from your model's predictions to a number that matters to the business, you don't have a success metric.
+
+### 5. Underestimating the Last Mile
+
+The last 10% of the work takes 50% of the time. Getting a model from 80% accuracy to 90% in a notebook might take a week. Getting that same model from staging to production, with proper monitoring, error handling, and documentation, might take two months.
+
+Teams consistently underestimate this final mile. They think deployment is just "wrap the model in an API." But production deployment means handling edge cases, building failure recovery, writing runbooks, training the ops team, and ensuring the system degrades gracefully when things go wrong.
+
+## What Actually Works
+
+The projects that succeed share common patterns:
+
+**Start with the pipeline, not the model.** Build your data infrastructure first. Get clean, reliable data flowing end-to-end before you even think about modeling. A mediocre model on reliable data beats a brilliant model on broken infrastructure every single time.
+
+**Treat deployment as part of the project, not an afterthought.** Budget time and resources for MLOps from day one. If your project timeline doesn't include monitoring, alerting, A/B testing, and rollback strategies, your timeline is wrong.
+
+**Measure what matters to the business.** Define success metrics that tie directly to revenue, cost savings, or user outcomes. Track those metrics in production from day one. If the business metric doesn't move, the project failed — regardless of model accuracy.
+
+**Build for degradation, not perfection.** Production systems fail. Build fallback logic. Monitor for drift. Have a plan for when (not if) your model's performance degrades. The best ML systems are the ones that fail gracefully, not the ones that never fail.
+
+**Keep it simple.** The simplest model that works is better than a complex model that's impossible to debug in production. Interpretability, maintainability, and operational simplicity are more valuable than marginal accuracy gains.
+
+## The Unsexy Truth
+
+The projects that actually ship and deliver value are the ones that invest heavily in the unglamorous work: data pipelines, monitoring dashboards, deployment automation, incident response processes. This is the work that doesn't win awards or get published in papers. But it's the work that separates demos from products.
+
+If you want your AI project to succeed, spend less time obsessing over model architecture and more time building the infrastructure that makes models reliable. The model is 20% of the work. The other 80% is everything around it.
+
+That's what most people miss. And that's why most AI projects fail.
