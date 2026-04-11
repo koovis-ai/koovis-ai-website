@@ -109,7 +109,15 @@ export default function Navbar() {
         </ul>
 
         {/* Desktop CTA + Mobile toggle */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
+          <a
+            href="https://pa.koovis.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden lg:inline-flex items-center rounded-full bg-accent px-5 py-2 text-sm font-medium tracking-wide uppercase text-neutral-950 transition-all duration-200 hover:bg-accent/90"
+          >
+            Open Koovis
+          </a>
           <Link
             href="/contact"
             className="hidden lg:inline-flex items-center rounded-full border border-accent/60 px-5 py-2 text-sm font-medium tracking-wide uppercase text-accent transition-all duration-200 hover:bg-accent/10 hover:border-accent"
@@ -186,14 +194,23 @@ export default function Navbar() {
                 </motion.div>
               ))}
 
-              {/* Mobile CTA */}
+              {/* Mobile CTAs */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 10 }}
                 transition={{ delay: navLinks.length * 0.05, duration: 0.3 }}
-                className="mt-8"
+                className="mt-8 flex flex-col items-center gap-4"
               >
+                <a
+                  href="https://pa.koovis.ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileOpen(false)}
+                  className="inline-flex items-center rounded-full bg-accent px-8 py-3 text-sm font-medium tracking-widest uppercase text-neutral-950 transition-all hover:bg-accent/90"
+                >
+                  Open Koovis
+                </a>
                 <Link
                   href="/contact"
                   onClick={() => setMobileOpen(false)}

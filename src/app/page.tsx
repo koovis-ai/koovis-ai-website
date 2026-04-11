@@ -161,6 +161,16 @@ export default function HomePage() {
                 See How We Work <ArrowRight size={16} />
               </Button>
             </div>
+            <div className="mt-6 flex justify-center">
+              <a
+                href="https://pa.koovis.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium text-neutral-400 transition-colors hover:text-accent"
+              >
+                Open Koovis <ArrowRight size={14} />
+              </a>
+            </div>
           </AnimateIn>
         </div>
       </section>
