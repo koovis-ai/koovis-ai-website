@@ -1,189 +1,167 @@
 import type { Metadata } from "next";
-import { Box, Compass, Wrench, ArrowRight } from "lucide-react";
+import {
+  Cpu,
+  Layers,
+  Shield,
+  Zap,
+  ArrowRight,
+} from "lucide-react";
 import AnimateIn from "@/components/AnimateIn";
 import Button from "@/components/Button";
 import SectionLabel from "@/components/SectionLabel";
 import SectionTitle from "@/components/SectionTitle";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "What We Do",
   description:
-    "We build AI-powered products and systems for businesses — custom development, architecture consulting, and ML infrastructure. From first conversation to production deployment.",
+    "How Koovis AI builds products — our technology approach, engineering principles, and the stack behind our AI products.",
 };
 
 /* ---------- DATA ---------- */
 
-const serviceCards = [
+const principles = [
   {
-    icon: Box,
-    title: "Custom AI Product Development",
-    tagline: "From problem to production, end to end.",
-    desc: "You have a business problem. We build the AI-powered product or system that solves it — end to end. Model selection, training, API design, production deployment, and the monitoring that keeps it reliable. We\u2019ve done this across global-scale systems. Now we do it for businesses like yours.",
-    capabilities: [
-      "Model selection & training pipelines",
-      "REST / gRPC API design & serving",
-      "Production deployment (AWS, GCP, Azure)",
-      "Real-time & batch inference systems",
-      "Monitoring, alerting & drift detection",
-      "Documentation & team handoff",
-    ],
-    tags: ["Python", "PyTorch", "TensorFlow", "AWS SageMaker", "FastAPI", "Docker"],
+    icon: Cpu,
+    title: "Production First",
+    desc: "Every product is built for production from day one. No prototypes that never ship. No demos that can't handle real load. Working software, deployed and monitored.",
   },
   {
-    icon: Compass,
-    title: "AI Architecture & Strategy",
-    tagline: "Honest assessments. Architectures that scale.",
-    desc: "Not sure if you need a fine-tuned LLM, a simple classifier, or just better heuristics? We\u2019ll tell you honestly \u2014 even if the honest answer means less work for us. We design architectures that scale with your business, not architectures that impress in a pitch deck.",
-    capabilities: [
-      "Technical feasibility assessments",
-      "Build vs. buy analysis",
-      "Model architecture selection",
-      "Data strategy & pipeline design",
-      "Cost & latency optimization",
-      "Scalability & growth planning",
-    ],
-    tags: ["System Design", "Cost Modeling", "Cloud Architecture", "MLOps"],
+    icon: Layers,
+    title: "Multi-Model Architecture",
+    desc: "We don't bet on a single model. Our systems route between Claude, GPT, Gemini, and open-source models — picking the right tool for each task, optimizing for cost and quality.",
   },
   {
-    icon: Wrench,
-    title: "ML Infrastructure & Operations",
-    tagline: "The unsexy work that makes AI actually work.",
-    desc: "Data pipelines, model serving, A/B testing, CI/CD for ML, cost optimization. If your model is great but your infrastructure is held together with duct tape, this is where we come in. We build the foundation that makes everything else reliable.",
-    capabilities: [
-      "Data pipeline engineering (Spark, Airflow)",
-      "Model serving & orchestration",
-      "A/B testing & experimentation frameworks",
-      "CI/CD for ML (MLflow, SageMaker, Vertex)",
-      "Cloud cost optimization",
-      "Observability & logging infrastructure",
+    icon: Shield,
+    title: "Reliability Over Hype",
+    desc: "Automatic failover, health monitoring, and graceful degradation. Our systems stay up when providers go down. We build for the 3 AM scenario, not the demo room.",
+  },
+  {
+    icon: Zap,
+    title: "Ship Fast, Ship Often",
+    desc: "Solo founder velocity with enterprise-grade quality. Automated CI/CD, comprehensive test suites, and continuous deployment. Small batches, fast feedback loops.",
+  },
+];
+
+const techStack = [
+  {
+    category: "AI & ML",
+    items: [
+      "Claude (Opus, Sonnet, Haiku)",
+      "GPT-4.1",
+      "Gemini 2.5",
+      "PyTorch",
+      "scikit-learn",
     ],
-    tags: ["Airflow", "Kubernetes", "Terraform", "MLflow", "Spark", "Redis"],
+  },
+  {
+    category: "Infrastructure",
+    items: [
+      "AWS (Bedrock, EC2, S3, SSM)",
+      "GCP (Vertex AI)",
+      "Vercel",
+      "SQLite + Litestream",
+      "systemd",
+    ],
+  },
+  {
+    category: "Languages & Frameworks",
+    items: [
+      "Python",
+      "TypeScript",
+      "Next.js",
+      "FastAPI",
+      "React",
+    ],
+  },
+  {
+    category: "Data & Trading",
+    items: [
+      "Pandas / NumPy",
+      "Bayesian methods",
+      "Causal ML",
+      "NLP (FastText, transformers)",
+      "Real-time market feeds",
+    ],
   },
 ];
 
 const processSteps = [
   {
     num: "01",
-    title: "Discovery & Assessment",
-    desc: "We understand your problem, your data, and your business constraints before writing a single line of code. Half of good ML engineering is knowing what not to build. We\u2019ll give you an honest assessment \u2014 even if it means recommending against ML.",
+    title: "Identify a Real Problem",
+    desc: "We build products that solve problems we understand deeply. No hypothetical use cases — every product starts from a genuine need we've experienced firsthand.",
   },
   {
     num: "02",
-    title: "Architecture & Design",
-    desc: "We design the right approach for your scale, budget, and timeline. Not every problem needs deep learning. Not every startup needs real-time inference. We choose what works, not what\u2019s fashionable.",
+    title: "Build the Core Fast",
+    desc: "Get to working software quickly. Validate with real usage, not surveys. We run our own products daily before considering anyone else as a user.",
   },
   {
     num: "03",
-    title: "Build & Validate",
-    desc: "Rapid prototyping, validation with real data, then production hardening. Short cycles, constant feedback. You see working code every week \u2014 not quarterly demos.",
+    title: "Harden for Production",
+    desc: "Add monitoring, failover, testing, and the operational infrastructure that separates toys from tools. This is where most AI projects die — and where we thrive.",
   },
   {
     num: "04",
-    title: "Deploy, Monitor & Evolve",
-    desc: "Production deployment with monitoring, alerting, and documentation your team can maintain. We don\u2019t build systems that only we can understand. And we stay involved as your needs evolve.",
-  },
-];
-
-const engagementModels = [
-  {
-    title: "Project-Based",
-    desc: "A defined scope with clear deliverables, timeline, and budget. We take your project from specification to production deployment. You get a working system, not a report.",
-    bestFor: "Businesses with a specific AI product, system, or feature to build.",
-    duration: "Typically 2\u20136 months",
-  },
-  {
-    title: "Embedded Partnership",
-    desc: "We embed with your engineering team as a long-term AI partner. We lead the ML engineering while your team handles the product around it. Think of it as your fractional AI engineering team.",
-    bestFor: "Companies building AI-powered products that need ongoing senior ML leadership.",
-    duration: "3\u201312+ month engagements",
-  },
-  {
-    title: "Architecture Sprint",
-    desc: "A focused 2-week engagement to audit your current AI approach, identify gaps, and deliver a detailed technical roadmap with clear next steps. Perfect before committing budget to a full build.",
-    bestFor: "Teams that need expert guidance and an honest assessment before investing further.",
-    duration: "2 weeks, fixed scope",
+    title: "Iterate in Public",
+    desc: "Ship updates continuously. Share what we learn. Build trust through transparency, not marketing. The product speaks for itself.",
   },
 ];
 
 /* ---------- PAGE ---------- */
 
-export default function ServicesPage() {
+export default function WhatWeDoPage() {
   return (
     <>
       {/* ==================== HEADER ==================== */}
       <section className="mx-auto max-w-7xl px-5 sm:px-6 pt-24 pb-16">
         <AnimateIn>
-          <SectionLabel>Services</SectionLabel>
+          <SectionLabel>What We Do</SectionLabel>
         </AnimateIn>
         <AnimateIn delay={0.1}>
           <SectionTitle className="mt-5">
-            From first conversation to{" "}
-            <em>production deployment</em> and beyond.
+            We build AI products with{" "}
+            <em>production-grade engineering.</em>
           </SectionTitle>
         </AnimateIn>
         <AnimateIn delay={0.2}>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-neutral-400">
-            We partner with businesses to build AI-powered products and systems
-            from zero to production. No handoff &mdash; we stay from
-            architecture through deployment and beyond. Every engagement starts
-            with an honest assessment: do you actually need what you think you
-            need?
+            Koovis AI is a product company. We build our own AI-powered tools
+            and ship them to real users. Here&apos;s how we think about
+            building software.
           </p>
         </AnimateIn>
       </section>
 
-      {/* ==================== SERVICE CARDS ==================== */}
+      {/* ==================== PRINCIPLES ==================== */}
       <section className="border-t border-white/10 py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-6">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {serviceCards.map((svc, i) => (
-              <AnimateIn key={svc.title} delay={i * 0.1}>
-                <div className="group relative h-full overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02] transition-all duration-300 hover:border-accent/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/5">
-                  {/* Top gradient line */}
-                  <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-accent/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          <AnimateIn>
+            <SectionLabel>Engineering Principles</SectionLabel>
+          </AnimateIn>
+          <AnimateIn delay={0.1}>
+            <SectionTitle className="mt-5">
+              How we think about <em>building.</em>
+            </SectionTitle>
+          </AnimateIn>
 
+          <div className="mt-12 sm:mt-16 grid gap-6 md:grid-cols-2">
+            {principles.map((p, i) => (
+              <AnimateIn key={p.title} delay={0.1 + i * 0.1}>
+                <div className="group relative h-full overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02] transition-all duration-300 hover:border-accent/30">
+                  <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-accent/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   <div className="p-5 sm:p-7">
-                    <svc.icon
+                    <p.icon
                       size={28}
                       className="text-accent"
                       strokeWidth={1.5}
                     />
-
                     <h3 className="mt-5 text-xl font-semibold text-white">
-                      {svc.title}
+                      {p.title}
                     </h3>
-
-                    <p className="mt-1 font-serif text-sm italic text-neutral-400">
-                      {svc.tagline}
+                    <p className="mt-3 text-sm leading-relaxed text-neutral-400">
+                      {p.desc}
                     </p>
-
-                    <p className="mt-4 text-sm leading-relaxed text-neutral-400">
-                      {svc.desc}
-                    </p>
-
-                    <ul className="mt-6 flex flex-col gap-2.5">
-                      {svc.capabilities.map((cap) => (
-                        <li
-                          key={cap}
-                          className="flex items-start gap-2.5 text-sm text-neutral-500"
-                        >
-                          <span className="mt-[7px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent/60" />
-                          {cap}
-                        </li>
-                      ))}
-                    </ul>
-
-                    {/* Tech stack tags */}
-                    <div className="mt-6 flex flex-wrap gap-2">
-                      {svc.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full bg-accent/[0.08] px-2.5 py-0.5 font-jetbrains text-[10px] text-accent/70"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
                   </div>
                 </div>
               </AnimateIn>
@@ -199,7 +177,9 @@ export default function ServicesPage() {
             <SectionLabel>Process</SectionLabel>
           </AnimateIn>
           <AnimateIn delay={0.1}>
-            <SectionTitle className="mt-5">How we work</SectionTitle>
+            <SectionTitle className="mt-5">
+              How we go from idea to <em>shipped product.</em>
+            </SectionTitle>
           </AnimateIn>
 
           <div className="mt-12 sm:mt-16 grid gap-8 sm:gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -222,37 +202,36 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* ==================== ENGAGEMENT MODELS ==================== */}
+      {/* ==================== TECH STACK ==================== */}
       <section className="border-t border-white/10 py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-6">
           <AnimateIn>
-            <SectionLabel>Engagement Models</SectionLabel>
+            <SectionLabel>Technology</SectionLabel>
           </AnimateIn>
           <AnimateIn delay={0.1}>
             <SectionTitle className="mt-5">
-              Choose the model that <em>fits.</em>
+              Our <em>stack.</em>
             </SectionTitle>
           </AnimateIn>
 
-          <div className="mt-12 sm:mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {engagementModels.map((model, i) => (
-              <AnimateIn key={model.title} delay={0.1 + i * 0.1}>
-                <div className="group h-full rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 transition-colors hover:border-accent/20">
-                  <h3 className="text-lg font-semibold text-white">
-                    {model.title}
+          <div className="mt-12 sm:mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {techStack.map((group, i) => (
+              <AnimateIn key={group.category} delay={0.1 + i * 0.1}>
+                <div className="h-full rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6">
+                  <h3 className="font-jetbrains text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+                    {group.category}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-neutral-400">
-                    {model.desc}
-                  </p>
-                  <div className="mt-5 space-y-2">
-                    <p className="text-sm text-neutral-500">
-                      <span className="font-medium text-accent/80">Best for:</span>{" "}
-                      {model.bestFor}
-                    </p>
-                    <p className="font-jetbrains text-xs text-neutral-600">
-                      {model.duration}
-                    </p>
-                  </div>
+                  <ul className="mt-4 flex flex-col gap-2.5">
+                    {group.items.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-2.5 text-sm text-neutral-400"
+                      >
+                        <span className="mt-[7px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent/60" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </AnimateIn>
             ))}
@@ -266,17 +245,23 @@ export default function ServicesPage() {
           <AnimateIn>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-10 text-center">
               <SectionTitle>
-                Have a problem worth <em>solving?</em>
+                Want to see our work in <em>action?</em>
               </SectionTitle>
               <p className="mt-4 text-base text-neutral-400">
-                Every engagement starts with a conversation &mdash; no pressure,
-                no commitment. Tell us about the product or system you need
-                built, and we&apos;ll give you an honest assessment. The best
-                partnerships start with clarity.
+                Try Koovis, our personal AI assistant. It&apos;s live and free
+                to use.
               </p>
-              <div className="mt-8">
-                <Button href="/contact" size="lg">
-                  Start a Conversation <ArrowRight size={16} />
+              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+                <Button
+                  href="https://pa.koovis.ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  size="lg"
+                >
+                  Open Koovis <ArrowRight size={16} />
+                </Button>
+                <Button href="/products" variant="outline" size="lg">
+                  All Products <ArrowRight size={16} />
                 </Button>
               </div>
             </div>

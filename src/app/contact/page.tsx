@@ -8,7 +8,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Start a conversation with Koovis AI. Custom AI product development — honest assessment, no-obligation consultation.",
+    "Get in touch with Koovis AI. Based in Hyderabad, India. Product inquiries, partnerships, and general questions.",
 };
 
 const contactInfo = [
@@ -20,8 +20,8 @@ const contactInfo = [
   },
   {
     icon: MapPin,
-    label: "Headquarters",
-    value: "Seattle, USA",
+    label: "Location",
+    value: "Hyderabad, India",
   },
   {
     icon: Clock,
@@ -45,14 +45,13 @@ export default function ContactPage() {
         </AnimateIn>
         <AnimateIn delay={0.1}>
           <SectionTitle className="mt-4">
-            Let&apos;s build something <em>exceptional.</em>
+            Get in <em>touch.</em>
           </SectionTitle>
         </AnimateIn>
         <AnimateIn delay={0.2}>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-neutral-400">
-            We work with a select number of clients at a time to ensure every
-            engagement gets the attention it deserves. Reach out for an honest
-            assessment of your project &mdash; no obligation, no sales pitch.
+            Have a question about our products? Want to discuss a partnership?
+            Just want to say hi? Drop us a message.
           </p>
         </AnimateIn>
 

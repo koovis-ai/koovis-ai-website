@@ -8,25 +8,25 @@ import SectionTitle from "@/components/SectionTitle";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Meet Rajesh Kolachana, founder of Koovis AI. 11 years of building production ML systems at Amazon and beyond — now helping businesses build AI-powered products and systems.",
+    "Koovis AI is a product company founded by Rajesh Kolachana — 11 years in ML engineering, 7 at Amazon. Based in Hyderabad, India. Building AI products that work.",
 };
 
 const principles = [
   {
     title: "Ship, Don\u2019t Demo",
-    desc: "Demos impress. Production creates value. We optimize for systems that run reliably at 3 AM, not systems that look great in a slide deck.",
+    desc: "Demos impress. Production creates value. Every product we build runs in production from day one — not in a pitch deck.",
   },
   {
     title: "Honest Architecture",
-    desc: "We\u2019ll recommend the simplest solution that works \u2014 even if it means less work for us. Sometimes the answer isn\u2019t ML. Sometimes it\u2019s a well-written SQL query.",
+    desc: "We choose the simplest solution that works. Sometimes the answer isn\u2019t ML. Sometimes it\u2019s a well-written SQL query. We optimize for results, not complexity.",
   },
   {
     title: "Own the Outcome",
-    desc: "We\u2019re not a staffing agency. We don\u2019t hand off and disappear. We stay from architecture through deployment, and we\u2019re available when things break.",
+    desc: "We build products we use ourselves. Every day. If it\u2019s not good enough for us, it\u2019s not good enough to ship.",
   },
   {
-    title: "Relentless Standards",
-    desc: "Good enough isn\u2019t. Every system we ship meets the bar we\u2019ve held at global scale \u2014 because your users deserve production-grade quality, not MVP compromises.",
+    title: "Build in Public",
+    desc: "Transparency over marketing. We share what we learn, what breaks, and how we fix it. Trust is earned through honesty, not ad spend.",
   },
 ];
 
@@ -40,8 +40,8 @@ export default function AboutPage() {
         </AnimateIn>
         <AnimateIn delay={0.1}>
           <SectionTitle className="mt-5">
-            Built by engineers who&apos;ve shipped at the{" "}
-            <em>highest level.</em>
+            A product company, not a{" "}
+            <em>consulting firm.</em>
           </SectionTitle>
         </AnimateIn>
       </section>
@@ -51,45 +51,27 @@ export default function AboutPage() {
         <div className="mx-auto max-w-3xl px-5 sm:px-6">
           <AnimateIn>
             <p className="text-base leading-relaxed text-neutral-400">
-              Koovis AI was founded on a conviction: the AI industry has a
-              delivery problem. Not a talent problem. Not a funding problem. A
-              delivery problem. Companies invest heavily in research and
-              prototyping, then watch those investments stall at the production
-              boundary &mdash; the gap between &ldquo;it works in a
-              notebook&rdquo; and &ldquo;it drives revenue reliably at
-              scale.&rdquo;
+              Koovis AI is a product company building AI-powered tools.
+              We&apos;re not a consulting firm. We don&apos;t do client work.
+              We build our own products, ship them to real users, and iterate
+              based on real usage.
             </p>
           </AnimateIn>
 
           <AnimateIn delay={0.1}>
             <p className="mt-5 text-base leading-relaxed text-neutral-400">
-              We built Koovis AI to close that gap. Our founding team spent years
-              building ML systems at global scale — recommendation engines,
-              NLP systems, advertising optimization — across some of the most
-              demanding engineering environments in the world. We know what
-              production-grade AI looks like because we&apos;ve built it under
-              real constraints, with real stakes.
+              The company was incorporated in April 2026 as Koovis AI Pvt Ltd
+              in India. We&apos;re based in Hyderabad. Our products span
+              personal AI (Koovis), quantitative trading (WealthPilot), and
+              AI pre-visualization for cinema (Koovis Studios).
             </p>
           </AnimateIn>
 
           <AnimateIn delay={0.15}>
-            <p className="mt-5 text-base leading-relaxed text-neutral-400">
-              Now we bring that same standard to businesses that need
-              AI-powered products and systems built right &mdash; whether
-              you&apos;re a startup building your core product, a mid-market
-              company modernizing with AI, or an enterprise that needs senior
-              engineering leadership for a critical initiative. We partner with
-              founders and technical leaders who understand that the real
-              competitive advantage in AI isn&apos;t the model &mdash;
-              it&apos;s the engineering that turns a model into a product.
-            </p>
-          </AnimateIn>
-
-          <AnimateIn delay={0.2}>
             <p className="mt-5 text-base leading-relaxed text-white/90 font-medium">
-              Every engagement we take is a bet on a shared outcome. We
-              don&apos;t bill hours and disappear. We ship systems that work, and
-              we stand behind them.
+              We believe the best AI products come from engineers who build
+              for themselves first, then for others. Every product we ship is
+              something we use daily.
             </p>
           </AnimateIn>
         </div>
@@ -105,17 +87,10 @@ export default function AboutPage() {
           </AnimateIn>
           <AnimateIn delay={0.1}>
             <p className="mt-6 text-base leading-relaxed text-neutral-400">
-              We&apos;re building Koovis AI to become one of the most trusted
-              names in applied AI engineering. Not the largest. Not the
-              flashiest. The most trusted. The company that technical founders
-              call when the stakes are real and the margin for error is thin.
-            </p>
-          </AnimateIn>
-          <AnimateIn delay={0.15}>
-            <p className="mt-4 text-base leading-relaxed text-neutral-400">
-              Our aspiration is grounded: earn trust through results, grow
-              through reputation, and build a portfolio of production systems
-              that speaks louder than any pitch deck ever could.
+              Build AI products that people rely on every day. Not the
+              flashiest. Not the most hyped. The most useful. Products that
+              work reliably, solve real problems, and earn trust through
+              consistent performance.
             </p>
           </AnimateIn>
         </div>
@@ -144,66 +119,76 @@ export default function AboutPage() {
                   <p className="mt-1 font-jetbrains text-xs font-medium uppercase tracking-[0.2em] text-accent">
                     Founder &amp; CEO
                   </p>
+                  <p className="mt-1 text-sm text-neutral-500">
+                    Hyderabad, India
+                  </p>
                 </div>
               </div>
             </AnimateIn>
 
-            {/* Bio — first person */}
+            {/* Bio */}
             <div className="flex flex-col gap-5">
               <AnimateIn delay={0.15}>
-                <p className="text-base leading-relaxed text-neutral-400">
-                  I&apos;m Rajesh Kolachana. I started my career in structural
-                  engineering &mdash; IIT Roorkee for undergrad, Indian Institute
-                  of Science (IISc Bangalore) for my master&apos;s, ranked in the
-                  top 0.013% nationally in entrance exams (GATE AIR 5). Then I
-                  discovered that the same mathematical frameworks I used to model
-                  physical structures could model something far more interesting:
-                  human behavior, markets, and decisions.
+                <h3 className="text-lg font-semibold text-white">
+                  Why I&apos;m building this
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-neutral-400">
+                  I spent 11 years building ML systems &mdash; 7 of them at
+                  Amazon as a Senior Data Scientist. I built recommendation
+                  engines, NLP systems, advertising optimization, and
+                  forecasting tools that served millions of users across
+                  global marketplaces.
                 </p>
               </AnimateIn>
 
               <AnimateIn delay={0.2}>
                 <p className="text-base leading-relaxed text-neutral-400">
-                  That pivot led me through InMobi, where I earned a Rising Star
-                  Award after scaling an ad account from $3K to $80K daily budget
-                  in 8 months. Then to AgreeYa Solutions, where client recognition
-                  followed pricing optimization work for Best Buy, Sam&apos;s
-                  Club, and Dick&apos;s Sporting Goods. And ultimately to Amazon,
-                  where I spent 7 years as a Senior Data Scientist building the
-                  systems that mattered most.
+                  I started in structural engineering (IIT Roorkee, IISc
+                  Bangalore, GATE AIR 5 &mdash; top 0.013% nationally), then
+                  pivoted to data science when I realized the same mathematical
+                  frameworks could model human behavior, markets, and
+                  decisions.
                 </p>
               </AnimateIn>
 
               <AnimateIn delay={0.25}>
                 <p className="text-base leading-relaxed text-neutral-400">
-                  At Amazon, I built the FBA Recommendation Engine that drove
-                  $4.4B in GMS using causal ML, engineered NLP systems generating
-                  $26M in annual revenue across 9 marketplaces, created
-                  probabilistic reorder models that lifted click-through rates by
-                  37%, and built a keyword bidding engine that improved annual
-                  profits by $1.9M. I won a hackathon building a natural language
-                  to SQL system that became a production product used by 1,000+
-                  account managers globally.
+                  Before Amazon, I worked at InMobi (Rising Star Award, scaled
+                  an ad account from $3K to $80K daily) and AgreeYa Solutions
+                  (pricing optimization for Best Buy, Sam&apos;s Club, and
+                  Dick&apos;s Sporting Goods).
                 </p>
               </AnimateIn>
 
               <AnimateIn delay={0.3}>
-                <p className="text-base leading-relaxed text-neutral-400">
-                  I left because I kept seeing the same problem from the outside:
-                  companies with strong ideas but no practical path from prototype
-                  to production. The gap isn&apos;t the model &mdash; it&apos;s
-                  everything around it. Data pipelines, deployment infrastructure,
-                  monitoring, model maintenance, and the judgment calls that come
-                  from having shipped ML systems at scale.
-                </p>
+                <h3 className="mt-3 text-lg font-semibold text-white">
+                  At Amazon (2017&ndash;2024)
+                </h3>
+                <ul className="mt-3 flex flex-col gap-2.5">
+                  {[
+                    "FBA Recommendation Engine — $4.4B GMS using causal ML (Double Machine Learning) across 7 global marketplaces",
+                    "NLP review relevance system — $26M annual revenue across 9 marketplaces using FastText embeddings",
+                    "Probabilistic reorder models — $14.3M incremental revenue, 37% CTR lift using Bayesian methods",
+                    "Keyword bidding optimization — $1.9M annual profit lift using incremental profit metrics",
+                    "Natural language to SQL — hackathon winner, became a production product used by 1,000+ account managers globally",
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2.5 text-sm text-neutral-400"
+                    >
+                      <span className="mt-[7px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent/60" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </AnimateIn>
 
               <AnimateIn delay={0.35}>
-                <p className="text-base leading-relaxed text-white/90 font-medium">
-                  That&apos;s why I founded Koovis AI. To bring that same
-                  level of ML engineering to companies that need it most &mdash;
-                  with the honesty, rigor, and ownership that every engagement
-                  deserves.
+                <p className="mt-3 text-base leading-relaxed text-white/90 font-medium">
+                  I left Amazon to build my own products. Not to consult. Not
+                  to advise. To build. Koovis AI is the result &mdash; a
+                  product company where I apply everything I learned at scale
+                  to products I use myself every day.
                 </p>
               </AnimateIn>
             </div>
@@ -218,7 +203,7 @@ export default function AboutPage() {
             <SectionLabel>Principles</SectionLabel>
           </AnimateIn>
           <AnimateIn delay={0.1}>
-            <SectionTitle className="mt-5">How we work</SectionTitle>
+            <SectionTitle className="mt-5">How we build</SectionTitle>
           </AnimateIn>
 
           <div className="mt-12 sm:mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -245,16 +230,23 @@ export default function AboutPage() {
           <AnimateIn>
             <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-10 text-center">
               <SectionTitle>
-                Ready to build something that <em>works?</em>
+                Try what we&apos;ve <em>built.</em>
               </SectionTitle>
               <p className="mt-4 text-base text-neutral-400">
-                We take on a limited number of consulting engagements to ensure
-                every client gets exceptional results. Tell us about the product
-                or system you need built.
+                Koovis, our personal AI assistant, is live. See our
+                engineering philosophy in action.
               </p>
-              <div className="mt-8">
-                <Button href="/contact" size="lg">
-                  Get in Touch <ArrowRight size={16} />
+              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+                <Button
+                  href="https://pa.koovis.ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  size="lg"
+                >
+                  Open Koovis <ArrowRight size={16} />
+                </Button>
+                <Button href="/products" variant="outline" size="lg">
+                  All Products <ArrowRight size={16} />
                 </Button>
               </div>
             </div>

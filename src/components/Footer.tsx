@@ -5,7 +5,7 @@ import { useState, FormEvent } from "react";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
+  { href: "/services", label: "What We Do" },
   { href: "/products", label: "Products" },
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
@@ -133,9 +133,9 @@ export default function Footer() {
           </Link>
 
           <p className="text-sm leading-relaxed text-neutral-400">
-            We build AI-powered products and systems for businesses.
+            Building AI products that work.
             <br />
-            From architecture to deployment.
+            Hyderabad, India.
           </p>
 
           {/* Social links */}
@@ -191,10 +191,10 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-5 sm:flex-row">
           <p className="font-jetbrains text-[11px] tracking-wide text-neutral-600">
-            &copy; 2026 Koovis AI LLC. Delaware, USA.
+            &copy; 2026 Koovis AI Pvt Ltd. India.
           </p>
           <p className="font-jetbrains text-[11px] tracking-wide text-neutral-600">
-            Built with precision.
+            Products, not pitches.
           </p>
         </div>
       </div>

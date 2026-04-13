@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 export const siteConfig = {
   name: "Koovis AI",
-  title: "Koovis AI — From Model to Market",
+  title: "Koovis AI — We Build AI Products That Work",
   description:
-    "We engineer production-grade AI systems for companies that demand more than demos. From architecture through production.",
+    "Koovis AI builds production-grade AI products — a personal AI assistant, quantitative trading engine, and AI pre-visualization for cinema. Founded by Rajesh Kolachana.",
   url: "https://www.koovis.ai",
   ogImage: "https://www.koovis.ai/og-image.png",
   author: "Rajesh Kolachana",
@@ -19,11 +19,11 @@ export const sharedMetadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    "AI product development",
-    "machine learning consulting",
-    "ML engineering",
-    "AI for startups",
-    "custom AI solutions",
+    "AI products",
+    "personal AI assistant",
+    "quantitative trading",
+    "AI pre-visualization",
+    "machine learning",
     "production ML systems",
     "Koovis AI",
     "Rajesh Kolachana",
@@ -74,7 +74,7 @@ export const jsonLd = {
   organization: {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Koovis AI LLC",
+    name: "Koovis AI Pvt Ltd",
     url: siteConfig.url,
     logo: `${siteConfig.url}/og-image.png`,
     description: siteConfig.description,
@@ -86,8 +86,9 @@ export const jsonLd = {
     },
     address: {
       "@type": "PostalAddress",
-      addressRegion: "DE",
-      addressCountry: "US",
+      addressLocality: "Hyderabad",
+      addressRegion: "Telangana",
+      addressCountry: "IN",
     },
     sameAs: [
       "https://linkedin.com/in/rajeshkolachana",
@@ -103,7 +104,7 @@ export const jsonLd = {
     url: siteConfig.url + "/about",
     worksFor: {
       "@type": "Organization",
-      name: "Koovis AI LLC",
+      name: "Koovis AI Pvt Ltd",
     },
     alumniOf: [
       {
@@ -132,7 +133,7 @@ export const jsonLd = {
     description: siteConfig.description,
     publisher: {
       "@type": "Organization",
-      name: "Koovis AI LLC",
+      name: "Koovis AI Pvt Ltd",
     },
   },
 };

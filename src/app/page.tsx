@@ -1,39 +1,51 @@
 import type { Metadata } from "next";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Bot, TrendingUp, Clapperboard } from "lucide-react";
 import AnimateIn from "@/components/AnimateIn";
 import Button from "@/components/Button";
-import ContactForm from "@/components/ContactForm";
 import SectionLabel from "@/components/SectionLabel";
 import SectionTitle from "@/components/SectionTitle";
+import NewsletterForm from "@/components/NewsletterForm";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Koovis AI — We Build AI-Powered Products & Systems for Your Business",
+  title: "Koovis AI — We Build AI Products That Work",
   description:
-    "We partner with businesses to build production-grade AI systems — from architecture through deployment. Senior engineering, applied directly to your hardest problems.",
+    "Koovis AI builds production-grade AI products — a personal AI assistant, quantitative trading engine, and AI pre-visualization for cinema. Founded by Rajesh Kolachana.",
   alternates: { canonical: "https://www.koovis.ai" },
 };
 
 /* ---------- DATA ---------- */
 
-const services = [
+const products = [
   {
-    num: "01",
-    title: "Custom AI Product Development",
-    desc: "End-to-end product engineering — model selection, training, API design, production deployment, and monitoring that keeps it reliable.",
-    tags: ["Python", "PyTorch", "AWS SageMaker", "FastAPI", "Docker"],
+    icon: Bot,
+    name: "Koovis",
+    tagline: "Your personal AI assistant",
+    desc: "Multi-model AI assistant powered by Claude, GPT, and Gemini. Conversation history, tool use, and voice input. Built for daily use.",
+    status: "Live",
+    statusColor: "bg-green-400",
+    href: "https://pa.koovis.ai",
+    external: true,
   },
   {
-    num: "02",
-    title: "AI Architecture & Strategy",
-    desc: "Honest assessments and architectures that scale with your business — not architectures that impress in a pitch deck.",
-    tags: ["System Design", "Cost Modeling", "MLOps", "Cloud Architecture"],
+    icon: TrendingUp,
+    name: "WealthPilot",
+    tagline: "Quantitative trading for Indian equities",
+    desc: "ML-driven signal generation, backtesting engine, and risk management. Built with the same production rigor behind billion-dollar recommendation systems.",
+    status: "In Development",
+    statusColor: "bg-amber-400",
+    href: "/products",
+    external: false,
   },
   {
-    num: "03",
-    title: "ML Infrastructure & Operations",
-    desc: "Data pipelines, model serving, A/B testing, CI/CD for ML, and cost optimization — the unsexy work that makes AI actually work.",
-    tags: ["Airflow", "Kubernetes", "Terraform", "MLflow", "Spark"],
+    icon: Clapperboard,
+    name: "Koovis Studios",
+    tagline: "AI pre-visualization for cinema",
+    desc: "Automated pre-viz pipeline for Telugu cinema using generative AI. Image generation, SFX, audio mixing, and video assembly.",
+    status: "In Development",
+    statusColor: "bg-amber-400",
+    href: "/products",
+    external: false,
   },
 ];
 
@@ -59,11 +71,6 @@ const metrics = [
     desc: "Built a keyword bidding optimization engine using incremental profit metrics for paid advertising.",
   },
   {
-    value: "33%",
-    label: "YoY Adoption Increase",
-    desc: "Developed a Pan-EU recommendation engine with calibrated interval forecasts.",
-  },
-  {
     value: "1,000+",
     label: "Users Globally",
     desc: "Built a natural language to SQL system that became a production product used by account managers worldwide.",
@@ -72,52 +79,6 @@ const metrics = [
     value: "7",
     label: "Global Marketplaces",
     desc: "Deployed ML systems across US, UK, DE, FR, IT, ES, and JP — each with unique data patterns and business constraints.",
-  },
-];
-
-const whyUsCards = [
-  {
-    title: "Production-Grade Engineering",
-    desc: "We build systems that run reliably at 3 AM, not systems that look great in a slide deck. The same engineering rigor behind billion-dollar platforms, applied to your problem.",
-  },
-  {
-    title: "Full Lifecycle Ownership",
-    desc: "From first architecture decision to production deployment and ongoing monitoring. No handoffs, no gaps, no surprises.",
-  },
-  {
-    title: "Radical Technical Honesty",
-    desc: "We'll tell you if you don't need ML. We'll tell you if your timeline is unrealistic. Honest advice, even when it means less work for us.",
-  },
-  {
-    title: "Battle-Tested Across Domains",
-    desc: "NLP, recommendation systems, forecasting, causal inference, ad optimization — we've shipped production systems across all of them.",
-  },
-  {
-    title: "Speed Without Compromise",
-    desc: "We move fast because we've solved these problems before. Not because we cut corners. Working code every week, not quarterly demos.",
-  },
-  {
-    title: "Depth That Compounds",
-    desc: "Years of shipping ML systems at scale means pattern recognition that accelerates every project. We've seen what works and what doesn't.",
-  },
-];
-
-const whoWeWorkWith = [
-  {
-    title: "Building an AI-Powered Product",
-    desc: "You have a product vision that requires ML at its core \u2014 recommendation engines, intelligent automation, NLP systems, computer vision. You need a senior engineering partner who\u2019s built these at global scale.",
-  },
-  {
-    title: "Stuck Between Prototype and Production",
-    desc: "Your team built a model that works in a notebook. Now you need the deployment infrastructure, monitoring, and production hardening that comes from shipping ML systems serving millions of users.",
-  },
-  {
-    title: "Need AI Strategy Before Committing",
-    desc: "You\u2019re exploring AI for your business but aren\u2019t sure what\u2019s feasible, what it\u2019ll cost, or whether to build or buy. You need an honest technical assessment, not a sales pitch.",
-  },
-  {
-    title: "Scaling Without a Full ML Team",
-    desc: "You\u2019re too early to hire a dedicated data science team but too ambitious for off-the-shelf solutions. You need embedded AI engineering leadership that moves at the speed of your business.",
   },
 ];
 
@@ -137,28 +98,27 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto max-w-4xl px-5 sm:px-6 text-center">
           <AnimateIn>
             <h1 className="font-serif text-[clamp(2rem,6vw,4.5rem)] font-semibold leading-[1.15] tracking-tight text-white">
-              Your AI Deserves Better Than a{" "}
-              <span className="text-accent italic">Proof of Concept.</span>
+              We build AI products that{" "}
+              <span className="text-accent italic">work.</span>
             </h1>
           </AnimateIn>
 
           <AnimateIn delay={0.15}>
             <p className="mx-auto mt-6 sm:mt-8 max-w-2xl text-base sm:text-lg leading-relaxed text-neutral-400">
-              We partner with businesses to design, build, and deploy
-              production-grade AI systems. End-to-end product and systems
-              development — from architecture through deployment. No agency
-              overhead. No junior handoffs. Just senior engineering, applied
-              directly to your hardest problems.
+              Koovis AI is a product company building intelligent tools for
+              everyday use, financial markets, and creative industries. Founded
+              by a former Amazon Senior Data Scientist with 11 years of
+              shipping production ML systems.
             </p>
           </AnimateIn>
 
           <AnimateIn delay={0.3}>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href="#work-with-us" size="lg">
-                Book a Consultation <ArrowRight size={16} />
+              <Button href="#products" size="lg">
+                See Our Products <ArrowRight size={16} />
               </Button>
-              <Button href="/services" variant="outline" size="lg">
-                See How We Work <ArrowRight size={16} />
+              <Button href="/about" variant="outline" size="lg">
+                Our Story <ArrowRight size={16} />
               </Button>
             </div>
             <div className="mt-6 flex justify-center">
@@ -175,134 +135,142 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ==================== MISSION STATEMENT ==================== */}
+      {/* ==================== PRODUCTS ==================== */}
+      <section id="products" className="border-t border-white/10 py-16 sm:py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6">
+          <AnimateIn>
+            <SectionLabel>Products</SectionLabel>
+          </AnimateIn>
+          <AnimateIn delay={0.1}>
+            <SectionTitle className="mt-5">
+              Three products. One <em>mission.</em>
+            </SectionTitle>
+          </AnimateIn>
+          <AnimateIn delay={0.2}>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-neutral-400">
+              We build AI products that solve real problems &mdash; not demos
+              that impress in pitch decks. Every product is built with
+              production-grade engineering.
+            </p>
+          </AnimateIn>
+
+          <div className="mt-12 sm:mt-16 grid gap-6 md:grid-cols-3">
+            {products.map((product, i) => {
+              const Card = (
+                <div className="group relative h-full overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02] transition-all duration-300 hover:border-accent/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/5">
+                  <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-accent/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="p-5 sm:p-7">
+                    <div className="flex items-center justify-between">
+                      <product.icon
+                        size={28}
+                        className="text-accent"
+                        strokeWidth={1.5}
+                      />
+                      <span className="flex items-center gap-2 text-xs text-neutral-400">
+                        <span className={`inline-block h-2 w-2 rounded-full ${product.statusColor}`} />
+                        {product.status}
+                      </span>
+                    </div>
+
+                    <h3 className="mt-5 text-xl font-semibold text-white">
+                      {product.name}
+                    </h3>
+                    <p className="mt-1 font-serif text-sm italic text-neutral-400">
+                      {product.tagline}
+                    </p>
+                    <p className="mt-4 text-sm leading-relaxed text-neutral-500">
+                      {product.desc}
+                    </p>
+
+                    <div className="mt-6 flex items-center gap-2 text-sm font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
+                      {product.status === "Live" ? "Try it now" : "Learn more"}
+                      <ArrowRight size={14} />
+                    </div>
+                  </div>
+                </div>
+              );
+
+              return (
+                <AnimateIn key={product.name} delay={0.1 + i * 0.1}>
+                  {product.external ? (
+                    <a
+                      href={product.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block h-full"
+                    >
+                      {Card}
+                    </a>
+                  ) : (
+                    <Link href={product.href} className="block h-full">
+                      {Card}
+                    </Link>
+                  )}
+                </AnimateIn>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ==================== FOUNDER ==================== */}
       <section className="border-t border-white/10 py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-4xl px-5 sm:px-6">
           <div className="border-l-2 border-accent/40 pl-8 sm:pl-12">
             <AnimateIn>
-              <SectionLabel>Our Mission</SectionLabel>
+              <SectionLabel>Founder</SectionLabel>
             </AnimateIn>
             <AnimateIn delay={0.1}>
               <SectionTitle className="mt-5">
-                We exist to close the most expensive gap in AI.
+                From Amazon to <em>building in public.</em>
               </SectionTitle>
             </AnimateIn>
             <AnimateIn delay={0.2}>
               <p className="mt-6 text-base leading-relaxed text-neutral-400">
-                Most businesses that invest in AI hit the same wall: the model
-                works in a demo but never makes it to production. Prototypes get
-                celebrated while the engineering needed to turn them into real
-                products &mdash; data pipelines, deployment infrastructure,
-                monitoring, reliability &mdash; gets underestimated or ignored.
+                Koovis AI is built by Rajesh Kolachana &mdash; 11 years in ML
+                engineering, 7 of them as a Senior Data Scientist at Amazon.
+                IIT Roorkee and IISc Bangalore educated. GATE AIR 5 (top
+                0.013% nationally).
               </p>
               <p className="mt-4 text-base leading-relaxed text-neutral-400">
-                We founded Koovis AI to solve that problem for businesses like
-                yours. We bring the engineering rigor forged at the scale of
-                global marketplaces and apply it to building the AI-powered
-                products and systems your business actually needs.
-              </p>
-            </AnimateIn>
-            <AnimateIn delay={0.3}>
-              <p className="mt-6 text-lg font-medium text-white">
-                We don&apos;t just build AI. We build AI-powered products and
-                systems that drive real business results.
-              </p>
-            </AnimateIn>
-          </div>
-        </div>
-      </section>
-
-      {/* ==================== CAPABILITIES / WHAT WE DO ==================== */}
-      <section className="border-t border-white/10 py-16 sm:py-24 lg:py-32">
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:gap-20">
-          {/* Left column */}
-          <div className="flex flex-col justify-center">
-            <AnimateIn>
-              <SectionLabel>Capabilities</SectionLabel>
-            </AnimateIn>
-            <AnimateIn delay={0.1}>
-              <SectionTitle className="mt-5">
-                We build the AI-powered products and systems your{" "}
-                <em>business needs.</em>
-              </SectionTitle>
-            </AnimateIn>
-            <AnimateIn delay={0.2}>
-              <p className="mt-6 text-base leading-relaxed text-neutral-400">
-                Whether you need an intelligent product built from scratch, a
-                model taken from prototype to production, or a technical strategy
-                before committing &mdash; we handle it end-to-end. Every
-                engagement is engineered to drive revenue, reduce costs, or
-                create lasting competitive advantage.
+                After building recommendation engines, NLP systems, and
+                advertising optimization tools at Amazon scale, Raj left to
+                build his own products. Now based in Hyderabad, India, he&apos;s
+                building Koovis AI as a solo founder &mdash; shipping real
+                products, not pitching consulting hours.
               </p>
             </AnimateIn>
             <AnimateIn delay={0.3}>
               <div className="mt-8">
-                <Button href="/services" variant="ghost">
-                  Explore Services <ArrowRight size={16} />
+                <Button href="/about" variant="ghost">
+                  Read the Full Story <ArrowRight size={16} />
                 </Button>
               </div>
             </AnimateIn>
           </div>
-
-          {/* Right column — service rows */}
-          <div className="flex flex-col justify-center gap-4">
-            {services.map((svc, i) => (
-              <AnimateIn key={svc.num} delay={0.1 + i * 0.1}>
-                <Link
-                  href="/services"
-                  className="group flex items-start gap-5 rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 transition-all duration-200 hover:border-accent/20 hover:bg-white/[0.04]"
-                >
-                  <span className="font-jetbrains text-sm font-semibold text-accent/60 group-hover:text-accent transition-colors">
-                    {svc.num}
-                  </span>
-                  <div className="flex-1">
-                    <h3 className="text-base font-semibold text-white">
-                      {svc.title}
-                    </h3>
-                    <p className="mt-1 text-sm text-neutral-500">
-                      {svc.desc}
-                    </p>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {svc.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full bg-accent/[0.08] px-2.5 py-0.5 font-jetbrains text-[10px] text-accent/70"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <ArrowRight
-                    size={18}
-                    className="mt-1 flex-shrink-0 text-neutral-600 opacity-0 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-1 group-hover:text-accent"
-                  />
-                </Link>
-              </AnimateIn>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* ==================== PROOF SECTION ==================== */}
+      {/* ==================== PROVEN IMPACT ==================== */}
       <section className="border-t border-white/10 bg-white/[0.02] py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-6">
           <AnimateIn>
-            <SectionLabel>Proven Impact</SectionLabel>
+            <SectionLabel>Track Record</SectionLabel>
           </AnimateIn>
           <AnimateIn delay={0.1}>
             <SectionTitle className="mt-5">
-              We don&apos;t make promises. We point to <em>results.</em>
+              Proven impact at <em>Amazon scale.</em>
             </SectionTitle>
           </AnimateIn>
           <AnimateIn delay={0.15}>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-neutral-400">
-              Production systems, not prototypes. Real revenue impact, measured
-              in real dollars, deployed across real global marketplaces.
+              During 7 years at Amazon (2017&ndash;2024), Rajesh built
+              production ML systems that drove measurable business results
+              across global marketplaces.
             </p>
           </AnimateIn>
 
-          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {metrics.map((m, i) => (
               <AnimateIn key={m.value + m.label} delay={0.05 * i}>
                 <div className="group h-full rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 transition-colors hover:border-accent/20">
@@ -322,109 +290,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ==================== WHY KOOVIS AI ==================== */}
+      {/* ==================== CTA ==================== */}
       <section className="border-t border-white/10 py-16 sm:py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-5 sm:px-6">
+        <div className="mx-auto max-w-2xl px-5 sm:px-6">
           <AnimateIn>
-            <SectionLabel>Why Us</SectionLabel>
-          </AnimateIn>
-          <AnimateIn delay={0.1}>
-            <SectionTitle className="mt-5">
-              Built different. Engineered to <em>outperform.</em>
-            </SectionTitle>
-          </AnimateIn>
-
-          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {whyUsCards.map((card, i) => (
-              <AnimateIn key={card.title} delay={0.05 + i * 0.07}>
-                <div className="h-full rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 transition-colors hover:border-accent/20">
-                  <div className="mb-4 h-0.5 w-10 bg-accent/60" />
-                  <h3 className="text-base font-semibold text-white">
-                    {card.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-neutral-500">
-                    {card.desc}
-                  </p>
-                </div>
-              </AnimateIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ==================== WHO WE WORK WITH ==================== */}
-      <section className="relative border-t border-white/10 py-16 sm:py-24 lg:py-32 overflow-hidden">
-        {/* Left edge cyan gradient */}
-        <div className="pointer-events-none absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-accent/[0.04] to-transparent" />
-
-        <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6">
-          <AnimateIn>
-            <SectionLabel>Who We Work With</SectionLabel>
-          </AnimateIn>
-          <AnimateIn delay={0.1}>
-            <SectionTitle className="mt-5">
-              Built for businesses that refuse to settle for{" "}
-              <em>demos.</em>
-            </SectionTitle>
-          </AnimateIn>
-          <AnimateIn delay={0.2}>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-neutral-400">
-              We work best with companies that have a real problem, a clear
-              ambition, and the willingness to invest in getting it right. If
-              any of these sound like you, we should talk.
-            </p>
-          </AnimateIn>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            {whoWeWorkWith.map((item, i) => (
-              <AnimateIn key={item.title} delay={0.1 + i * 0.08}>
-                <div className="h-full rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 transition-colors hover:border-accent/20">
-                  <div className="mb-4 h-0.5 w-10 bg-accent/60" />
-                  <h3 className="text-base font-semibold text-white">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-neutral-500">
-                    {item.desc}
-                  </p>
-                </div>
-              </AnimateIn>
-            ))}
-          </div>
-
-          <AnimateIn delay={0.5}>
-            <div className="mt-10 text-center">
-              <Button href="#work-with-us" size="lg">
-                Sound Like You? Let&apos;s Talk <ArrowRight size={16} />
-              </Button>
-            </div>
-          </AnimateIn>
-        </div>
-      </section>
-
-      {/* ==================== WORK WITH US ==================== */}
-      <section id="work-with-us" className="border-t border-white/10 py-16 sm:py-24 lg:py-32">
-        <div className="mx-auto max-w-3xl px-5 sm:px-6">
-          <div className="text-center">
-            <AnimateIn>
-              <SectionLabel>Work With Us</SectionLabel>
-            </AnimateIn>
-            <AnimateIn delay={0.1}>
-              <SectionTitle as="h2" className="mt-5">
-                Ready to build something <em>exceptional?</em>
+            <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-10 text-center">
+              <SectionTitle>
+                Stay in the <em>loop.</em>
               </SectionTitle>
-            </AnimateIn>
-            <AnimateIn delay={0.2}>
-              <p className="mt-6 text-base leading-relaxed text-neutral-400">
-                We take on a limited number of consulting engagements at a time
-                to ensure exceptional results. Tell us about your project
-                &mdash; no obligation, no sales pitch. Just an honest
-                assessment of how we can help.
+              <p className="mt-4 text-base text-neutral-400">
+                Product updates, founder stories, and AI engineering
+                insights. No spam.
               </p>
-            </AnimateIn>
-          </div>
-          <AnimateIn delay={0.3}>
-            <div className="mt-12">
-              <ContactForm />
+              <div className="mt-8 mx-auto max-w-sm">
+                <NewsletterForm />
+              </div>
+              <div className="mt-6">
+                <a
+                  href="https://pa.koovis.ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors hover:text-accent/80"
+                >
+                  Open Koovis <ArrowRight size={14} />
+                </a>
+              </div>
             </div>
           </AnimateIn>
         </div>
