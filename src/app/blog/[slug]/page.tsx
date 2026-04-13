@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
-import { MDXRemote } from "next-mdx-remote/rsc";
 import { getBlogPost, getPublishedPosts } from "@/lib/blog";
 import AnimateIn from "@/components/AnimateIn";
 
@@ -63,9 +62,10 @@ export default function BlogPostPage({ params }: Props) {
 
       {/* MDX content */}
       <AnimateIn delay={0.2}>
-        <div className="prose-blog font-outfit text-base leading-[1.8] text-neutral-300">
-          <MDXRemote source={post.content} />
-        </div>
+        <div
+          className="prose-blog font-outfit text-base leading-[1.8] text-neutral-300"
+          dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+        />
       </AnimateIn>
 
       {/* Author info */}

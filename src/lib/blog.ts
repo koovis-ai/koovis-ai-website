@@ -1,6 +1,8 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { remark } from "remark";
+import html from "remark-html";
 
 const contentDir = path.join(process.cwd(), "src/content/blog");
 
@@ -14,6 +16,12 @@ export interface BlogPost {
   readTime: string;
   published: boolean;
   content: string;
+  contentHtml: string;
+}
+
+function renderMarkdown(markdown: string): string {
+  const result = remark().use(html).processSync(markdown);
+  return result.toString();
 }
 
 export function getBlogPosts(): BlogPost[] {
@@ -37,6 +45,7 @@ export function getBlogPosts(): BlogPost[] {
       readTime: data.readTime ?? "5 min read",
       published: data.published !== false,
       content,
+      contentHtml: renderMarkdown(content),
     };
   });
 
