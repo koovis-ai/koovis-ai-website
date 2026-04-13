@@ -1,0 +1,110 @@
+---
+title: "When NOT to Use Machine Learning: A Guide to Honest Engineering"
+excerpt: "The best engineering decision is often saying no to ML. Here's how to tell when you're solving the wrong problem with the wrong tool."
+date: "2025-03-10"
+author: "Rajesh Kolachana"
+tag: "AI Strategy"
+readTime: "6 min read"
+published: true
+---
+
+The most valuable advice I give clients isn't about which model to use. It's about whether they should use ML at all.
+
+I've turned down projects worth six figures because the honest answer was "you don't need machine learning for this." That answer doesn't win me work in the short term, but it builds trust that pays off when clients actually do need ML. More importantly, it saves them from wasting months and budgets on solutions that were never going to work.
+
+Here's when you should walk away from ML — even if it's technically feasible.
+
+## When You Can Solve It With a SQL Query
+
+The first question I ask any potential ML project is: "Can this be solved with deterministic logic?" Because if it can, ML is the wrong tool.
+
+I once reviewed a project where a team spent three months building a recommendation model to suggest related products. The business logic was simple: "If customer bought A, recommend B and C." They had explicit rules for every product category. The entire problem could have been solved with a lookup table and 200 lines of SQL.
+
+They chose ML because it felt more sophisticated. But sophisticated doesn't mean better. Their ML model had to be retrained weekly, required constant monitoring, and occasionally made nonsensical recommendations when it encountered edge cases. The SQL version would have been instant, deterministic, and required zero maintenance.
+
+**Rule of thumb:** If you can write down the decision logic explicitly, write it down explicitly. Don't use ML to learn rules you already know.
+
+## When You Don't Have a Clear Success Metric
+
+If you can't define success numerically, you can't build a successful ML system. Full stop.
+
+"Improve user engagement" is not a metric. "Increase daily active users by 15%" is a metric. "Make the product feel smarter" is not a metric. "Reduce customer support tickets by 30%" is a metric.
+
+ML requires measuring performance. If you can't measure it, you can't improve it. And if you don't have a clear target, you'll never know if you've succeeded.
+
+I've seen teams build beautiful models that optimized for metrics no one cared about. They celebrated high precision scores while the business metric they were hired to improve — revenue — stayed flat. Without a clear success metric tied to business outcomes, you're just doing research, not solving a problem.
+
+**Rule of thumb:** If you can't write down a specific number you're trying to move and by how much, you're not ready for ML.
+
+## When Your Data Is Garbage
+
+ML doesn't fix bad data. It amplifies it.
+
+"Garbage in, garbage out" is a cliché because it's true. If your data is incomplete, biased, outdated, or inconsistent, your model will learn to be incomplete, biased, outdated, and inconsistent — just with more confidence.
+
+I've turned down projects where clients had data, but the data quality was so poor that any model built on it would be worse than useless. Missing fields. Inconsistent schemas. Labels applied by people who didn't understand what they were labeling. Training a model on that data would have produced confidently wrong predictions.
+
+The right move wasn't to build a model. It was to fix the data pipeline first. But that's not what they wanted to hear, because it's not as exciting as "we're building AI."
+
+**Rule of thumb:** If you wouldn't trust a human analyst to make decisions with your data, don't trust a model either. Fix the data problem first.
+
+## When the Problem Is Actually a People Problem
+
+Some problems look like they need ML but are actually organizational failures.
+
+Example: a company wanted to build a predictive model to forecast which projects would run over budget. When I dug into the problem, it became clear the issue wasn't prediction — it was discipline. Teams weren't tracking hours, updating milestones, or following estimation processes.
+
+No model can fix a broken process. You can't machine-learn your way out of organizational dysfunction. The right solution wasn't an ML model; it was better project management practices and accountability.
+
+ML works best when it solves a problem that's fundamentally hard for humans or deterministic systems. It doesn't work when the real problem is that people aren't following the process.
+
+**Rule of thumb:** If the root cause is "people aren't doing what they're supposed to do," the solution is process improvement, not ML.
+
+## When You Can't Afford to Be Wrong
+
+ML models are probabilistic. They make mistakes. If your use case requires 100% accuracy, ML is the wrong tool.
+
+I once worked with a company exploring ML for medical diagnosis. The model had 95% accuracy — impressive in most contexts. But in healthcare, 95% means 1 in 20 patients gets a wrong diagnosis. That's unacceptable.
+
+They needed a deterministic system with human-in-the-loop verification. ML could assist, but it couldn't be the sole decision-maker. Any use case where errors have severe consequences (financial, legal, medical, safety-critical) needs to be designed with the assumption that the model will be wrong sometimes.
+
+**Rule of thumb:** If you can't tolerate false positives or false negatives, ML alone isn't the answer. Build hybrid systems with human oversight.
+
+## When the Simpler Solution Is Good Enough
+
+Engineering is about tradeoffs. ML is powerful but comes with costs: infrastructure complexity, maintenance overhead, monitoring requirements, and operational risk.
+
+If a simpler solution gets you 90% of the value with 10% of the complexity, take it. You can always add ML later if the simpler approach stops scaling.
+
+I've advised clients to start with heuristics, rules-based systems, or simple statistical methods before jumping to ML. In many cases, the "dumb" solution worked well enough that they never needed the complex ML version.
+
+The best ML projects are the ones you never had to build because you found a simpler solution that worked.
+
+**Rule of thumb:** Always ask, "What's the simplest thing that could work?" Start there. Upgrade to ML only when simple stops being sufficient.
+
+## The Hardest Part: Saying No
+
+The pressure to use ML is real. It's trendy. It attracts funding. It makes you look innovative. Saying "you don't need ML" feels like saying "you don't need to be cutting-edge."
+
+But the best engineers aren't the ones who use the fanciest tools. They're the ones who choose the right tool for the job — even when the right tool is boring.
+
+If you're a business leader evaluating whether to invest in ML, hire engineers who are willing to tell you when you don't need it. That honesty is more valuable than any model they'll build.
+
+And if you're an engineer, have the courage to say no when ML is the wrong solution. Your reputation is built on solving problems effectively, not on using the most impressive technology.
+
+## When You *Should* Use ML
+
+So when is ML the right choice?
+
+- When the problem is genuinely complex and can't be solved with deterministic logic
+- When you have high-quality, representative data
+- When you have a clear, measurable success metric tied to business outcomes
+- When you can tolerate some error rate and have processes to handle failures
+- When simpler solutions have been tried and proven insufficient
+- When you have the infrastructure and resources to maintain the system in production
+
+If all of those conditions are true, then yes — ML is the right tool. Build it, ship it, and make sure it works reliably.
+
+But if any of them are missing, the honest answer might be: don't build it. At least not yet.
+
+That's the advice that doesn't win pitches. But it's the advice that saves projects.
