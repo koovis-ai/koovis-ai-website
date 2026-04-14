@@ -52,12 +52,12 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-1.5 sm:gap-2 group">
-          <span className="font-serif text-lg sm:text-xl font-semibold tracking-[0.15em] text-content">
-            Koovis
+        <Link href="/" className="flex items-baseline gap-1.5 group">
+          <span className="text-[1.125rem] sm:text-xl font-semibold tracking-tight text-content">
+            koovis
           </span>
-          <span className="font-serif text-lg sm:text-xl font-semibold tracking-[0.15em] text-accent">
-            AI
+          <span className="text-[1.125rem] sm:text-xl font-medium tracking-tight text-accent">
+            ai
           </span>
         </Link>
 

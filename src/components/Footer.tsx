@@ -39,12 +39,12 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-16 md:grid-cols-3 md:gap-8">
         {/* Column 1: Logo + tagline + social */}
         <div className="flex flex-col gap-6">
-          <Link href="/" className="flex items-center gap-1.5">
-            <span className="font-serif text-base font-semibold tracking-[0.15em] text-content">
-              Koovis
+          <Link href="/" className="flex items-baseline gap-1.5">
+            <span className="text-base font-semibold tracking-tight text-content">
+              koovis
             </span>
-            <span className="font-serif text-base font-semibold tracking-[0.15em] text-accent">
-              AI
+            <span className="text-base font-medium tracking-tight text-accent">
+              ai
             </span>
           </Link>
 
