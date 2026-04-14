@@ -15,8 +15,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@koovis.ai",
-    href: "mailto:hello@koovis.ai",
+    value: "info@koovis.ai",
+    href: "mailto:info@koovis.ai",
   },
   {
     icon: MapPin,
@@ -49,9 +49,9 @@ export default function ContactPage() {
           </SectionTitle>
         </AnimateIn>
         <AnimateIn delay={0.2}>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-neutral-400">
-            Have a question about our products? Want to discuss a partnership?
-            Just want to say hi? Drop us a message.
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-content-muted">
+            Product question? Partnership idea? Or just want to say hi? Send us
+            a message.
           </p>
         </AnimateIn>
 
@@ -63,14 +63,14 @@ export default function ContactPage() {
       </section>
 
       {/* ==================== CONTACT INFO GRID ==================== */}
-      <section className="border-t border-white/10 py-16">
+      <section className="border-t border-content/10 py-16">
         <div className="mx-auto max-w-3xl px-5 sm:px-6">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {contactInfo.map((item, i) => (
               <AnimateIn key={item.label} delay={0.05 * i}>
-                <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-5">
+                <div className="rounded-2xl border border-content/[0.06] bg-content/[0.02] p-5">
                   <item.icon size={20} className="text-accent" />
-                  <p className="mt-3 font-jetbrains text-xs uppercase tracking-wider text-neutral-500">
+                  <p className="mt-3 font-jetbrains text-xs uppercase tracking-wider text-content-dim">
                     {item.label}
                   </p>
                   {item.href ? (
@@ -78,12 +78,12 @@ export default function ContactPage() {
                       href={item.href}
                       target={item.href.startsWith("http") ? "_blank" : undefined}
                       rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                      className="mt-1 block text-sm font-medium text-white hover:text-accent transition-colors"
+                      className="mt-1 block text-sm font-medium text-content hover:text-accent transition-colors"
                     >
                       {item.value}
                     </a>
                   ) : (
-                    <p className="mt-1 text-sm font-medium text-white">
+                    <p className="mt-1 text-sm font-medium text-content">
                       {item.value}
                     </p>
                   )}

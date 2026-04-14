@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, FormEvent } from "react";
+import KoovisLogo from "./KoovisLogo";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -65,7 +66,7 @@ function FooterNewsletter() {
       <div className="flex items-center gap-2 rounded-lg border border-accent/20 bg-accent/5 px-4 py-3">
         <span className="text-accent text-lg">&#10003;</span>
         <p className="text-sm text-accent">
-          You&apos;re subscribed! Check your inbox.
+          You&apos;re subscribed.
         </p>
       </div>
     );
@@ -77,16 +78,16 @@ function FooterNewsletter() {
         <input
           name="email"
           type="email"
-          placeholder="you@company.com"
+          placeholder="you@email.com"
           required
-          className="flex-1 rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-neutral-500 outline-none transition-all duration-200 focus:border-accent/50 focus:shadow-[0_0_12px_rgba(34,211,238,0.15)] min-h-[44px]"
+          className="flex-1 rounded-lg border border-content/10 bg-content/5 px-4 py-3 text-sm text-content placeholder:text-content-dim outline-none transition-all duration-200 focus:border-accent/50 focus:shadow-[0_0_12px_var(--accent-shadow)] min-h-[44px]"
         />
         <button
           type="submit"
           disabled={status === "loading"}
-          className="flex-shrink-0 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-neutral-950 transition-colors hover:brightness-110 disabled:opacity-50"
+          className="flex-shrink-0 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-accent-on transition-colors hover:brightness-110 disabled:opacity-50"
         >
-          {status === "loading" ? "Subscribing..." : "Subscribe"}
+          {status === "loading" ? "..." : "Subscribe"}
         </button>
       </div>
       {status === "error" && (
@@ -98,33 +99,16 @@ function FooterNewsletter() {
   );
 }
 
-function Diamond({ size = 18 }: { size?: number }) {
-  const inner = size * 0.45;
-  return (
-    <span
-      className="relative inline-flex items-center justify-center flex-shrink-0"
-      style={{ width: size, height: size }}
-    >
-      <span className="absolute inset-0 rotate-45 rounded-[2px] border-2 border-accent" />
-      <span
-        className="absolute rotate-45 rounded-[1px] bg-accent"
-        style={{ width: inner, height: inner }}
-      />
-    </span>
-  );
-}
-
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-neutral-950">
+    <footer className="border-t border-content/10 bg-surface">
       {/* Main grid */}
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-16 md:grid-cols-3 md:gap-8">
         {/* Column 1: Logo + tagline + social */}
         <div className="flex flex-col gap-6">
-          {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5">
-            <Diamond />
-            <span className="text-base font-bold tracking-[0.2em] uppercase text-white">
+            <KoovisLogo size={20} className="text-accent" />
+            <span className="text-base font-bold tracking-[0.2em] uppercase text-content">
               KOOVIS
             </span>
             <span className="text-base font-bold tracking-[0.2em] uppercase text-accent">
@@ -132,13 +116,12 @@ export default function Footer() {
             </span>
           </Link>
 
-          <p className="text-sm leading-relaxed text-neutral-400">
-            Building AI products that work.
+          <p className="text-sm leading-relaxed text-content-dim">
+            AI products that work.
             <br />
             Hyderabad, India.
           </p>
 
-          {/* Social links */}
           <ul className="flex gap-5">
             {socialLinks.map((link) => (
               <li key={link.label}>
@@ -146,7 +129,7 @@ export default function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 font-jetbrains text-xs tracking-wider text-neutral-500 transition-colors hover:text-accent"
+                  className="flex items-center gap-1.5 font-jetbrains text-xs tracking-wider text-content-dim transition-colors hover:text-accent"
                 >
                   {link.icon}
                   {link.label}
@@ -158,7 +141,7 @@ export default function Footer() {
 
         {/* Column 2: Navigation */}
         <div>
-          <h3 className="font-jetbrains text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-5">
+          <h3 className="font-jetbrains text-[11px] font-semibold uppercase tracking-[0.2em] text-content-dim mb-5">
             Navigation
           </h3>
           <ul className="flex flex-col gap-3">
@@ -166,7 +149,7 @@ export default function Footer() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm text-neutral-400 transition-colors hover:text-accent"
+                  className="text-sm text-content-muted transition-colors hover:text-accent"
                 >
                   {link.label}
                 </Link>
@@ -177,23 +160,23 @@ export default function Footer() {
 
         {/* Column 3: Newsletter */}
         <div>
-          <h3 className="font-jetbrains text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-5">
+          <h3 className="font-jetbrains text-[11px] font-semibold uppercase tracking-[0.2em] text-content-dim mb-5">
             Newsletter
           </h3>
-          <p className="text-sm text-neutral-400 mb-5">
-            AI insights, product updates, and founder stories. No spam.
+          <p className="text-sm text-content-muted mb-5">
+            Product updates and engineering notes. No spam.
           </p>
           <FooterNewsletter />
         </div>
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-content/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-5 sm:flex-row">
-          <p className="font-jetbrains text-[11px] tracking-wide text-neutral-600">
+          <p className="font-jetbrains text-[11px] tracking-wide text-content-faint">
             &copy; 2026 Koovis AI Pvt Ltd. India.
           </p>
-          <p className="font-jetbrains text-[11px] tracking-wide text-neutral-600">
+          <p className="font-jetbrains text-[11px] tracking-wide text-content-faint">
             Products, not pitches.
           </p>
         </div>

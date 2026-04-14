@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { geistSans, geistMono, jetbrainsMono, sourceSerif, outfit } from "@/lib/fonts";
 import { sharedMetadata, jsonLd } from "@/lib/metadata";
 import { Analytics } from "@vercel/analytics/react";
+import Providers from "@/components/Providers";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -14,34 +15,36 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable} ${sourceSerif.variable} ${outfit.variable} font-sans antialiased`}
       >
-        {/* JSON-LD Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd.organization),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd.person),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd.website),
-          }}
-        />
+        <Providers>
+          {/* JSON-LD Structured Data */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(jsonLd.organization),
+            }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(jsonLd.person),
+            }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(jsonLd.website),
+            }}
+          />
 
-        <Navbar />
-        <main className="min-h-screen pt-[72px]">{children}</main>
-        <Footer />
-        <Analytics />
+          <Navbar />
+          <main className="min-h-screen pt-[72px]">{children}</main>
+          <Footer />
+          <Analytics />
+        </Providers>
       </body>
     </html>
   );

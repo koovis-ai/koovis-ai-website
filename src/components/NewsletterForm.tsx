@@ -42,9 +42,9 @@ export default function NewsletterForm() {
       <input
         name="email"
         type="email"
-        placeholder="you@company.com"
+        placeholder="you@email.com"
         required
-        className="flex-1 rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-neutral-500 outline-none transition-all duration-200 focus:border-accent/50 focus:shadow-[0_0_12px_rgba(34,211,238,0.15)] min-h-[44px]"
+        className="flex-1 rounded-full border border-content/10 bg-content/5 px-4 py-3 text-sm text-content placeholder:text-content-dim outline-none transition-all duration-200 focus:border-accent/50 focus:shadow-[0_0_12px_var(--accent-shadow)] min-h-[44px]"
       />
       <Button type="submit" size="sm" disabled={status === "loading"}>
         {status === "loading" ? "Subscribing..." : "Subscribe"}

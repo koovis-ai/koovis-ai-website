@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import KoovisLogo from "./KoovisLogo";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -14,26 +16,6 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
-
-function Diamond({ size = 20 }: { size?: number }) {
-  const inner = size * 0.45;
-  return (
-    <span
-      className="relative inline-flex items-center justify-center flex-shrink-0"
-      style={{ width: size, height: size }}
-    >
-      {/* Outer rotated square (border only) */}
-      <span
-        className="absolute inset-0 rotate-45 rounded-[3px] border-2 border-accent"
-      />
-      {/* Inner filled square */}
-      <span
-        className="absolute rotate-45 rounded-[1px] bg-accent"
-        style={{ width: inner, height: inner }}
-      />
-    </span>
-  );
-}
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -49,7 +31,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => {
@@ -66,15 +47,15 @@ export default function Navbar() {
     <header
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? "bg-neutral-950/80 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/10"
+          ? "bg-surface/80 backdrop-blur-xl border-b border-content/10 shadow-lg shadow-surface/20"
           : "bg-transparent border-b border-transparent"
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 sm:gap-3 group">
-          <Diamond />
-          <span className="text-base sm:text-lg font-bold tracking-[0.2em] sm:tracking-[0.25em] uppercase text-white">
+        <Link href="/" className="flex items-center gap-2 sm:gap-2.5 group">
+          <KoovisLogo size={24} className="text-accent" />
+          <span className="text-base sm:text-lg font-bold tracking-[0.2em] sm:tracking-[0.25em] uppercase text-content">
             KOOVIS
           </span>
           <span className="text-base sm:text-lg font-bold tracking-[0.2em] sm:tracking-[0.25em] uppercase text-accent">
@@ -91,11 +72,10 @@ export default function Navbar() {
                 className={`relative px-4 py-2 text-sm font-medium tracking-wide uppercase transition-colors duration-200 ${
                   isActive(link.href)
                     ? "text-accent"
-                    : "text-neutral-400 hover:text-white"
+                    : "text-content-dim hover:text-content"
                 }`}
               >
                 {link.label}
-                {/* Active underline indicator */}
                 {isActive(link.href) && (
                   <motion.span
                     layoutId="nav-underline"
@@ -108,13 +88,14 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Desktop CTA + Mobile toggle */}
+        {/* Desktop CTA + Theme Toggle + Mobile toggle */}
         <div className="flex items-center gap-3">
+          <ThemeToggle />
           <a
             href="https://pa.koovis.ai"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden lg:inline-flex items-center rounded-full bg-accent px-5 py-2 text-sm font-medium tracking-wide uppercase text-neutral-950 transition-all duration-200 hover:bg-accent/90"
+            className="hidden lg:inline-flex items-center rounded-full bg-accent px-5 py-2 text-sm font-medium tracking-wide uppercase text-accent-on transition-all duration-200 hover:brightness-110"
           >
             Open Koovis
           </a>
@@ -127,7 +108,7 @@ export default function Navbar() {
 
           {/* Hamburger */}
           <button
-            className="relative z-50 lg:hidden text-white p-2 -mr-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
+            className="relative z-50 lg:hidden text-content p-2 -mr-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -166,7 +147,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-neutral-950/95 backdrop-blur-2xl lg:hidden"
+            className="fixed inset-0 z-40 bg-surface/95 backdrop-blur-2xl lg:hidden"
           >
             <nav className="flex h-full flex-col items-center justify-center gap-2">
               {navLinks.map((link, i) => (
@@ -183,7 +164,7 @@ export default function Navbar() {
                     className={`block px-6 py-4 text-xl sm:text-2xl font-semibold tracking-widest uppercase transition-colors ${
                       isActive(link.href)
                         ? "text-accent"
-                        : "text-neutral-300 hover:text-white"
+                        : "text-content-secondary hover:text-content"
                     }`}
                   >
                     {link.label}
@@ -194,7 +175,6 @@ export default function Navbar() {
                 </motion.div>
               ))}
 
-              {/* Mobile CTAs */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -207,7 +187,7 @@ export default function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMobileOpen(false)}
-                  className="inline-flex items-center rounded-full bg-accent px-8 py-3 text-sm font-medium tracking-widest uppercase text-neutral-950 transition-all hover:bg-accent/90"
+                  className="inline-flex items-center rounded-full bg-accent px-8 py-3 text-sm font-medium tracking-widest uppercase text-accent-on transition-all hover:brightness-110"
                 >
                   Open Koovis
                 </a>

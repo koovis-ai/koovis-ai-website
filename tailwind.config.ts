@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -16,21 +17,23 @@ const config: Config = {
         outfit: ["var(--font-outfit)", "system-ui", "sans-serif"],
       },
       colors: {
-        bg: "#0a0a0b",
-        card: "#111113",
-        border: "#222225",
-        "border-light": "#2a2a2e",
-        text: "#e4e4e7",
-        "text-muted": "#71717a",
-        "text-dim": "#52525b",
-        accent: {
-          DEFAULT: "#22d3ee",
-          dim: "rgba(34, 211, 238, 0.12)",
-          glow: "rgba(34, 211, 238, 0.25)",
+        surface: {
+          DEFAULT: "rgb(var(--color-surface) / <alpha-value>)",
+          raised: "rgb(var(--color-surface-raised) / <alpha-value>)",
+          elevated: "rgb(var(--color-surface-elevated) / <alpha-value>)",
         },
-        white: "#fafafa",
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        content: {
+          DEFAULT: "rgb(var(--color-content) / <alpha-value>)",
+          secondary: "rgb(var(--color-content-secondary) / <alpha-value>)",
+          muted: "rgb(var(--color-content-muted) / <alpha-value>)",
+          dim: "rgb(var(--color-content-dim) / <alpha-value>)",
+          faint: "rgb(var(--color-content-faint) / <alpha-value>)",
+        },
+        accent: {
+          DEFAULT: "rgb(var(--color-accent) / <alpha-value>)",
+          hover: "rgb(var(--color-accent-hover) / <alpha-value>)",
+          on: "rgb(var(--color-on-accent) / <alpha-value>)",
+        },
       },
     },
   },
