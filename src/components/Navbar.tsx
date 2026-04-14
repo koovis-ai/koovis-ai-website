@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import KoovisLogo from "./KoovisLogo";
 import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
@@ -53,12 +52,11 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 sm:gap-2.5 group">
-          <KoovisLogo size={24} className="text-accent" />
-          <span className="text-base sm:text-lg font-bold tracking-[0.2em] sm:tracking-[0.25em] uppercase text-content">
-            KOOVIS
+        <Link href="/" className="flex items-center gap-1.5 sm:gap-2 group">
+          <span className="font-serif text-lg sm:text-xl font-semibold tracking-[0.15em] text-content">
+            Koovis
           </span>
-          <span className="text-base sm:text-lg font-bold tracking-[0.2em] sm:tracking-[0.25em] uppercase text-accent">
+          <span className="font-serif text-lg sm:text-xl font-semibold tracking-[0.15em] text-accent">
             AI
           </span>
         </Link>

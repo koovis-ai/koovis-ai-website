@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useState, FormEvent } from "react";
-import KoovisLogo from "./KoovisLogo";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -34,71 +32,6 @@ const socialLinks = [
   },
 ];
 
-function FooterNewsletter() {
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
-
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus("loading");
-
-    const form = e.currentTarget;
-    const email = (form.elements.namedItem("email") as HTMLInputElement).value;
-
-    try {
-      const res = await fetch("/api/newsletter", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-
-      if (!res.ok) throw new Error("Failed to subscribe");
-      setStatus("success");
-      form.reset();
-    } catch {
-      setStatus("error");
-    }
-  }
-
-  if (status === "success") {
-    return (
-      <div className="flex items-center gap-2 rounded-lg border border-accent/20 bg-accent/5 px-4 py-3">
-        <span className="text-accent text-lg">&#10003;</span>
-        <p className="text-sm text-accent">
-          You&apos;re subscribed.
-        </p>
-      </div>
-    );
-  }
-
-  return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-      <div className="flex gap-2">
-        <input
-          name="email"
-          type="email"
-          placeholder="you@email.com"
-          required
-          className="flex-1 rounded-lg border border-content/10 bg-content/5 px-4 py-3 text-sm text-content placeholder:text-content-dim outline-none transition-all duration-200 focus:border-accent/50 focus:shadow-[0_0_12px_var(--accent-shadow)] min-h-[44px]"
-        />
-        <button
-          type="submit"
-          disabled={status === "loading"}
-          className="flex-shrink-0 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-accent-on transition-colors hover:brightness-110 disabled:opacity-50"
-        >
-          {status === "loading" ? "..." : "Subscribe"}
-        </button>
-      </div>
-      {status === "error" && (
-        <p className="text-xs text-red-400">
-          Something went wrong. Please try again.
-        </p>
-      )}
-    </form>
-  );
-}
-
 export default function Footer() {
   return (
     <footer className="border-t border-content/10 bg-surface">
@@ -106,12 +39,11 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-16 md:grid-cols-3 md:gap-8">
         {/* Column 1: Logo + tagline + social */}
         <div className="flex flex-col gap-6">
-          <Link href="/" className="flex items-center gap-2.5">
-            <KoovisLogo size={20} className="text-accent" />
-            <span className="text-base font-bold tracking-[0.2em] uppercase text-content">
-              KOOVIS
+          <Link href="/" className="flex items-center gap-1.5">
+            <span className="font-serif text-base font-semibold tracking-[0.15em] text-content">
+              Koovis
             </span>
-            <span className="text-base font-bold tracking-[0.2em] uppercase text-accent">
+            <span className="font-serif text-base font-semibold tracking-[0.15em] text-accent">
               AI
             </span>
           </Link>
@@ -158,15 +90,29 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Column 3: Newsletter */}
+        {/* Column 3: Get in touch */}
         <div>
           <h3 className="font-jetbrains text-[11px] font-semibold uppercase tracking-[0.2em] text-content-dim mb-5">
-            Newsletter
+            Get in Touch
           </h3>
-          <p className="text-sm text-content-muted mb-5">
-            Product updates and engineering notes. No spam.
-          </p>
-          <FooterNewsletter />
+          <ul className="flex flex-col gap-3">
+            <li>
+              <a
+                href="mailto:info@koovis.ai"
+                className="text-sm text-content-muted transition-colors hover:text-accent"
+              >
+                info@koovis.ai
+              </a>
+            </li>
+            <li>
+              <Link
+                href="/contact"
+                className="text-sm text-content-muted transition-colors hover:text-accent"
+              >
+                Contact Form
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
 
