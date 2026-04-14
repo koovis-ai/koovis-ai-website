@@ -62,11 +62,12 @@ export default function AboutPage() {
 
           <AnimateIn delay={0.1}>
             <p className="mt-5 text-base leading-relaxed text-content-muted">
-              We&apos;re a product company based in Hyderabad, India,
-              incorporated in April 2026 as Koovis AI Pvt Ltd. We don&apos;t
-              take client projects or sell consulting hours. We build our own AI
-              tools, use them daily, and iterate based on what we learn from real
-              usage.
+              We&apos;re based in Hyderabad, India, incorporated in March 2026
+              as Koovis AI Pvt Ltd. We build our own AI products, use them
+              daily, and iterate based on what we learn from real usage. We also
+              work with companies that need the same production-grade AI
+              engineering applied to their problems &mdash; because the best way
+              to stay sharp is to solve real challenges across different domains.
             </p>
           </AnimateIn>
 
@@ -151,13 +152,13 @@ export default function AboutPage() {
 
               <AnimateIn delay={0.2}>
                 <p className="text-base leading-relaxed text-content-muted">
-                  My first real data science role was at AgreeYa Solutions,
-                  building pricing optimization models for Best Buy, Sam&apos;s
-                  Club, and Dick&apos;s Sporting Goods. Then InMobi, where I won
-                  the Rising Star Award and scaled an ad account from $3K to $80K
-                  in daily spend. Both taught me what production ML actually looks
-                  like &mdash; messy data, tight deadlines, and systems that have
-                  to work at 2 AM on a Saturday.
+                  My first real data science role was at InMobi, where I won the
+                  Rising Star Award and scaled an ad account from $3K to $80K in
+                  daily spend. Then AgreeYa Solutions, building pricing
+                  optimization models for Best Buy, Sam&apos;s Club, and
+                  Dick&apos;s Sporting Goods. Both taught me what production ML
+                  actually looks like &mdash; messy data, tight deadlines, and
+                  systems that have to work at 2 AM on a Saturday.
                 </p>
               </AnimateIn>
 
@@ -217,10 +218,12 @@ export default function AboutPage() {
                 <p className="mt-3 text-base leading-relaxed text-content-muted">
                   After 11 years in the industry &mdash; building systems for
                   other people&apos;s products &mdash; I wanted to build my own.
-                  Not to start a consulting firm. Not to advise. To actually
-                  build products that I use myself, apply everything I learned at
-                  Amazon scale, and see if one person with the right tools and the
-                  right discipline can ship things that matter.
+                  To apply everything I learned at Amazon scale, use it myself
+                  every day, and see if one person with the right tools and the
+                  right discipline can ship things that matter. Along the way,
+                  I&apos;m also bringing that same engineering rigor to companies
+                  that need production-grade AI &mdash; because solving real
+                  problems is how you stay sharp.
                 </p>
                 <p className="mt-4 text-base leading-relaxed text-content font-medium">
                   Koovis AI is that bet. It&apos;s early, and there&apos;s a lot

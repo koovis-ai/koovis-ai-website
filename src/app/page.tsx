@@ -223,8 +223,9 @@ export default function HomePage() {
               <p className="mt-6 text-base leading-relaxed text-content-muted">
                 11 years in ML engineering. 7 at Amazon as a Senior Data
                 Scientist. IIT Roorkee and IISc Bangalore. GATE AIR 5 (top
-                0.013% nationally). Now building products instead of pitching
-                consulting hours.
+                0.013% nationally). Now building AI products and bringing
+                that same production-grade engineering to every problem worth
+                solving.
               </p>
             </AnimateIn>
             <AnimateIn delay={0.3}>
