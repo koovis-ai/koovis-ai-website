@@ -12,6 +12,8 @@ The official website for [Koovis AI](https://www.koovis.ai) — AI product devel
 - **Email:** Resend (contact form & newsletter)
 - **Icons:** Lucide React
 - **Fonts:** Geist Sans, Geist Mono, JetBrains Mono, Source Serif 4, Outfit
+- **SEO:** next-seo + Next.js Metadata API + JSON-LD structured data
+- **Analytics:** Google Analytics 4 + Vercel Analytics
 
 ## Getting Started
 
@@ -41,6 +43,7 @@ cp .env.example .env.local
 | `RESEND_API_KEY` | API key from [Resend](https://resend.com) for contact form and newsletter emails |
 | `CONTACT_EMAIL` | Email address that receives contact form submissions |
 | `NEXT_PUBLIC_SITE_URL` | Production URL (e.g. `https://www.koovis.ai`) |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Google Analytics 4 Measurement ID (e.g. `G-XXXXXXXXXX`) - optional, only loads in production |
 
 ### Development
 
@@ -83,6 +86,10 @@ src/
     blog.ts               # Blog utilities (parse MDX, frontmatter)
     fonts.ts              # Font configuration
     metadata.ts           # SEO metadata & JSON-LD
+    seo.ts                # Page-specific metadata helpers
+  components/
+    analytics/
+      GoogleAnalytics.tsx # Google Analytics 4 component
 ```
 
 ## Deployment
@@ -111,3 +118,29 @@ Your markdown content here.
 ```
 
 Set `published: false` to keep a post hidden from the listing.
+
+## SEO & Analytics
+
+The site includes comprehensive SEO and analytics configuration:
+
+- **Meta Tags**: Automatic OpenGraph and Twitter Card tags on all pages
+- **JSON-LD**: Structured data for Organization, Person, and Website schemas
+- **Google Analytics 4**: Production analytics (requires `NEXT_PUBLIC_GA_MEASUREMENT_ID`)
+- **Vercel Analytics**: Real user monitoring and Core Web Vitals
+
+For detailed documentation, see [docs/SEO_ANALYTICS_SETUP.md](docs/SEO_ANALYTICS_SETUP.md).
+
+### Verification
+
+To verify SEO meta tags are rendering correctly:
+
+```bash
+npm run build
+npm start
+# View page source at http://localhost:3000 and check <head> tags
+```
+
+Test with these tools:
+- [Google Rich Results Test](https://search.google.com/test/rich-results)
+- [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
+- [Twitter Card Validator](https://cards-dev.twitter.com/validator)
