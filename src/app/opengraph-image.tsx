@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-export const alt = "Koovis AI — From Model to Market";
+export const alt = "Koovis AI — We Build AI Products That Work";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -117,7 +117,7 @@ export default async function OgImage() {
             letterSpacing: "0.08em",
           }}
         >
-          From Model to Market
+          We Build AI Products That Work
         </p>
 
         {/* Bottom bar */}
@@ -132,9 +132,11 @@ export default async function OgImage() {
             color: "#525252",
           }}
         >
-          <span>Custom AI Product Development</span>
+          <span>Personal AI</span>
           <span style={{ color: "#22d3ee" }}>&#9670;</span>
-          <span>ML Engineering</span>
+          <span>Quantitative Trading</span>
+          <span style={{ color: "#22d3ee" }}>&#9670;</span>
+          <span>AI Pre-Visualization</span>
           <span style={{ color: "#22d3ee" }}>&#9670;</span>
           <span>www.koovis.ai</span>
         </div>

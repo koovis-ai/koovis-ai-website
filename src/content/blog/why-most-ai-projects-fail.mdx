@@ -5,7 +5,57 @@ date: "2025-02-01"
 author: "Rajesh Kolachana"
 tag: "ML Ops"
 readTime: "5 min read"
-published: false
+published: true
 ---
 
-Coming soon.
+Everyone's building with AI. Almost nobody's shipping it reliably. The failure rate for AI projects in production is staggering — industry estimates range from 60% to 87%, depending on who you ask. And after seven years of building ML systems at Amazon, I can tell you the model is almost never the problem.
+
+## The Demo Trap
+
+Here's the pattern I've seen dozens of times: a team builds a compelling demo using a frontier model. Stakeholders get excited. A launch date is set. Then reality hits. The model works beautifully on curated test data but falls apart on edge cases. There's no monitoring to catch when it degrades. There's no fallback when the API provider has an outage at 3 AM. There's no pipeline to retrain when the data distribution shifts.
+
+The demo worked. The product never shipped.
+
+At Amazon, we called this the "last mile" problem — getting from a working prototype to a production system that handles real traffic, real edge cases, and real failure modes. The last mile is where 80% of the engineering effort lives, and it's invisible in a demo.
+
+## The Five Things That Actually Kill AI Projects
+
+### 1. No Data Pipeline
+
+Your model is only as good as the data feeding it. In production, data is messy, late, duplicated, and sometimes just wrong. I've seen multi-million dollar ML projects stall because nobody built a reliable way to get clean data from source systems to the model. At Amazon, we spent more engineering time on data pipelines than on model development — by a factor of about 3:1.
+
+### 2. No Monitoring
+
+If you can't measure model performance in production, you're flying blind. Models degrade silently. The accuracy you measured on your test set six months ago means nothing if the underlying data distribution has shifted. You need real-time metrics on prediction quality, latency, error rates, and data drift. When I built recommendation systems at Amazon, we had dashboards tracking dozens of metrics per model — not because we were paranoid, but because we'd been burned enough times to know better.
+
+### 3. No Fallback Strategy
+
+Every external dependency will fail. Every single one. Your LLM provider will have outages. Your GPU cluster will hit capacity. Your feature store will return stale data. The question isn't whether these things will happen — it's whether your system degrades gracefully when they do.
+
+At Koovis AI, we built multi-provider failover into our chat system from day one. When Bedrock goes down, we fall back to Vertex AI. When that's unavailable, we route to a different model entirely. The user never notices. This isn't over-engineering — it's the minimum viable reliability for a production system.
+
+### 4. No Cost Controls
+
+AI is expensive. A single misconfigured pipeline can burn through thousands of dollars in API calls overnight. I've seen startups blow their entire monthly budget in a weekend because a retry loop went haywire. Production AI systems need circuit breakers, rate limits, cost caps, and alerting. You need to know your cost per query, cost per user, and cost per unit of business value — and you need to optimize all three.
+
+### 5. No Operational Discipline
+
+This is the unsexy one. Runbooks. On-call rotations. Incident response procedures. Deployment checklists. Version pinning. Rollback plans. None of this is exciting AI work. But it's the difference between a system that runs reliably for years and one that catches fire every other week.
+
+## What Actually Works
+
+The teams I've seen succeed with AI in production share a few traits:
+
+**They start small.** Ship a simple model that solves one well-defined problem. Get it into production with full monitoring. Then iterate. Don't try to build AGI on your first deployment.
+
+**They invest in infrastructure early.** Before training a fancier model, build the pipeline, monitoring, and deployment infrastructure. It's boring, but it's what lets you move fast later.
+
+**They measure business outcomes, not model metrics.** F1 scores don't matter if users aren't getting value. Track the metrics that matter to the business — revenue, engagement, time saved, errors prevented.
+
+**They plan for failure.** Every component has a fallback. Every deployment has a rollback plan. Every alert has a runbook. When (not if) something breaks at 3 AM, the fix is documented and mechanical, not heroic and improvised.
+
+## The Model Is the Easy Part
+
+We're living in an era where anyone can access frontier AI models through an API call. The competitive advantage isn't in having a better model — it's in building better systems around that model. Data pipelines, monitoring, failover, cost optimization, and operational discipline are what separate demos from products.
+
+This is exactly what we focus on at Koovis AI. Every product we build — from our personal AI assistant to our quantitative trading engine — is designed for the 3 AM scenario, not the demo room. Because the demo is the easy part. Running reliably in production, every day, for real users — that's the hard part. And that's where we thrive.
