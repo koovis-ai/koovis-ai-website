@@ -14,19 +14,19 @@ export const metadata: Metadata = {
 const principles = [
   {
     title: "Ship, Don\u2019t Demo",
-    desc: "Working software in production beats a perfect prototype every time. If it doesn\u2019t serve real users, it doesn\u2019t count.",
+    desc: "A working product in production teaches you more in a week than a prototype teaches you in a year. We ship first, polish second, and learn from every deployment.",
   },
   {
     title: "Honest Architecture",
-    desc: "Simplest solution that works. Sometimes the answer isn\u2019t ML. Sometimes it\u2019s a SQL query. Optimize for results, not complexity.",
+    desc: "Not every problem needs ML. Sometimes the best solution is a well-crafted SQL query. We pick the simplest tool that actually solves the problem \u2014 ego aside.",
   },
   {
     title: "Own the Outcome",
-    desc: "We use everything we build. Every day. If it\u2019s not good enough for us, it\u2019s not good enough to ship.",
+    desc: "Every product we build is something we use ourselves, every day. That\u2019s the bar. If it doesn\u2019t make our own lives better, it\u2019s not ready for anyone else.",
   },
   {
     title: "Build in Public",
-    desc: "Share what works, what breaks, and how we fix it. Trust is earned through honesty, not ad spend.",
+    desc: "We share what works, what breaks, and what we learn along the way. It\u2019s slower than slick marketing, but it builds the kind of trust you can\u2019t buy.",
   },
 ];
 
@@ -40,8 +40,8 @@ export default function AboutPage() {
         </AnimateIn>
         <AnimateIn delay={0.1}>
           <SectionTitle className="mt-5">
-            A product company, not a{" "}
-            <em>consulting firm.</em>
+            The story behind{" "}
+            <em>Koovis AI.</em>
           </SectionTitle>
         </AnimateIn>
       </section>
@@ -51,25 +51,32 @@ export default function AboutPage() {
         <div className="mx-auto max-w-3xl px-5 sm:px-6">
           <AnimateIn>
             <p className="text-base leading-relaxed text-content-muted">
-              Koovis AI builds AI-powered products. Not consulting. Not client
-              work. We build our own tools, ship them, and iterate based on real
-              usage.
+              Koovis AI exists because of a simple frustration: the gap between
+              what AI can do in a demo and what it actually does in production is
+              enormous. After years of watching promising AI projects die in the
+              &ldquo;last mile&rdquo; &mdash; the monitoring, the failover, the
+              operational discipline &mdash; we decided to build products that
+              cross that gap ourselves.
             </p>
           </AnimateIn>
 
           <AnimateIn delay={0.1}>
             <p className="mt-5 text-base leading-relaxed text-content-muted">
-              Incorporated April 2026 as Koovis AI Pvt Ltd in India. Based in
-              Hyderabad. Three products: personal AI (Koovis), quantitative
-              trading (WealthPilot), and AI pre-visualization for cinema
-              (Koovis Studios).
+              We&apos;re a product company based in Hyderabad, India,
+              incorporated in April 2026 as Koovis AI Pvt Ltd. We don&apos;t
+              take client projects or sell consulting hours. We build our own AI
+              tools, use them daily, and iterate based on what we learn from real
+              usage.
             </p>
           </AnimateIn>
 
           <AnimateIn delay={0.15}>
-            <p className="mt-5 text-base leading-relaxed text-content font-medium">
-              The best AI products come from engineers who build for themselves
-              first. Everything we ship is something we use daily.
+            <p className="mt-5 text-base leading-relaxed text-content-muted">
+              Right now that means three products: a personal AI assistant
+              that&apos;s already live, a quantitative trading engine for Indian
+              equities, and an AI pre-visualization pipeline for Telugu cinema.
+              Different domains, same philosophy &mdash; build things that
+              actually work when nobody&apos;s watching.
             </p>
           </AnimateIn>
         </div>
@@ -80,14 +87,16 @@ export default function AboutPage() {
         <div className="mx-auto max-w-3xl px-5 sm:px-6">
           <AnimateIn>
             <h2 className="font-serif text-2xl font-semibold text-content">
-              Our Vision
+              What we&apos;re building toward
             </h2>
           </AnimateIn>
           <AnimateIn delay={0.1}>
             <p className="mt-6 text-base leading-relaxed text-content-muted">
-              Build AI products people rely on every day. Not the flashiest. Not
-              the most hyped. The most useful. Products that work reliably, solve
-              real problems, and earn trust through consistent performance.
+              We want to build AI products that people quietly rely on every day.
+              Not the flashiest tools in someone&apos;s demo reel. Not the most
+              hyped product on launch day. The ones that just work &mdash;
+              reliably, consistently &mdash; and earn trust over time through
+              performance, not promises.
             </p>
           </AnimateIn>
         </div>
@@ -127,62 +136,97 @@ export default function AboutPage() {
             <div className="flex flex-col gap-5">
               <AnimateIn delay={0.15}>
                 <h3 className="text-lg font-semibold text-content">
-                  Why I&apos;m building this
+                  The path here wasn&apos;t straight
                 </h3>
                 <p className="mt-3 text-base leading-relaxed text-content-muted">
-                  11 years building ML systems. 7 at Amazon as a Senior Data
-                  Scientist — recommendation engines, NLP, advertising
-                  optimization, forecasting. Systems serving millions across
-                  global marketplaces.
+                  I started in structural engineering &mdash; IIT Roorkee for my
+                  B.Tech, then IISc Bangalore for my M.Tech. Scored GATE AIR 5
+                  (top 0.013% nationally), which in Indian engineering circles
+                  opens every door. But somewhere between finite element analysis
+                  and optimization theory, I realized the same mathematical
+                  frameworks that model bridges and buildings could model human
+                  behavior, markets, and decisions. That pivot changed everything.
                 </p>
               </AnimateIn>
 
               <AnimateIn delay={0.2}>
                 <p className="text-base leading-relaxed text-content-muted">
-                  Started in structural engineering (IIT Roorkee, IISc Bangalore,
-                  GATE AIR 5 — top 0.013% nationally). Pivoted to data science
-                  when I realized the same mathematical frameworks model human
-                  behavior, markets, and decisions.
+                  My first real data science role was at AgreeYa Solutions,
+                  building pricing optimization models for Best Buy, Sam&apos;s
+                  Club, and Dick&apos;s Sporting Goods. Then InMobi, where I won
+                  the Rising Star Award and scaled an ad account from $3K to $80K
+                  in daily spend. Both taught me what production ML actually looks
+                  like &mdash; messy data, tight deadlines, and systems that have
+                  to work at 2 AM on a Saturday.
                 </p>
               </AnimateIn>
 
               <AnimateIn delay={0.25}>
-                <p className="text-base leading-relaxed text-content-muted">
-                  Before Amazon: InMobi (Rising Star Award, scaled an ad account
-                  from $3K to $80K daily) and AgreeYa Solutions (pricing
-                  optimization for Best Buy, Sam&apos;s Club, Dick&apos;s
-                  Sporting Goods).
+                <h3 className="mt-3 text-lg font-semibold text-content">
+                  Seven years at Amazon
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-content-muted">
+                  Amazon is where I learned what it means to build at scale. Over
+                  seven years as a Senior Data Scientist, I built ML systems that
+                  ran across global marketplaces &mdash; the kind of systems
+                  where a 1% improvement translates to millions in impact.
                 </p>
               </AnimateIn>
 
               <AnimateIn delay={0.3}>
-                <h3 className="mt-3 text-lg font-semibold text-content">
-                  At Amazon (2017&ndash;2024)
-                </h3>
-                <ul className="mt-3 flex flex-col gap-2.5">
-                  {[
-                    "FBA Recommendation Engine — $4.4B GMS using causal ML across 7 global marketplaces",
-                    "NLP review relevance — $26M annual revenue across 9 marketplaces",
-                    "Probabilistic reorder models — $14.3M incremental revenue, 37% CTR lift",
-                    "Keyword bidding optimization — $1.9M annual profit lift",
-                    "Natural language to SQL — hackathon winner turned production product, 1,000+ users globally",
-                  ].map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-2.5 text-sm text-content-muted"
-                    >
-                      <span className="mt-[7px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent/60" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                <div className="mt-2 rounded-2xl border border-content/[0.06] bg-content/[0.02] p-6">
+                  <ul className="flex flex-col gap-3">
+                    {[
+                      { metric: "$4.4B GMS", desc: "Recommendation engine using causal ML (Double Machine Learning) across 7 global marketplaces" },
+                      { metric: "$26M revenue", desc: "NLP-driven review relevance system using FastText embeddings, deployed across 9 marketplaces" },
+                      { metric: "$14.3M incremental", desc: "Probabilistic reorder models using Bayesian methods, 37% click-through rate lift" },
+                      { metric: "$1.9M profit lift", desc: "Keyword bidding optimization using incremental profit metrics for paid advertising" },
+                      { metric: "1,000+ users", desc: "Natural language to SQL \u2014 started as a hackathon project, became a production product used globally" },
+                    ].map((item) => (
+                      <li
+                        key={item.metric}
+                        className="flex items-start gap-4"
+                      >
+                        <span className="mt-0.5 flex-shrink-0 font-jetbrains text-sm font-semibold text-accent min-w-[120px]">
+                          {item.metric}
+                        </span>
+                        <span className="text-sm leading-relaxed text-content-muted">
+                          {item.desc}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </AnimateIn>
 
               <AnimateIn delay={0.35}>
-                <p className="mt-3 text-base leading-relaxed text-content font-medium">
-                  I left Amazon to build products, not to consult. Koovis AI is
-                  everything I learned at scale, applied to tools I use every
-                  day.
+                <p className="mt-3 text-base leading-relaxed text-content-muted">
+                  Those numbers are impressive on paper. But what I actually took
+                  away from Amazon wasn&apos;t the scale &mdash; it was the
+                  discipline. The operational rigor. The understanding that a
+                  model is maybe 20% of a production ML system. The rest is
+                  pipelines, monitoring, failover, and the kind of boring
+                  engineering that keeps things running at 3 AM.
+                </p>
+              </AnimateIn>
+
+              <AnimateIn delay={0.4}>
+                <h3 className="mt-3 text-lg font-semibold text-content">
+                  Why I left
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-content-muted">
+                  After 11 years in the industry &mdash; building systems for
+                  other people&apos;s products &mdash; I wanted to build my own.
+                  Not to start a consulting firm. Not to advise. To actually
+                  build products that I use myself, apply everything I learned at
+                  Amazon scale, and see if one person with the right tools and the
+                  right discipline can ship things that matter.
+                </p>
+                <p className="mt-4 text-base leading-relaxed text-content font-medium">
+                  Koovis AI is that bet. It&apos;s early, and there&apos;s a lot
+                  left to build. But the first product is live, the second is in
+                  paper trading, and the third is taking shape. Ask me again in
+                  a year.
                 </p>
               </AnimateIn>
             </div>
@@ -197,7 +241,9 @@ export default function AboutPage() {
             <SectionLabel>Principles</SectionLabel>
           </AnimateIn>
           <AnimateIn delay={0.1}>
-            <SectionTitle className="mt-5">How we build</SectionTitle>
+            <SectionTitle className="mt-5">
+              What we <em>believe.</em>
+            </SectionTitle>
           </AnimateIn>
 
           <div className="mt-12 sm:mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -224,10 +270,11 @@ export default function AboutPage() {
           <AnimateIn>
             <div className="rounded-2xl border border-content/[0.06] bg-content/[0.02] p-10 text-center">
               <SectionTitle>
-                Try what we&apos;ve <em>built.</em>
+                See what we&apos;re <em>building.</em>
               </SectionTitle>
               <p className="mt-4 text-base text-content-muted">
-                Koovis is live. See our engineering philosophy in action.
+                Koovis is live and free to use. The best way to understand
+                what we&apos;re about is to try it.
               </p>
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Button

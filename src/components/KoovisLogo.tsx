@@ -14,15 +14,23 @@ export default function KoovisLogo({
       className={className}
       aria-hidden="true"
     >
-      {/* Arc — 280-degree open circle, gap at right */}
+      {/* Tapered arc — thick at top, tapering to thin ends, gap at bottom.
+          Drawn as a filled shape: outer arc + inner arc with offset for thickness variation */}
       <path
-        d="M 25.2 8.3 A 12 12 0 1 0 25.2 23.7"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
+        d="
+          M 24.5 24.5
+          C 29 20 29 10 26.5 5.5
+          C 24 1.5 20 0 16 0
+          C 12 0 8 1.5 5.5 5.5
+          C 3 10 3 20 7.5 24.5
+          C 5.5 21 5.5 14.5 7 10
+          C 8.5 5 12 3.5 16 3.5
+          C 20 3.5 23.5 5 25 10
+          C 26.5 14.5 26.5 21 24.5 24.5
+          Z
+        "
+        fill="currentColor"
       />
-      {/* Center dot */}
-      <circle cx="16" cy="16" r="2.5" fill="currentColor" />
     </svg>
   );
 }
