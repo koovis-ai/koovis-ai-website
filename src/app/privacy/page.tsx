@@ -41,10 +41,10 @@ export default function PrivacyPage() {
               Telangana, India. We build AI products and provide AI engineering
               services. You can reach us at{" "}
               <a
-                href="mailto:admin@koovis.ai"
+                href="mailto:info@koovis.ai"
                 className="text-accent hover:underline"
               >
-                admin@koovis.ai
+                info@koovis.ai
               </a>
               .
             </p>
@@ -142,10 +142,10 @@ export default function PrivacyPage() {
               You may request access to, correction of, or deletion of your
               personal data at any time by emailing{" "}
               <a
-                href="mailto:admin@koovis.ai"
+                href="mailto:info@koovis.ai"
                 className="text-accent hover:underline"
               >
-                admin@koovis.ai
+                info@koovis.ai
               </a>
               . We will respond within 30 days.
             </p>

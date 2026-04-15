@@ -140,10 +140,10 @@ export default function TermsPage() {
             <p className="mt-3 text-base leading-relaxed text-content-muted">
               If you have questions about these terms, contact us at{" "}
               <a
-                href="mailto:admin@koovis.ai"
+                href="mailto:info@koovis.ai"
                 className="text-accent hover:underline"
               >
-                admin@koovis.ai
+                info@koovis.ai
               </a>
               .
             </p>
