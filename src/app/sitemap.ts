@@ -10,6 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteConfig.url}/blog`, lastModified: new Date(), priority: 0.8 },
     { url: `${siteConfig.url}/about`, lastModified: new Date(), priority: 0.7 },
     { url: `${siteConfig.url}/contact`, lastModified: new Date(), priority: 0.7 },
+    { url: `${siteConfig.url}/privacy`, lastModified: new Date(), priority: 0.3 },
+    { url: `${siteConfig.url}/terms`, lastModified: new Date(), priority: 0.3 },
   ];
 
   const blogPages = getPublishedPosts().map((post) => ({

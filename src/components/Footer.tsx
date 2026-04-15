@@ -122,9 +122,20 @@ export default function Footer() {
           <p className="font-jetbrains text-[11px] tracking-wide text-content-faint">
             &copy; 2026 Koovis AI Pvt Ltd. India.
           </p>
-          <p className="font-jetbrains text-[11px] tracking-wide text-content-faint">
-            Products, not pitches.
-          </p>
+          <div className="flex gap-4">
+            <Link
+              href="/privacy"
+              className="font-jetbrains text-[11px] tracking-wide text-content-faint transition-colors hover:text-accent"
+            >
+              Privacy
+            </Link>
+            <Link
+              href="/terms"
+              className="font-jetbrains text-[11px] tracking-wide text-content-faint transition-colors hover:text-accent"
+            >
+              Terms
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
