@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
+const isValidEmail = (email: string) =>
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
 export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
@@ -18,6 +21,13 @@ export async function POST(request: Request) {
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: "Name, email, and message are required." },
+        { status: 400 }
+      );
+    }
+
+    if (!isValidEmail(email)) {
+      return NextResponse.json(
+        { error: "Invalid email format." },
         { status: 400 }
       );
     }

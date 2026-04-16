@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
 
+const isValidEmail = (email: string) =>
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
 export const dynamic = "force-dynamic";
 
 const BEEHIIV_API_KEY = process.env.BEEHIIV_API_KEY;
@@ -20,6 +23,13 @@ export async function POST(request: Request) {
     if (!email) {
       return NextResponse.json(
         { error: "Email is required." },
+        { status: 400 }
+      );
+    }
+
+    if (!isValidEmail(email)) {
+      return NextResponse.json(
+        { error: "Invalid email format." },
         { status: 400 }
       );
     }
