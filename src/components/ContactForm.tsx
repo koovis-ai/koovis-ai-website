@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import Link from "next/link";
 import Button from "./Button";
 
 export default function ContactForm() {
@@ -74,6 +75,17 @@ export default function ContactForm() {
         required
         className={`${inputClasses} resize-none`}
       />
+      <p className="text-xs text-content-dim">
+        By submitting, you agree to our{" "}
+        <Link href="/privacy" className="text-content-muted hover:text-accent transition-colors">
+          Privacy Policy
+        </Link>{" "}
+        and{" "}
+        <Link href="/terms" className="text-content-muted hover:text-accent transition-colors">
+          Terms of Service
+        </Link>
+        .
+      </p>
       <Button type="submit" disabled={status === "loading"}>
         {status === "loading" ? "Sending..." : "Send Message"}
       </Button>
