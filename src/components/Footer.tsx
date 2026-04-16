@@ -125,13 +125,13 @@ export default function Footer() {
           <div className="flex gap-4">
             <Link
               href="/privacy"
-              className="font-jetbrains text-[11px] tracking-wide text-content-faint transition-colors hover:text-accent"
+              className="font-jetbrains text-[11px] tracking-wide text-content-dim transition-colors hover:text-accent"
             >
               Privacy
             </Link>
             <Link
               href="/terms"
-              className="font-jetbrains text-[11px] tracking-wide text-content-faint transition-colors hover:text-accent"
+              className="font-jetbrains text-[11px] tracking-wide text-content-dim transition-colors hover:text-accent"
             >
               Terms
             </Link>
