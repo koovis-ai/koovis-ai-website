@@ -112,6 +112,14 @@ export default function Footer() {
                 Contact Form
               </Link>
             </li>
+            <li>
+              <Link
+                href="/faq"
+                className="text-sm text-content-muted transition-colors hover:text-accent"
+              >
+                FAQ
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

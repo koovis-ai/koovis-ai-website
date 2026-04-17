@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   ArrowRight,
   Brain,
@@ -21,6 +22,36 @@ import Button from "@/components/Button";
 import SectionLabel from "@/components/SectionLabel";
 import SectionTitle from "@/components/SectionTitle";
 import WaitlistForm from "@/components/WaitlistForm";
+
+const comparison = [
+  {
+    name: "Koovis",
+    tagline: "Personal AI assistant",
+    forWho: "Anyone who uses AI daily",
+    status: "Live",
+    statusColor: "bg-green-400",
+    access: "Free to use at pa.koovis.ai",
+    cta: { label: "Open Koovis", href: "https://pa.koovis.ai", external: true },
+  },
+  {
+    name: "WealthPilot",
+    tagline: "Quantitative trading",
+    forWho: "Indian equity traders & self-directed investors",
+    status: "In Development",
+    statusColor: "bg-amber-400",
+    access: "Paper-trading phase. Join waitlist.",
+    cta: { label: "Jump to waitlist", href: "#wealthpilot", external: false },
+  },
+  {
+    name: "Koovis Studios",
+    tagline: "AI pre-viz for cinema",
+    forWho: "Telugu cinema filmmakers & producers",
+    status: "In Development",
+    statusColor: "bg-amber-400",
+    access: "First demo in production. Join waitlist.",
+    cta: { label: "Jump to waitlist", href: "#studios", external: false },
+  },
+];
 
 export const metadata: Metadata = {
   title: "Products",
@@ -133,6 +164,78 @@ export default function ProductsPage() {
         </AnimateIn>
       </section>
 
+      {/* ==================== COMPARISON STRIP ==================== */}
+      <section className="border-t border-content/10 py-12 sm:py-16">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6">
+          <AnimateIn>
+            <SectionLabel>At a glance</SectionLabel>
+          </AnimateIn>
+          <AnimateIn delay={0.1}>
+            <h2 className="mt-4 font-serif text-2xl font-semibold tracking-tight text-content sm:text-3xl">
+              Which one&apos;s <em>for you?</em>
+            </h2>
+          </AnimateIn>
+
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {comparison.map((p, i) => (
+              <AnimateIn key={p.name} delay={0.1 + i * 0.08}>
+                <div className="flex h-full flex-col rounded-2xl border border-content/[0.08] bg-content/[0.02] p-6 transition-colors hover:border-accent/30">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <h3 className="text-lg font-semibold text-content">
+                        {p.name}
+                      </h3>
+                      <p className="mt-1 font-serif text-sm italic text-content-muted">
+                        {p.tagline}
+                      </p>
+                    </div>
+                    <span className="flex flex-shrink-0 items-center gap-1.5 rounded-full border border-content/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-content-dim">
+                      <span className={`inline-block h-1.5 w-1.5 rounded-full ${p.statusColor}`} />
+                      {p.status}
+                    </span>
+                  </div>
+
+                  <dl className="mt-5 flex flex-1 flex-col gap-3 text-sm">
+                    <div>
+                      <dt className="font-jetbrains text-[10px] uppercase tracking-[0.15em] text-content-dim">
+                        Who it&apos;s for
+                      </dt>
+                      <dd className="mt-1 text-content-muted">{p.forWho}</dd>
+                    </div>
+                    <div>
+                      <dt className="font-jetbrains text-[10px] uppercase tracking-[0.15em] text-content-dim">
+                        Access
+                      </dt>
+                      <dd className="mt-1 text-content-muted">{p.access}</dd>
+                    </div>
+                  </dl>
+
+                  <div className="mt-6 pt-4 border-t border-content/[0.08]">
+                    {p.cta.external ? (
+                      <a
+                        href={p.cta.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:opacity-80 transition-opacity"
+                      >
+                        {p.cta.label} <ArrowRight size={14} />
+                      </a>
+                    ) : (
+                      <Link
+                        href={p.cta.href}
+                        className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:opacity-80 transition-opacity"
+                      >
+                        {p.cta.label} <ArrowRight size={14} />
+                      </Link>
+                    )}
+                  </div>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ==================== KOOVIS (PA) ==================== */}
       <section className="border-t border-content/10 py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-6">
@@ -200,7 +303,7 @@ export default function ProductsPage() {
       </section>
 
       {/* ==================== WEALTHPILOT ==================== */}
-      <section className="border-t border-content/10 bg-content/[0.02] py-16 sm:py-24">
+      <section id="wealthpilot" className="border-t border-content/10 bg-content/[0.02] py-16 sm:py-24 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-6">
           <AnimateIn>
             <div className="relative overflow-hidden rounded-2xl border border-content/[0.06] bg-content/[0.02]">
@@ -262,7 +365,7 @@ export default function ProductsPage() {
       </section>
 
       {/* ==================== KOOVIS STUDIOS ==================== */}
-      <section className="border-t border-content/10 py-16 sm:py-24">
+      <section id="studios" className="border-t border-content/10 py-16 sm:py-24 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-6">
           <AnimateIn>
             <div className="relative overflow-hidden rounded-2xl border border-content/[0.06] bg-content/[0.02]">
