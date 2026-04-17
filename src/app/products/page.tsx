@@ -20,6 +20,7 @@ import AnimateIn from "@/components/AnimateIn";
 import Button from "@/components/Button";
 import SectionLabel from "@/components/SectionLabel";
 import SectionTitle from "@/components/SectionTitle";
+import WaitlistForm from "@/components/WaitlistForm";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -247,6 +248,13 @@ export default function ProductsPage() {
                   <span className="pulse-dot inline-block h-2 w-2 rounded-full bg-amber-400" />
                   In active development &mdash; paper trading phase
                 </div>
+
+                <div className="mt-6 max-w-md">
+                  <p className="mb-3 text-sm font-semibold text-content">
+                    Get notified when WealthPilot launches
+                  </p>
+                  <WaitlistForm product="wealthpilot" />
+                </div>
               </div>
             </div>
           </AnimateIn>
@@ -301,6 +309,13 @@ export default function ProductsPage() {
                 <div className="mt-10 flex items-center gap-2 text-sm text-content-muted">
                   <span className="pulse-dot inline-block h-2 w-2 rounded-full bg-amber-400" />
                   In active development
+                </div>
+
+                <div className="mt-6 max-w-md">
+                  <p className="mb-3 text-sm font-semibold text-content">
+                    Get notified when Koovis Studios launches
+                  </p>
+                  <WaitlistForm product="studios" />
                 </div>
               </div>
             </div>

@@ -4,6 +4,7 @@ import AnimateIn from "@/components/AnimateIn";
 import SectionLabel from "@/components/SectionLabel";
 import SectionTitle from "@/components/SectionTitle";
 import ContactForm from "@/components/ContactForm";
+import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -60,6 +61,30 @@ export default function ContactPage() {
             <ContactForm />
           </div>
         </AnimateIn>
+      </section>
+
+      {/* ==================== BOOK A CALL ==================== */}
+      <section className="border-t border-content/10 py-16 sm:py-24">
+        <div className="mx-auto max-w-4xl px-5 sm:px-6">
+          <AnimateIn>
+            <SectionLabel>Book a call</SectionLabel>
+          </AnimateIn>
+          <AnimateIn delay={0.1}>
+            <SectionTitle className="mt-4">
+              Prefer to <em>talk?</em>
+            </SectionTitle>
+          </AnimateIn>
+          <AnimateIn delay={0.2}>
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-content-muted">
+              Pick a 30-minute slot that works for you.
+            </p>
+          </AnimateIn>
+          <AnimateIn delay={0.25}>
+            <div className="mt-10">
+              <CalendlyEmbed />
+            </div>
+          </AnimateIn>
+        </div>
       </section>
 
       {/* ==================== CONTACT INFO GRID ==================== */}
