@@ -39,7 +39,7 @@ const offering = [
 ];
 
 const whoFor = [
-  { name: "Family offices", price: "₹50K – ₹5L per report", desc: "Ablation-first second opinion on positions you&apos;re sizing up." },
+  { name: "Family offices", price: "₹50K – ₹5L per report", desc: "Ablation-first second opinion on positions you're sizing up." },
   { name: "Boutique PMS firms", price: "₹1 – 3L per month", desc: "Rigorous research to cite in client letters. 3-5 names per quarter." },
   { name: "Multi-family offices", price: "₹3 – 10L per month", desc: "White-label research for HNI client briefings." },
   { name: "Independent RIAs", price: "₹50K per report", desc: "Differentiated research without broker conflicts." },

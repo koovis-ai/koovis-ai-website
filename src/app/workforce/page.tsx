@@ -233,7 +233,7 @@ const faqs = [
     ),
   },
   {
-    q: "What&apos;s the roadmap?",
+    q: "What's the roadmap?",
     a: (
       <>
         <ul className="mt-2 ml-5 list-disc space-y-1.5">
