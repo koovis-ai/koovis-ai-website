@@ -108,48 +108,45 @@ export default function HomePage() {
 
       {/* ==================== FOUNDER QUOTE + METRICS ==================== */}
       <section className="border-t border-content/10 bg-content/[0.02] py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl px-5 sm:px-6">
-          <div className="grid gap-10 md:grid-cols-5 md:gap-12">
-            {/* Founder quote */}
-            <AnimateIn delay={0.05}>
-              <div className="md:col-span-3">
-                <div className="border-l-2 border-accent/40 pl-6 sm:pl-8">
-                  <blockquote className="font-serif text-xl sm:text-2xl leading-relaxed text-content">
-                    &ldquo;Pulse runs on the engine I&apos;ve used to run 4 Koovis AI
-                    products solo for 8 months. Same reliability, applied to D2C
-                    creative. This isn&apos;t demo-ware.&rdquo;
-                  </blockquote>
-                  <p className="mt-5 text-sm text-content-muted">
-                    <span className="font-medium text-content">Rajesh Kolachana</span> · Founder, Koovis AI
+        <div className="mx-auto max-w-7xl px-5 sm:px-6">
+          {/* Founder quote — centered, wide */}
+          <AnimateIn delay={0.05}>
+            <div className="mx-auto max-w-3xl text-center">
+              <blockquote className="font-serif text-xl sm:text-2xl lg:text-3xl leading-relaxed text-content">
+                &ldquo;Pulse runs on the engine I&apos;ve used to run 4 Koovis AI
+                products solo for 8 months. Same reliability, applied to D2C
+                creative. This isn&apos;t demo-ware.&rdquo;
+              </blockquote>
+              <p className="mt-6 text-sm text-content-muted">
+                <span className="font-medium text-content">Rajesh Kolachana</span>{" "}
+                <span className="text-content-dim">· Founder, Koovis AI</span>
+              </p>
+            </div>
+          </AnimateIn>
+
+          {/* Stats strip — 4 equal tiles */}
+          <AnimateIn delay={0.15}>
+            <div className="mt-14 sm:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+              {[
+                { value: "48hr", label: "Turnaround per batch" },
+                { value: "150", label: "Variants per batch" },
+                { value: "3", label: "Indian languages" },
+                { value: "₹2L", label: "Starting price" },
+              ].map((m) => (
+                <div
+                  key={m.label}
+                  className="rounded-2xl border border-content/[0.06] bg-content/[0.02] p-5 sm:p-6 text-center"
+                >
+                  <p className="font-jetbrains text-3xl sm:text-4xl font-semibold text-accent">
+                    {m.value}
+                  </p>
+                  <p className="mt-2 text-xs sm:text-sm leading-snug text-content-dim">
+                    {m.label}
                   </p>
                 </div>
-              </div>
-            </AnimateIn>
-
-            {/* Stats */}
-            <AnimateIn delay={0.15}>
-              <div className="md:col-span-2 grid grid-cols-2 gap-4 sm:gap-5">
-                {[
-                  { value: "48hr", label: "Turnaround per batch" },
-                  { value: "150", label: "Variants per batch" },
-                  { value: "3", label: "Indian languages" },
-                  { value: "₹2L", label: "Starting price" },
-                ].map((m) => (
-                  <div
-                    key={m.label}
-                    className="rounded-2xl border border-content/[0.06] bg-content/[0.02] p-5"
-                  >
-                    <p className="font-jetbrains text-2xl sm:text-3xl font-semibold text-accent">
-                      {m.value}
-                    </p>
-                    <p className="mt-2 text-xs leading-snug text-content-dim">
-                      {m.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </AnimateIn>
-          </div>
+              ))}
+            </div>
+          </AnimateIn>
         </div>
       </section>
 
