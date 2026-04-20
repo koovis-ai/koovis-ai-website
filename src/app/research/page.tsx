@@ -254,17 +254,78 @@ export default function ResearchPage() {
             </SectionTitle>
           </AnimateIn>
 
-          {/* TODO: Replace placeholder with specific sample company + thesis + findings once Raj chooses */}
           <AnimateIn delay={0.3}>
-            <div className="mt-12 rounded-2xl border border-dashed border-content/20 bg-content/[0.01] p-12 text-center">
-              <FileSearch size={32} className="mx-auto text-accent/60" strokeWidth={1.5} />
-              <p className="mt-4 text-sm text-content-dim">
-                First sample report in preparation. Subscribe below to be notified when the PDF is available.
-              </p>
-              <div className="mt-6">
-                <Button href="#pricing" variant="outline">
-                  Join waitlist <ArrowRight size={14} />
-                </Button>
+            <div className="mt-12 grid gap-6 md:grid-cols-2">
+              {/* Left: What a sample covers */}
+              <div className="rounded-2xl border border-content/[0.06] bg-content/[0.02] p-6 sm:p-8">
+                <div className="mb-5 flex items-center gap-3">
+                  <FileSearch size={22} className="text-accent" strokeWidth={1.75} />
+                  <p className="font-jetbrains text-xs uppercase tracking-widest text-content-dim">
+                    What a sample report covers
+                  </p>
+                </div>
+                <ul className="space-y-3 text-sm leading-relaxed text-content-muted">
+                  <li className="flex gap-3">
+                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
+                    <span><strong className="text-content">Thesis (2-3 pages).</strong> The bull case, bear case, and why the market is mispricing one of them.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
+                    <span><strong className="text-content">Ablation analysis.</strong> The alternative hypotheses we tested and ruled out, with supporting data.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
+                    <span><strong className="text-content">Valuation framework.</strong> DCF + multiples + sensitivity tables. No black-box number.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
+                    <span><strong className="text-content">Contrarian findings (3-5).</strong> Things consensus research missed, with supporting primary data.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
+                    <span><strong className="text-content">Key risks.</strong> Regulatory, operational, management, with probability-weighted impact.</span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
+                    <span><strong className="text-content">Methodology appendix.</strong> Every claim reproducible. Code + data sources on request.</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Right: Turnaround + delivery + request */}
+              <div className="flex flex-col gap-6">
+                <div className="rounded-2xl border border-content/[0.06] bg-content/[0.02] p-6 sm:p-8">
+                  <p className="font-jetbrains text-xs uppercase tracking-widest text-content-dim">
+                    Delivery
+                  </p>
+                  <div className="mt-4 space-y-4">
+                    <div>
+                      <p className="font-jetbrains text-2xl font-semibold text-accent">2-3 weeks</p>
+                      <p className="mt-1 text-sm text-content-muted">First draft after brief intake</p>
+                    </div>
+                    <div>
+                      <p className="font-jetbrains text-2xl font-semibold text-accent">20-40 pages</p>
+                      <p className="mt-1 text-sm text-content-muted">Typical length with appendix</p>
+                    </div>
+                    <div>
+                      <p className="font-jetbrains text-2xl font-semibold text-accent">PDF + raw data</p>
+                      <p className="mt-1 text-sm text-content-muted">Shared Drive, methodology appendix included</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="rounded-2xl border border-accent/20 bg-accent/[0.03] p-6 sm:p-8">
+                  <p className="text-sm leading-relaxed text-content">
+                    <strong>Request a sample report brief.</strong> We&apos;ll share
+                    scope + methodology on a 20-min call, and if there&apos;s fit,
+                    ship a first draft in 2-3 weeks.
+                  </p>
+                  <div className="mt-4">
+                    <Button href="#pricing" variant="outline">
+                      Book a call <ArrowRight size={14} />
+                    </Button>
+                  </div>
+                </div>
               </div>
             </div>
           </AnimateIn>

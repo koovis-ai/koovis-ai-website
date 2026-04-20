@@ -313,6 +313,37 @@ export default function WorkforcePage() {
         </div>
       </section>
 
+      {/* ==================== TRUST SIGNALS ==================== */}
+      <section className="border-y border-content/10 bg-content/[0.02] py-10 sm:py-12">
+        <div className="mx-auto max-w-6xl px-5 sm:px-6">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4">
+            {[
+              { value: "MIT", label: "Open-source engine" },
+              { value: "8 mo", label: "Production use" },
+              { value: "0", label: "Catastrophic failures" },
+              { value: "arXiv", label: "Benchmark paper in submission" },
+            ].map((m) => (
+              <div key={m.label} className="text-center">
+                <p className="font-jetbrains text-2xl sm:text-3xl font-semibold text-accent">
+                  {m.value}
+                </p>
+                <p className="mt-2 text-xs sm:text-sm text-content-dim leading-snug">
+                  {m.label}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 text-center">
+            <a
+              href="/workforce/security"
+              className="inline-flex items-center gap-1.5 text-xs text-content-dim transition-colors hover:text-accent"
+            >
+              Security, Trust Ladder, compliance roadmap <ArrowRight size={12} />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ==================== THE PROBLEM ==================== */}
       <section className="border-t border-content/10 py-16 sm:py-24">
         <div className="mx-auto max-w-4xl px-5 sm:px-6">

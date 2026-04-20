@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import WaitlistForm from "./WaitlistForm";
 
 const productLinks = [
   { href: "/workforce", label: "Koovis Workforce" },
@@ -10,9 +11,11 @@ const productLinks = [
 ];
 
 const navLinks = [
+  { href: "/pricing", label: "Pricing" },
   { href: "/papers", label: "Papers" },
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
+  { href: "/careers", label: "Careers" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -40,6 +43,30 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="border-t border-content/10 bg-surface">
+      {/* Newsletter strip */}
+      <div className="border-b border-content/10 bg-content/[0.02]">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-10 md:flex-row md:items-center md:justify-between md:gap-12">
+          <div className="md:max-w-lg">
+            <h3 className="font-serif text-xl font-semibold text-content">
+              Updates when we ship
+            </h3>
+            <p className="mt-2 text-sm text-content-muted">
+              Low-volume. Product launches, published papers, meaningful
+              milestones. Roughly 1-2 emails a month.
+            </p>
+          </div>
+          <div className="md:flex-1 md:max-w-md">
+            <WaitlistForm
+              product="newsletter"
+              placeholder="you@work.com"
+              buttonLabel="Subscribe"
+              successMessage="Subscribed. Talk soon."
+              compact
+            />
+          </div>
+        </div>
+      </div>
+
       {/* Main grid */}
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-16 md:grid-cols-4 md:gap-8">
         {/* Column 1: Logo + tagline + social */}

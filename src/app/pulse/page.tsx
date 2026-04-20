@@ -8,7 +8,6 @@ import {
   Users,
   Play,
   Zap,
-  Sparkles,
 } from "lucide-react";
 import AnimateIn from "@/components/AnimateIn";
 import Button from "@/components/Button";
@@ -152,8 +151,79 @@ export default function PulsePage() {
         </div>
       </section>
 
+      {/* ==================== SAMPLE VARIANTS ==================== */}
+      <section id="samples" className="border-t border-content/10 bg-content/[0.02] py-16 sm:py-24 scroll-mt-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6">
+          <AnimateIn>
+            <SectionLabel>Sample variants</SectionLabel>
+          </AnimateIn>
+          <AnimateIn delay={0.1}>
+            <SectionTitle className="mt-5">
+              See the <em>output.</em>
+            </SectionTitle>
+          </AnimateIn>
+          <AnimateIn delay={0.2}>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-content-muted">
+              Six variants from a single brief — across verticals, hook angles,
+              and Indian languages. A full batch delivers 150 of these in 48
+              hours.
+            </p>
+          </AnimateIn>
+
+          <AnimateIn delay={0.3}>
+            <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 sm:gap-5">
+              {[
+                { vertical: "Skincare", hook: "Founder hook", lang: "HI", gradient: "from-rose-500/25 to-pink-500/10" },
+                { vertical: "Skincare", hook: "Problem-solution", lang: "TA", gradient: "from-amber-500/25 to-orange-500/10" },
+                { vertical: "Food & Bev", hook: "Gen-Z hook", lang: "HI", gradient: "from-lime-500/25 to-emerald-500/10" },
+                { vertical: "Food & Bev", hook: "Founder hook", lang: "TE", gradient: "from-cyan-500/25 to-blue-500/10" },
+                { vertical: "Electronics", hook: "Problem-solution", lang: "TE", gradient: "from-violet-500/25 to-purple-500/10" },
+                { vertical: "Electronics", hook: "Gen-Z hook", lang: "TA", gradient: "from-fuchsia-500/25 to-pink-500/10" },
+              ].map((variant, i) => (
+                <div
+                  key={i}
+                  className={`group relative aspect-[9/16] overflow-hidden rounded-xl border border-content/[0.08] bg-gradient-to-br ${variant.gradient}`}
+                >
+                  <div className="absolute inset-0 bg-black/10" />
+
+                  {/* Language badge top-left */}
+                  <div className="absolute left-3 top-3">
+                    <span className="rounded-full bg-content/80 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-widest text-neutral-950 backdrop-blur">
+                      {variant.lang}
+                    </span>
+                  </div>
+
+                  {/* Play indicator center */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="rounded-full border border-white/20 bg-black/30 p-3 backdrop-blur transition-all group-hover:scale-110 group-hover:border-accent group-hover:bg-accent/30">
+                      <Play size={14} className="text-white" fill="currentColor" />
+                    </div>
+                  </div>
+
+                  {/* Metadata bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3 sm:p-4">
+                    <p className="text-xs sm:text-sm font-semibold text-white">{variant.vertical}</p>
+                    <p className="mt-0.5 text-[10px] sm:text-xs text-white/70">{variant.hook}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </AnimateIn>
+
+          <AnimateIn delay={0.4}>
+            <p className="mt-10 text-center text-sm text-content-muted">
+              Want to see your product run through this pipeline?{" "}
+              <a href="#pricing" className="text-accent hover:opacity-80">
+                Book a 15-min call
+              </a>{" "}
+              and we&apos;ll generate 5 live on the call.
+            </p>
+          </AnimateIn>
+        </div>
+      </section>
+
       {/* ==================== WHAT YOU GET ==================== */}
-      <section className="border-t border-content/10 bg-content/[0.02] py-16 sm:py-24">
+      <section className="border-t border-content/10 py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-6">
           <AnimateIn>
             <SectionLabel>What you get</SectionLabel>
@@ -205,42 +275,6 @@ export default function PulsePage() {
               </AnimateIn>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ==================== SAMPLE VARIANTS ==================== */}
-      <section id="samples" className="border-t border-content/10 bg-content/[0.02] py-16 sm:py-24 scroll-mt-24">
-        <div className="mx-auto max-w-7xl px-5 sm:px-6">
-          <AnimateIn>
-            <SectionLabel>Sample variants</SectionLabel>
-          </AnimateIn>
-          <AnimateIn delay={0.1}>
-            <SectionTitle className="mt-5">
-              <em>See the output.</em>
-            </SectionTitle>
-          </AnimateIn>
-          <AnimateIn delay={0.2}>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-content-muted">
-              Sample reel coming shortly — 12 variants across skincare, food &amp; beverage, and electronics
-              verticals, in Hindi / Telugu / Tamil. In the meantime, book a call and we&apos;ll generate 5 fresh
-              variants of your hero product live on the call.
-            </p>
-          </AnimateIn>
-
-          {/* TODO: Replace with actual sample reel grid when Demo v2 + 5 variants are ready */}
-          <AnimateIn delay={0.3}>
-            <div className="mt-12 rounded-2xl border border-dashed border-content/20 bg-content/[0.01] p-12 text-center">
-              <Sparkles size={32} className="mx-auto text-accent/60" strokeWidth={1.5} />
-              <p className="mt-4 text-sm text-content-dim">
-                Sample reel shipping with Demo v2. Check back or book a call for live generation.
-              </p>
-              <div className="mt-6">
-                <Button href="#pricing" variant="outline">
-                  Book a call instead <ArrowRight size={14} />
-                </Button>
-              </div>
-            </div>
-          </AnimateIn>
         </div>
       </section>
 

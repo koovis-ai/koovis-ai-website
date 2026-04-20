@@ -167,47 +167,23 @@ export default function AboutPage() {
                   Seven years at Amazon
                 </h3>
                 <p className="mt-3 text-base leading-relaxed text-content-muted">
-                  Amazon is where I learned what it means to build at scale. Over
-                  seven years as a Senior Data Scientist, I built ML systems that
-                  ran across global marketplaces &mdash; the kind of systems
-                  where a 1% improvement translates to millions in impact.
+                  Amazon is where I learned what it means to build at scale.
+                  Seven years as a Senior Data Scientist, shipping ML systems
+                  across global marketplaces &mdash; recommendation engines,
+                  NLP-driven review ranking, Bayesian reorder models, paid-
+                  advertising optimization, and an NL-to-SQL tool that went
+                  from hackathon project to a production tool used by
+                  thousands of account managers worldwide.
                 </p>
               </AnimateIn>
 
               <AnimateIn delay={0.3}>
-                <div className="mt-2 rounded-2xl border border-content/[0.06] bg-content/[0.02] p-6">
-                  <ul className="flex flex-col gap-3">
-                    {[
-                      { metric: "$4.4B GMS", desc: "Recommendation engine using causal ML (Double Machine Learning) across 7 global marketplaces" },
-                      { metric: "$26M revenue", desc: "NLP-driven review relevance system using FastText embeddings, deployed across 9 marketplaces" },
-                      { metric: "$14.3M incremental", desc: "Probabilistic reorder models using Bayesian methods, 37% click-through rate lift" },
-                      { metric: "$1.9M profit lift", desc: "Keyword bidding optimization using incremental profit metrics for paid advertising" },
-                      { metric: "1,000+ users", desc: "Natural language to SQL \u2014 started as a hackathon project, became a production product used globally" },
-                    ].map((item) => (
-                      <li
-                        key={item.metric}
-                        className="flex items-start gap-4"
-                      >
-                        <span className="mt-0.5 flex-shrink-0 font-jetbrains text-sm font-semibold text-accent min-w-[120px]">
-                          {item.metric}
-                        </span>
-                        <span className="text-sm leading-relaxed text-content-muted">
-                          {item.desc}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </AnimateIn>
-
-              <AnimateIn delay={0.35}>
-                <p className="mt-3 text-base leading-relaxed text-content-muted">
-                  Those numbers are impressive on paper. But what I actually took
-                  away from Amazon wasn&apos;t the scale &mdash; it was the
+                <p className="mt-4 text-base leading-relaxed text-content-muted">
+                  The real takeaway wasn&apos;t the scale &mdash; it was the
                   discipline. The operational rigor. The understanding that a
-                  model is maybe 20% of a production ML system. The rest is
-                  pipelines, monitoring, failover, and the kind of boring
-                  engineering that keeps things running at 3 AM.
+                  model is maybe 20% of a production ML system; the rest is
+                  pipelines, monitoring, failover, and the boring engineering
+                  that keeps things running at 3 AM.
                 </p>
               </AnimateIn>
 

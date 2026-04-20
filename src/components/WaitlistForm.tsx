@@ -3,13 +3,23 @@
 import { useState, FormEvent } from "react";
 import { ArrowRight } from "lucide-react";
 
-type Product = "wealthpilot" | "studios" | "workforce" | "pulse" | "research";
+type Product = "wealthpilot" | "studios" | "workforce" | "pulse" | "research" | "newsletter";
 
 interface WaitlistFormProps {
   product: Product;
+  placeholder?: string;
+  buttonLabel?: string;
+  successMessage?: string;
+  compact?: boolean;
 }
 
-export default function WaitlistForm({ product }: WaitlistFormProps) {
+export default function WaitlistForm({
+  product,
+  placeholder = "you@example.com",
+  buttonLabel = "Join waitlist",
+  successMessage = "You're on the list. We'll email you when it's ready.",
+  compact = false,
+}: WaitlistFormProps) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -42,11 +52,9 @@ export default function WaitlistForm({ product }: WaitlistFormProps) {
 
   if (status === "success") {
     return (
-      <div className="flex items-center gap-3 rounded-xl border border-accent/20 bg-accent/5 p-4">
+      <div className={`flex items-center gap-3 rounded-xl border border-accent/20 bg-accent/5 ${compact ? "p-3" : "p-4"}`}>
         <span className="text-xl text-accent">&#10003;</span>
-        <p className="text-sm text-content">
-          You&apos;re on the list. We&apos;ll email you when it&apos;s ready.
-        </p>
+        <p className="text-sm text-content">{successMessage}</p>
       </div>
     );
   }
@@ -57,26 +65,28 @@ export default function WaitlistForm({ product }: WaitlistFormProps) {
         <input
           name="email"
           type="email"
-          placeholder="you@example.com"
+          placeholder={placeholder}
           required
-          aria-label="Email address for waitlist"
-          className="min-h-[44px] flex-1 rounded-lg border border-content/10 bg-content/5 px-4 py-3 text-sm text-content placeholder:text-content-dim outline-none transition-all duration-200 focus:border-accent/50 focus:shadow-[0_0_12px_var(--accent-shadow)]"
+          aria-label="Email address"
+          className={`min-h-[44px] flex-1 rounded-lg border border-content/10 bg-content/5 ${compact ? "px-3 py-2 text-sm" : "px-4 py-3 text-sm"} text-content placeholder:text-content-dim outline-none transition-all duration-200 focus:border-accent/50 focus:shadow-[0_0_12px_var(--accent-shadow)]`}
         />
         <button
           type="submit"
           disabled={status === "loading"}
-          className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-neutral-950 transition-opacity hover:opacity-90 disabled:opacity-50"
+          className={`inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg bg-accent ${compact ? "px-4 py-2 text-sm" : "px-5 py-3 text-sm"} font-semibold text-neutral-950 transition-opacity hover:opacity-90 disabled:opacity-50`}
         >
-          {status === "loading" ? "Joining..." : "Join waitlist"}
+          {status === "loading" ? "Sending..." : buttonLabel}
           {status !== "loading" && <ArrowRight size={16} />}
         </button>
       </div>
       {status === "error" && (
         <p className="text-xs text-red-400">{errorMessage}</p>
       )}
-      <p className="text-xs text-content-dim">
-        No spam. One email when it ships.
-      </p>
+      {!compact && (
+        <p className="text-xs text-content-dim">
+          No spam. One email when it ships.
+        </p>
+      )}
     </form>
   );
 }
