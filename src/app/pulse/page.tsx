@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   ArrowRight,
   Video,
@@ -149,22 +148,6 @@ export default function PulsePage() {
                 <Play size={16} /> See sample variants
               </Button>
             </div>
-          </AnimateIn>
-        </div>
-      </section>
-
-      {/* ==================== CREDIBILITY STRIP ==================== */}
-      <section className="border-t border-content/10 py-10">
-        <div className="mx-auto max-w-4xl px-5 sm:px-6">
-          <AnimateIn>
-            <p className="text-center text-sm leading-relaxed text-content-muted">
-              Built by <strong className="text-content">Rajesh Kolachana</strong> — solo founder,
-              11 years applied ML/AI (7 at Amazon). The pipeline behind Pulse is also used for Tollywood pre-viz at{" "}
-              <Link href="/studios" className="text-accent hover:opacity-80">
-                koovis.ai/studios
-              </Link>
-              .
-            </p>
           </AnimateIn>
         </div>
       </section>
