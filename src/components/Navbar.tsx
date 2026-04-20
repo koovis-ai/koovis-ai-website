@@ -8,12 +8,13 @@ import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "What We Do" },
-  { href: "/products", label: "Products" },
+  { href: "/workforce", label: "Workforce" },
+  { href: "/pulse", label: "Pulse" },
+  { href: "/research", label: "Research" },
+  { href: "/studios", label: "Studios" },
+  { href: "/papers", label: "Papers" },
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -89,14 +90,12 @@ export default function Navbar() {
         {/* Desktop CTA + Theme Toggle + Mobile toggle */}
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <a
-            href="https://pa.koovis.ai"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/workforce"
             className="hidden lg:inline-flex items-center rounded-full bg-accent px-5 py-2 text-sm font-medium tracking-wide uppercase text-accent-on transition-all duration-200 hover:brightness-110"
           >
-            Open Koovis
-          </a>
+            Workforce
+          </Link>
           <Link
             href="/contact"
             className="hidden lg:inline-flex items-center rounded-full border border-accent/60 px-5 py-2 text-sm font-medium tracking-wide uppercase text-accent transition-all duration-200 hover:bg-accent/10 hover:border-accent"
@@ -180,15 +179,13 @@ export default function Navbar() {
                 transition={{ delay: navLinks.length * 0.05, duration: 0.3 }}
                 className="mt-8 flex flex-col items-center gap-4"
               >
-                <a
-                  href="https://pa.koovis.ai"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/workforce"
                   onClick={() => setMobileOpen(false)}
                   className="inline-flex items-center rounded-full bg-accent px-8 py-3 text-sm font-medium tracking-widest uppercase text-accent-on transition-all hover:brightness-110"
                 >
-                  Open Koovis
-                </a>
+                  Workforce
+                </Link>
                 <Link
                   href="/contact"
                   onClick={() => setMobileOpen(false)}

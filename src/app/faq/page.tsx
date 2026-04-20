@@ -9,7 +9,7 @@ import SectionTitle from "@/components/SectionTitle";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Frequently asked questions about Koovis AI products, consulting engagements, data handling, and the company.",
+    "Frequently asked questions about Koovis AI products — Koovis Workforce, Koovis Pulse, WealthPilot, Koovis Studios — data handling, and the company.",
   alternates: { canonical: "https://www.koovis.ai/faq" },
 };
 
@@ -18,7 +18,8 @@ const faqs = [
     q: "What's available to use right now?",
     a: (
       <>
-        <strong>Koovis</strong>, our personal AI assistant, is live at{" "}
+        <strong>Koovis Workforce</strong>, our autonomous AI workforce for
+        founders, is live in production at{" "}
         <a
           href="https://pa.koovis.ai"
           target="_blank"
@@ -26,9 +27,11 @@ const faqs = [
           className="text-accent hover:opacity-80"
         >
           pa.koovis.ai
-        </a>
-        . WealthPilot and Koovis Studios are in active development &mdash; you
-        can join the waitlist for either on our{" "}
+        </a>{" "}
+        (public launch at workforce.koovis.ai coming 2026). WealthPilot (AI
+        research platform), Koovis Pulse (Indian-language AI UGC ads for D2C
+        brands), and Koovis Studios (AI pre-viz for Telugu cinema) are in
+        active development &mdash; join the waitlist on our{" "}
         <Link href="/products" className="text-accent hover:opacity-80">
           Products
         </Link>{" "}
@@ -37,15 +40,22 @@ const faqs = [
     ),
   },
   {
-    q: "Is WealthPilot open to customers or investors?",
+    q: "Is WealthPilot open to customers?",
     a: (
       <>
-        Not yet. WealthPilot is in its paper-trading phase &mdash; we run it on
-        personal capital with a multi-month validation period before
-        considering any external access. When external access becomes
-        available, waitlist signups will be the first to hear. WealthPilot is
-        not registered investment advice and is not being offered as a
-        financial product today.
+        WealthPilot pivoted in April 2026 from systematic trading to an AI
+        research platform for Indian equity markets. MVP C (productized
+        deep-dive research on Indian listed companies for family offices,
+        boutique PMS, and RIAs) is shipping now at &#8377;50K&ndash;5L per
+        report. MVP A (B2B research copilot SaaS) is in spec phase, launching
+        later in 2026. Our validated 5-year OOS ablation paper (M1_NoRegimeNoVolAdj,
+        Sharpe 0.96, 8/8 gates) is in submission to Pacific-Basin Finance
+        Journal. Join the waitlist on the{" "}
+        <Link href="/products" className="text-accent hover:opacity-80">
+          Products
+        </Link>{" "}
+        page. WealthPilot is research, not investment advice &mdash; we do not
+        run money on behalf of others.
       </>
     ),
   },
@@ -67,24 +77,31 @@ const faqs = [
     q: "Do you take on AI consulting engagements?",
     a: (
       <>
-        We take on a small number of engagements each year &mdash; specifically
-        for companies needing production-grade AI engineering, not hypothetical
-        roadmaps. The best way to start a conversation is through our{" "}
+        Not a focus. Koovis AI is a product company &mdash; our bandwidth goes
+        to shipping Koovis Workforce, Pulse, WealthPilot, and Studios. If you
+        have a specific need that overlaps with our product work (e.g., an
+        enterprise evaluation of Koovis Workforce, or commissioning deep-dive
+        equity research via WealthPilot MVP C), reach out via our{" "}
         <Link href="/contact" className="text-accent hover:opacity-80">
           Contact page
-        </Link>{" "}
-        (book a 30-minute call directly or send a message).
+        </Link>
+        . Otherwise we&apos;re heads-down on our own products.
       </>
     ),
   },
   {
-    q: "How is my data handled on Koovis (pa.koovis.ai)?",
+    q: "How is my data handled on Koovis Workforce (pa.koovis.ai)?",
     a: (
       <>
-        Koovis routes your messages to Claude, GPT, or Gemini depending on the
-        task. Each provider&apos;s privacy terms apply to the messages they
-        process. We do not train models on your conversations. Full details in
-        our{" "}
+        Koovis Workforce routes your messages across 5 providers (Claude,
+        GPT, Gemini, DeepSeek, AWS Bedrock) with credit-aware routing.
+        Each provider&apos;s privacy terms apply to the messages they
+        process. We do not train models on your conversations. Agent actions
+        are governed by our Trust Ladder (L0 Propose &rarr; L1 Scoped &rarr;
+        L2 Autonomous-within-scope &rarr; L3 Hands-off) so you always control
+        what agents can do. Sensitive actions (git push to main, DB deletes,
+        external email, payments) require explicit approval regardless of
+        ladder level. Full details in our{" "}
         <Link href="/privacy" className="text-accent hover:opacity-80">
           Privacy Policy
         </Link>

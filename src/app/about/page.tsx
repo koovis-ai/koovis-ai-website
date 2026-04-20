@@ -62,22 +62,26 @@ export default function AboutPage() {
 
           <AnimateIn delay={0.1}>
             <p className="mt-5 text-base leading-relaxed text-content-muted">
-              We&apos;re based in Hyderabad, India, incorporated in March 2026
-              as Koovis AI Pvt Ltd. We build our own AI products, use them
-              daily, and iterate based on what we learn from real usage. We also
-              work with companies that need the same production-grade AI
-              engineering applied to their problems &mdash; because the best way
-              to stay sharp is to solve real challenges across different domains.
+              We&apos;re a product company, not an agency. Koovis AI Pvt Ltd is
+              incorporated in Hyderabad, India (March 2026), with Koovis AI LLC
+              registered in Delaware, USA. We build our own AI products, use
+              them daily, and iterate based on what we learn from real usage.
             </p>
           </AnimateIn>
 
           <AnimateIn delay={0.15}>
             <p className="mt-5 text-base leading-relaxed text-content-muted">
-              Right now that means three products: a personal AI assistant
-              that&apos;s already live, a quantitative trading engine for Indian
-              equities, and an AI pre-visualization pipeline for Telugu cinema.
-              Different domains, same philosophy &mdash; build things that
-              actually work when nobody&apos;s watching.
+              Four products, one engine. <strong className="text-content">Koovis Workforce</strong>{" "}
+              (autonomous AI workforce for founders) &mdash; MIT-licensed engine
+              running in production since March 2026. <strong className="text-content">Koovis Pulse</strong>{" "}
+              (Indian-language AI UGC ads for D2C brands).{" "}
+              <strong className="text-content">WealthPilot Research</strong>{" "}
+              (ablation-first research on Indian listed companies, 5-year OOS
+              validated).{" "}
+              <strong className="text-content">Koovis Studios</strong>{" "}
+              (AI pre-visualization for Telugu cinema and beyond). Different
+              domains, same philosophy &mdash; build things that actually work
+              when nobody&apos;s watching.
             </p>
           </AnimateIn>
         </div>
@@ -220,16 +224,21 @@ export default function AboutPage() {
                   other people&apos;s products &mdash; I wanted to build my own.
                   To apply everything I learned at Amazon scale, use it myself
                   every day, and see if one person with the right tools and the
-                  right discipline can ship things that matter. Along the way,
-                  I&apos;m also bringing that same engineering rigor to companies
-                  that need production-grade AI &mdash; because solving real
-                  problems is how you stay sharp.
+                  right discipline can ship things that matter.
+                </p>
+                <p className="mt-4 text-base leading-relaxed text-content-muted">
+                  Koovis is intentionally small. Solo for now; when I hire,
+                  it&apos;s because a specific constraint demands it, not
+                  because growth metrics say so. I publish negative findings
+                  alongside positive ones. I open-source our core engine because
+                  the best infrastructure compounds when others can run it too.
                 </p>
                 <p className="mt-4 text-base leading-relaxed text-content font-medium">
-                  Koovis AI is that bet. It&apos;s early, and there&apos;s a lot
-                  left to build. But the first product is live, the second is in
-                  paper trading, and the third is taking shape. Ask me again in
-                  a year.
+                  Koovis AI is the bet. It&apos;s early, and there&apos;s a lot
+                  left to build. But the Workforce engine is running in
+                  production, WealthPilot&apos;s 5-year OOS ablation paper is in
+                  submission, Pulse is preparing its first paid pilots, and
+                  Studios is shipping Demo v2. Ask me again in a year.
                 </p>
               </AnimateIn>
             </div>
@@ -276,20 +285,14 @@ export default function AboutPage() {
                 See what we&apos;re <em>building.</em>
               </SectionTitle>
               <p className="mt-4 text-base text-content-muted">
-                Koovis is live and free to use. The best way to understand
-                what we&apos;re about is to try it.
+                Four products, one engine. Pick the one that fits your work.
               </p>
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-                <Button
-                  href="https://pa.koovis.ai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  size="lg"
-                >
-                  Open Koovis <ArrowRight size={16} />
+                <Button href="/" size="lg">
+                  See all products <ArrowRight size={16} />
                 </Button>
-                <Button href="/products" variant="outline" size="lg">
-                  All Products <ArrowRight size={16} />
+                <Button href="/contact" variant="outline" size="lg">
+                  Get in touch <ArrowRight size={16} />
                 </Button>
               </div>
             </div>

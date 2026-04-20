@@ -4,11 +4,14 @@ import { Resend } from "resend";
 const isValidEmail = (email: string) =>
   /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-const VALID_PRODUCTS = ["wealthpilot", "studios"] as const;
+const VALID_PRODUCTS = ["wealthpilot", "studios", "workforce", "pulse", "research"] as const;
 type Product = (typeof VALID_PRODUCTS)[number];
 const PRODUCT_LABEL: Record<Product, string> = {
   wealthpilot: "WealthPilot",
   studios: "Koovis Studios",
+  workforce: "Koovis Workforce",
+  pulse: "Koovis Pulse",
+  research: "WealthPilot Research",
 };
 
 export const dynamic = "force-dynamic";

@@ -9,9 +9,6 @@ import {
   TrendingUp,
   Database,
   Bot,
-  MessageSquare,
-  Mic,
-  Upload,
   Clapperboard,
   Image,
   Music,
@@ -25,21 +22,21 @@ import WaitlistForm from "@/components/WaitlistForm";
 
 const comparison = [
   {
-    name: "Koovis",
-    tagline: "Personal AI assistant",
-    forWho: "Anyone who uses AI daily",
+    name: "Koovis Workforce",
+    tagline: "Autonomous AI workforce for founders",
+    forWho: "Multi-product founders, AI-first small agencies",
     status: "Live",
     statusColor: "bg-green-400",
-    access: "Free to use at pa.koovis.ai",
-    cta: { label: "Open Koovis", href: "https://pa.koovis.ai", external: true },
+    access: "In production at pa.koovis.ai; public launch at workforce.koovis.ai coming 2026",
+    cta: { label: "Try Koovis Workforce", href: "https://pa.koovis.ai", external: true },
   },
   {
     name: "WealthPilot",
-    tagline: "Quantitative trading",
-    forWho: "Indian equity traders & self-directed investors",
+    tagline: "AI research platform for Indian equities",
+    forWho: "Family offices, boutique PMS, independent RIAs, AMC research desks",
     status: "In Development",
     statusColor: "bg-amber-400",
-    access: "Paper-trading phase. Join waitlist.",
+    access: "MVP C productized research shipping. Join waitlist.",
     cta: { label: "Jump to waitlist", href: "#wealthpilot", external: false },
   },
   {
@@ -56,64 +53,64 @@ const comparison = [
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "AI products by Koovis AI — Koovis personal assistant (live), WealthPilot quantitative trading, and Koovis Studios AI pre-visualization.",
+    "AI products by Koovis AI — Koovis Workforce (autonomous AI workforce, live), WealthPilot (AI research platform for Indian equities), Koovis Pulse (Indian-language AI UGC for D2C brands), and Koovis Studios (AI pre-viz for Telugu cinema).",
 };
 
 /* ---------- DATA ---------- */
 
 const koovisFeatures = [
   {
-    icon: MessageSquare,
-    title: "Multi-Model Chat",
-    desc: "Claude, GPT, and Gemini with intelligent routing. Best model for every query.",
-  },
-  {
     icon: Bot,
-    title: "Tool Use",
-    desc: "Web search, file analysis, custom tools. More than conversation.",
+    title: "Multi-Domain Agents",
+    desc: "Coding, research, content, operations, strategy. 5 squads with cross-project context.",
   },
   {
-    icon: Mic,
-    title: "Voice Input",
-    desc: "Browser-native speech recognition. Talk instead of type.",
+    icon: Shield,
+    title: "Trust Ladder",
+    desc: "L0 Propose → L1 Scoped → L2 Autonomous → L3 Hands-off. Earn autonomy; don't grant it.",
   },
   {
-    icon: Upload,
-    title: "File Upload",
-    desc: "Images, PDFs, documents. Drop and analyze.",
+    icon: Activity,
+    title: "Credit-Aware Routing",
+    desc: "5 providers (Claude, GPT, Gemini, DeepSeek, Bedrock). Cheapest model that can do the job.",
+  },
+  {
+    icon: Database,
+    title: "Persistent Memory",
+    desc: "SQLite + FTS5. Agents remember your projects, decisions, and preferences across sessions.",
   },
 ];
 
 const wpFeatures = [
   {
-    icon: Brain,
-    title: "ML-Driven Signals",
-    desc: "Models trained on historical and live market data to identify high-probability setups.",
-  },
-  {
-    icon: Activity,
-    title: "Real-Time Processing",
-    desc: "Sub-second data ingestion and decision-making at market speed.",
-  },
-  {
-    icon: Shield,
-    title: "Risk Management",
-    desc: "Position sizing, dynamic stop-loss, portfolio exposure controls. Built in, not bolted on.",
-  },
-  {
     icon: FlaskConical,
-    title: "Backtesting Engine",
-    desc: "Validate strategies against years of data before risking real capital.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Adaptive Strategies",
-    desc: "Models retrain as market regimes shift. No manual intervention.",
+    title: "Ablation-First Methodology",
+    desc: "Every claim tested against alternatives. We publish negative findings when results don't hold.",
   },
   {
     icon: Database,
-    title: "Data Pipeline",
-    desc: "Production-grade infrastructure for market feeds, alternative data, and feature engineering.",
+    title: "Point-in-Time Universe",
+    desc: "Survivorship-bias-free data. Corporate-action adjusted. Dataset-versioned backtests.",
+  },
+  {
+    icon: Brain,
+    title: "Productized Deep-Dives",
+    desc: "AI-assisted research reports on Indian listed companies for family offices, boutique PMS, RIAs.",
+  },
+  {
+    icon: Shield,
+    title: "Rigorous Validation",
+    desc: "8-gate framework: OOS Sharpe, alpha t-stat, DSR, max drawdown, bootstrap CIs, PSR.",
+  },
+  {
+    icon: TrendingUp,
+    title: "5-Year OOS Paper",
+    desc: "Our 2021-2025 ablation study passed 8/8 gates (Sharpe 0.96). In submission to Pacific-Basin Finance Journal.",
+  },
+  {
+    icon: Activity,
+    title: "B2B Research Copilot",
+    desc: "MVP A: AI research SaaS for RIAs, PMS analysts, AMC desks. Launching 2026.",
   },
 ];
 
@@ -248,17 +245,19 @@ export default function ProductsPage() {
               </div>
 
               <div className="relative z-[1] p-5 sm:p-8 lg:p-12">
-                <SectionLabel>Personal AI</SectionLabel>
+                <SectionLabel>Autonomous AI Workforce</SectionLabel>
                 <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-content sm:text-5xl">
-                  Koovis
+                  Koovis Workforce
                 </h2>
                 <p className="mt-1 font-serif text-lg italic text-content-muted">
-                  Your personal AI assistant
+                  The autonomous AI workforce for founders
                 </p>
                 <p className="mt-4 max-w-2xl text-base leading-relaxed text-content-muted">
-                  Multi-model AI assistant with intelligent routing across
-                  Claude, GPT, and Gemini. Conversation history, tool use,
-                  voice input, file uploads. Built for daily use.
+                  Multi-domain autonomous agents across coding, research,
+                  content, operations, and strategy. Cross-project context,
+                  credit-aware routing across 5 providers, and a Trust Ladder
+                  that makes autonomy actually safe. Open-source MIT engine +
+                  hosted SaaS. In production since March 2026.
                 </p>
 
                 <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -312,17 +311,19 @@ export default function ProductsPage() {
               </div>
 
               <div className="relative z-[1] p-5 sm:p-8 lg:p-12">
-                <SectionLabel>Quantitative Trading</SectionLabel>
+                <SectionLabel>AI Research Platform</SectionLabel>
                 <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-content sm:text-5xl">
                   WealthPilot
                 </h2>
                 <p className="mt-1 font-serif text-lg italic text-content-muted">
-                  Quantitative trading for Indian equities
+                  AI research platform for Indian equities
                 </p>
                 <p className="mt-4 max-w-2xl text-base leading-relaxed text-content-muted">
-                  ML-powered quantitative trading that surfaces opportunities
-                  traditional analysis misses. Same production rigor behind
-                  billion-dollar recommendation systems.
+                  Productized deep-dive research on Indian listed companies
+                  for family offices, boutique PMS, and RIAs. Ablation-first
+                  methodology with 5-year OOS validation (paper in submission
+                  to Pacific-Basin Finance Journal). B2B research copilot SaaS
+                  launching 2026.
                 </p>
 
                 <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -349,7 +350,7 @@ export default function ProductsPage() {
 
                 <div className="mt-10 flex items-center gap-2 text-sm text-content-muted">
                   <span className="pulse-dot inline-block h-2 w-2 rounded-full bg-amber-400" />
-                  In active development &mdash; paper trading phase
+                  MVP C productized research shipping &mdash; MVP A (B2B SaaS) in spec
                 </div>
 
                 <div className="mt-6 max-w-md">

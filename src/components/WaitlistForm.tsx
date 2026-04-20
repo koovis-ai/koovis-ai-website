@@ -3,7 +3,7 @@
 import { useState, FormEvent } from "react";
 import { ArrowRight } from "lucide-react";
 
-type Product = "wealthpilot" | "studios";
+type Product = "wealthpilot" | "studios" | "workforce" | "pulse" | "research";
 
 interface WaitlistFormProps {
   product: Product;

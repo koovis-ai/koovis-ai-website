@@ -2,10 +2,15 @@
 
 import Link from "next/link";
 
+const productLinks = [
+  { href: "/workforce", label: "Koovis Workforce" },
+  { href: "/pulse", label: "Koovis Pulse" },
+  { href: "/research", label: "WealthPilot Research" },
+  { href: "/studios", label: "Koovis Studios" },
+];
+
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "What We Do" },
-  { href: "/products", label: "Products" },
+  { href: "/papers", label: "Papers" },
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
@@ -36,7 +41,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-content/10 bg-surface">
       {/* Main grid */}
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-16 md:grid-cols-3 md:gap-8">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-16 md:grid-cols-4 md:gap-8">
         {/* Column 1: Logo + tagline + social */}
         <div className="flex flex-col gap-6">
           <Link href="/" className="flex items-baseline gap-1.5">
@@ -49,7 +54,7 @@ export default function Footer() {
           </Link>
 
           <p className="text-sm leading-relaxed text-content-dim">
-            AI products that work.
+            India&apos;s AI-native infrastructure.
             <br />
             Hyderabad, India.
           </p>
@@ -71,10 +76,29 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Column 2: Navigation */}
+        {/* Column 2: Products */}
         <div>
           <h3 className="font-jetbrains text-[11px] font-semibold uppercase tracking-[0.2em] text-content-dim mb-5">
-            Navigation
+            Products
+          </h3>
+          <ul className="flex flex-col gap-3">
+            {productLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="text-sm text-content-muted transition-colors hover:text-accent"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Column 3: Navigation */}
+        <div>
+          <h3 className="font-jetbrains text-[11px] font-semibold uppercase tracking-[0.2em] text-content-dim mb-5">
+            Company
           </h3>
           <ul className="flex flex-col gap-3">
             {navLinks.map((link) => (
@@ -90,7 +114,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Column 3: Get in touch */}
+        {/* Column 4: Get in touch */}
         <div>
           <h3 className="font-jetbrains text-[11px] font-semibold uppercase tracking-[0.2em] text-content-dim mb-5">
             Get in Touch
@@ -113,12 +137,14 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link
-                href="/faq"
+              <a
+                href="https://github.com/koovis-ai"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm text-content-muted transition-colors hover:text-accent"
               >
-                FAQ
-              </Link>
+                GitHub
+              </a>
             </li>
           </ul>
         </div>

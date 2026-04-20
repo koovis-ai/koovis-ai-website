@@ -248,8 +248,8 @@ export default function WhatWeDoPage() {
                 See it in <em>action.</em>
               </SectionTitle>
               <p className="mt-4 text-base text-content-muted">
-                Koovis is live and free to use. Our engineering philosophy,
-                running in production.
+                Koovis Workforce is live in production &mdash; our engineering
+                philosophy, running as an autonomous AI workforce.
               </p>
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Button
@@ -258,7 +258,7 @@ export default function WhatWeDoPage() {
                   rel="noopener noreferrer"
                   size="lg"
                 >
-                  Open Koovis <ArrowRight size={16} />
+                  Try Koovis Workforce <ArrowRight size={16} />
                 </Button>
                 <Button href="/products" variant="outline" size="lg">
                   All Products <ArrowRight size={16} />
