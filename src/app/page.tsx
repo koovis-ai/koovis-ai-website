@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ArrowRight, Bot, Megaphone, TrendingUp, Clapperboard, FileText, Github } from "lucide-react";
+import { ArrowRight, Bot, Megaphone, TrendingUp, Clapperboard, FileText, Github, Play } from "lucide-react";
 import AnimateIn from "@/components/AnimateIn";
 import Button from "@/components/Button";
 import SectionLabel from "@/components/SectionLabel";
@@ -15,40 +15,48 @@ export const metadata: Metadata = {
 
 const products = [
   {
+    icon: Megaphone,
+    name: "Koovis Pulse",
+    tagline: "150 Hindi / Telugu / Tamil UGC ad variants in 48 hours.",
+    desc: "For D2C brands running 30-150 creative tests per month. Same engine that runs Koovis AI internally, applied to UGC ads.",
+    price: "From ₹2L / batch",
+    status: "Early access · Taking pilot inquiries",
+    statusColor: "bg-green-400",
+    href: "/pulse",
+    cta: "Book a 15-min Pulse call",
+  },
+  {
     icon: Bot,
     name: "Koovis Workforce",
-    tagline: "Delegate your work. Your AI team works while you sleep.",
-    desc: "Autonomous AI workforce for multi-product founders. Multi-domain agents — coding, research, content, operations, strategy. Trust Ladder approvals. Open-source MIT engine + hosted SaaS.",
+    tagline: "Autonomous AI workforce for founders.",
+    desc: "Multi-domain agents (coding, research, content, ops, strategy). Trust Ladder approvals. MIT-licensed engine + hosted SaaS.",
+    price: "Free (OSS) or from $199/mo",
     status: "Launching Q3 2026",
     statusColor: "bg-accent",
     href: "/workforce",
-  },
-  {
-    icon: Megaphone,
-    name: "Koovis Pulse",
-    tagline: "150 Hindi / Telugu / Tamil UGC ad variants delivered in 48 hours.",
-    desc: "Indian-language AI UGC for D2C brands. Founder hooks, Gen-Z hooks, problem-solution angles — localized across Hindi, Telugu, Tamil. 48-hour turnaround. ₹1.5-6L/mo subscription tiers.",
-    status: "Early Access",
-    statusColor: "bg-green-400",
-    href: "/pulse",
+    cta: "Join the alpha cohort",
   },
   {
     icon: TrendingUp,
     name: "WealthPilot Research",
     tagline: "Ablation-first research on Indian listed companies.",
-    desc: "Productized deep-dive research for family offices, PMS, RIAs, and AMC research desks. 5-year OOS validated methodology (Sharpe 0.96, 8/8 validation gates). ₹50K-5L per report, ₹1-10L/mo retainers.",
-    status: "Shipping Now",
+    desc: "For family offices, boutique PMS, RIAs, AMC research desks. 5-year OOS validated methodology.",
+    price: "From ₹50K / report",
+    status: "Now accepting research commissions",
     statusColor: "bg-green-400",
     href: "/research",
+    cta: "Request sample report",
   },
   {
     icon: Clapperboard,
     name: "Koovis Studios",
-    tagline: "AI pre-viz for Indian cinema. Screenplay to rough cut.",
-    desc: "Automated pre-visualization pipeline for Telugu cinema and beyond. Image generation, multi-character consistency, SFX, music, final video assembly. Research track + Tollywood production inquiries.",
-    status: "Research Track",
+    tagline: "AI pre-visualization for Indian cinema.",
+    desc: "Screenplay to rough cut. Multi-character shot handling with reference-image binding. Demo v2 in production.",
+    price: "Early engagement ₹3-15L",
+    status: "Demo v2 in production",
     statusColor: "bg-amber-400",
     href: "/studios",
+    cta: "Book Tollywood intro",
   },
 ];
 
@@ -62,58 +70,86 @@ export default function HomePage() {
 
         <div className="relative z-10 mx-auto max-w-5xl px-5 sm:px-6 text-center">
           <AnimateIn>
-            <h1 className="font-serif text-[clamp(2rem,6vw,4.5rem)] font-semibold leading-[1.15] tracking-tight text-content">
-              AI-native{" "}
-              <span className="text-accent italic">infrastructure.</span>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/[0.05] px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-accent">
+              <Megaphone size={12} /> Pulse · Early access
+            </div>
+          </AnimateIn>
+
+          <AnimateIn delay={0.05}>
+            <h1 className="font-serif text-[clamp(2rem,6vw,4.5rem)] font-semibold leading-[1.1] tracking-tight text-content">
+              Turn one brief into{" "}
+              <span className="text-accent italic">150 UGC ad variants.</span>
+              <br />
+              In 48 hours. In three Indian languages.
             </h1>
           </AnimateIn>
 
           <AnimateIn delay={0.15}>
             <p className="mx-auto mt-6 sm:mt-8 max-w-2xl text-base sm:text-lg leading-relaxed text-content-muted">
-              Four products. One engine. For founders, marketers, researchers,
-              and filmmakers.
+              AI-native creative infrastructure for D2C brands. Part of Koovis AI —
+              also powering <Link href="/workforce" className="text-content hover:text-accent">agent workforces</Link>,{" "}
+              <Link href="/research" className="text-content hover:text-accent">equity research</Link>, and{" "}
+              <Link href="/studios" className="text-content hover:text-accent">cinema pre-viz</Link>.
             </p>
           </AnimateIn>
 
-          <AnimateIn delay={0.3}>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-              <Link href="/workforce" className="inline-flex items-center gap-2 rounded-full border border-content/15 bg-content/[0.04] px-4 py-2 text-sm font-medium text-content transition-colors hover:border-accent/40 hover:bg-accent/5 hover:text-accent">
-                <Bot size={14} /> Workforce
-              </Link>
-              <Link href="/pulse" className="inline-flex items-center gap-2 rounded-full border border-content/15 bg-content/[0.04] px-4 py-2 text-sm font-medium text-content transition-colors hover:border-accent/40 hover:bg-accent/5 hover:text-accent">
-                <Megaphone size={14} /> Pulse
-              </Link>
-              <Link href="/research" className="inline-flex items-center gap-2 rounded-full border border-content/15 bg-content/[0.04] px-4 py-2 text-sm font-medium text-content transition-colors hover:border-accent/40 hover:bg-accent/5 hover:text-accent">
-                <TrendingUp size={14} /> Research
-              </Link>
-              <Link href="/studios" className="inline-flex items-center gap-2 rounded-full border border-content/15 bg-content/[0.04] px-4 py-2 text-sm font-medium text-content transition-colors hover:border-accent/40 hover:bg-accent/5 hover:text-accent">
-                <Clapperboard size={14} /> Studios
-              </Link>
+          <AnimateIn delay={0.25}>
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Button href="/pulse#samples" size="lg">
+                <Play size={16} /> Get samples
+              </Button>
+              <Button href="/pulse#pricing" variant="outline" size="lg">
+                Book a call <ArrowRight size={16} />
+              </Button>
             </div>
           </AnimateIn>
         </div>
       </section>
 
-      {/* ==================== THESIS ==================== */}
-      <section className="border-t border-content/10 py-16 sm:py-24 lg:py-32">
-        <div className="mx-auto max-w-4xl px-5 sm:px-6">
-          <AnimateIn>
-            <SectionLabel>The thesis</SectionLabel>
-          </AnimateIn>
-          <AnimateIn delay={0.1}>
-            <SectionTitle className="mt-5">
-              Infrastructure, not <em>chatbots.</em>
-            </SectionTitle>
-          </AnimateIn>
-          <AnimateIn delay={0.2}>
-            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-content-muted">
-              AI is reshaping how businesses operate. We&apos;re building the infrastructure —
-              not the chat tools — that capture that shift. Autonomous workflows for
-              founders. Localized creative at scale. Research methodology you can audit.
-              Production pipelines for Indian cinema. Each product stands on its own,
-              all four share one engine, and the engine is open source.
-            </p>
-          </AnimateIn>
+      {/* ==================== FOUNDER QUOTE + METRICS ==================== */}
+      <section className="border-t border-content/10 bg-content/[0.02] py-16 sm:py-24">
+        <div className="mx-auto max-w-6xl px-5 sm:px-6">
+          <div className="grid gap-10 md:grid-cols-5 md:gap-12">
+            {/* Founder quote */}
+            <AnimateIn delay={0.05}>
+              <div className="md:col-span-3">
+                <div className="border-l-2 border-accent/40 pl-6 sm:pl-8">
+                  <blockquote className="font-serif text-xl sm:text-2xl leading-relaxed text-content">
+                    &ldquo;Pulse runs on the engine I&apos;ve used to run 4 Koovis AI
+                    products solo for 8 months. Same reliability, applied to D2C
+                    creative. This isn&apos;t demo-ware.&rdquo;
+                  </blockquote>
+                  <p className="mt-5 text-sm text-content-muted">
+                    <span className="font-medium text-content">Rajesh Kolachana</span> · Founder, Koovis AI
+                  </p>
+                </div>
+              </div>
+            </AnimateIn>
+
+            {/* Stats */}
+            <AnimateIn delay={0.15}>
+              <div className="md:col-span-2 grid grid-cols-2 gap-4 sm:gap-5">
+                {[
+                  { value: "48hr", label: "Turnaround per batch" },
+                  { value: "150", label: "Variants per batch" },
+                  { value: "3", label: "Indian languages" },
+                  { value: "₹2L", label: "Starting price" },
+                ].map((m) => (
+                  <div
+                    key={m.label}
+                    className="rounded-2xl border border-content/[0.06] bg-content/[0.02] p-5"
+                  >
+                    <p className="font-jetbrains text-2xl sm:text-3xl font-semibold text-accent">
+                      {m.value}
+                    </p>
+                    <p className="mt-2 text-xs leading-snug text-content-dim">
+                      {m.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </AnimateIn>
+          </div>
         </div>
       </section>
 
@@ -121,7 +157,7 @@ export default function HomePage() {
       <section id="products" className="border-t border-content/10 py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-6">
           <AnimateIn>
-            <SectionLabel>Products</SectionLabel>
+            <SectionLabel>Four products · One engine</SectionLabel>
           </AnimateIn>
           <AnimateIn delay={0.1}>
             <SectionTitle className="mt-5">
@@ -130,8 +166,8 @@ export default function HomePage() {
           </AnimateIn>
           <AnimateIn delay={0.2}>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-content-muted">
-              Each product has its own conversion path. No single funnel — pick the one
-              that fits your work.
+              Pulse is the current revenue anchor. The same engine powers three
+              more products, each with its own buyer and its own conversion path.
             </p>
           </AnimateIn>
 
@@ -160,8 +196,12 @@ export default function HomePage() {
                         {product.desc}
                       </p>
 
+                      <div className="mt-5 inline-flex items-center rounded-full border border-content/10 bg-content/[0.03] px-3 py-1 text-xs font-jetbrains text-content-muted">
+                        {product.price}
+                      </div>
+
                       <div className="mt-6 flex items-center gap-2 text-sm font-medium text-accent opacity-70 transition-opacity group-hover:opacity-100">
-                        Learn more <ArrowRight size={14} />
+                        {product.cta} <ArrowRight size={14} />
                       </div>
                     </div>
                   </div>
@@ -185,10 +225,10 @@ export default function HomePage() {
           </AnimateIn>
           <AnimateIn delay={0.2}>
             <p className="mt-6 max-w-3xl text-base leading-relaxed text-content-muted">
-              When our own approaches don&apos;t work, we say so with numbers. Our research
-              covers autonomous agent framework benchmarks, Indian mid-cap momentum
-              ablation studies, AI video model comparisons, and Indian-language TTS. The
-              Koovis Workforce engine is MIT-licensed and runs our own operations.
+              When our own approaches don&apos;t work, we say so with numbers. Five
+              papers across agent-framework benchmarks, Indian mid-cap momentum
+              ablation, AI video model benchmarking, and Indian-language TTS. The
+              Koovis Workforce engine is MIT-licensed.
             </p>
           </AnimateIn>
 
@@ -199,7 +239,8 @@ export default function HomePage() {
                   <FileText size={28} className="text-accent" strokeWidth={1.5} />
                   <h3 className="mt-5 text-lg font-semibold text-content">Research papers</h3>
                   <p className="mt-2 text-sm text-content-muted">
-                    Published + forthcoming research across all three product verticals. arXiv + SSRN.
+                    Five papers — published and in submission. arXiv + SSRN. Pacific-Basin
+                    Finance Journal, ACM MM 2026, CVPR workshop targets.
                   </p>
                   <div className="mt-4 flex items-center gap-2 text-sm font-medium text-accent opacity-70 transition-opacity group-hover:opacity-100">
                     Browse papers <ArrowRight size={14} />
@@ -219,7 +260,8 @@ export default function HomePage() {
                   <Github size={28} className="text-accent" strokeWidth={1.5} />
                   <h3 className="mt-5 text-lg font-semibold text-content">Open-source engine</h3>
                   <p className="mt-2 text-sm text-content-muted">
-                    The Koovis Workforce engine — MIT-licensed. Run it yourself, self-host, or fork it.
+                    The Koovis Workforce engine — MIT-licensed. Run it yourself,
+                    self-host, or fork it.
                   </p>
                   <div className="mt-4 flex items-center gap-2 text-sm font-medium text-accent opacity-70 transition-opacity group-hover:opacity-100">
                     github.com/koovis-ai/koovis-workforce <ArrowRight size={14} />
@@ -236,7 +278,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-4xl px-5 sm:px-6">
           <div className="border-l-2 border-accent/40 pl-8 sm:pl-12">
             <AnimateIn>
-              <SectionLabel>Who we are</SectionLabel>
+              <SectionLabel>Who builds this</SectionLabel>
             </AnimateIn>
             <AnimateIn delay={0.1}>
               <SectionTitle className="mt-5">
@@ -259,6 +301,32 @@ export default function HomePage() {
               </div>
             </AnimateIn>
           </div>
+        </div>
+      </section>
+
+      {/* ==================== FINAL CTA ==================== */}
+      <section className="border-t border-content/10 bg-content/[0.02] py-16 sm:py-24">
+        <div className="mx-auto max-w-3xl px-5 sm:px-6">
+          <AnimateIn>
+            <div className="rounded-2xl border border-content/[0.06] bg-content/[0.02] p-10 sm:p-12 text-center">
+              <Megaphone size={32} className="mx-auto text-accent/60" strokeWidth={1.5} />
+              <h3 className="mt-4 font-serif text-2xl sm:text-3xl font-semibold text-content">
+                Running creative tests weekly?
+              </h3>
+              <p className="mt-3 text-base text-content-muted">
+                Pulse can deliver 150 Hindi / Telugu / Tamil UGC ad variants in 48
+                hours from one brief, starting at ₹2L per batch.
+              </p>
+              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+                <Button href="/pulse#samples" size="lg">
+                  <Play size={16} /> Get Pulse samples
+                </Button>
+                <Button href="/pulse#pricing" variant="outline" size="lg">
+                  Book a 15-min call <ArrowRight size={16} />
+                </Button>
+              </div>
+            </div>
+          </AnimateIn>
         </div>
       </section>
     </>
