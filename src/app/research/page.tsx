@@ -285,7 +285,7 @@ export default function ResearchPage() {
           <AnimateIn delay={0.2}>
             <p className="mt-6 text-base leading-relaxed text-content-muted">
               No self-serve checkout. Every engagement starts on a 20-min call. GST-compliant invoicing. Net 15
-              standard. Enterprise contracts signed directly with Koovis AI Pvt Ltd.
+              standard. Enterprise contracts signed directly with Koovis AI.
             </p>
           </AnimateIn>
 

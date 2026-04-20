@@ -9,7 +9,7 @@ import CalendlyEmbed from "@/components/CalendlyEmbed";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Koovis AI. Based in Hyderabad, India. Product inquiries, partnerships, and general questions.",
+    "Get in touch with Koovis AI. Product inquiries, partnerships, and general questions.",
 };
 
 const contactInfo = [

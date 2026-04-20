@@ -158,8 +158,8 @@ export default function PulsePage() {
         <div className="mx-auto max-w-4xl px-5 sm:px-6">
           <AnimateIn>
             <p className="text-center text-sm leading-relaxed text-content-muted">
-              Built by <strong className="text-content">Raj</strong> — solo founder, 11 years applied ML/AI
-              (7 at Amazon). The pipeline behind Pulse is also used for Tollywood pre-viz at{" "}
+              Built by <strong className="text-content">Rajesh Kolachana</strong> — solo founder,
+              11 years applied ML/AI (7 at Amazon). The pipeline behind Pulse is also used for Tollywood pre-viz at{" "}
               <Link href="/studios" className="text-accent hover:opacity-80">
                 koovis.ai/studios
               </Link>

@@ -54,9 +54,9 @@ export default function Footer() {
           </Link>
 
           <p className="text-sm leading-relaxed text-content-dim">
-            India&apos;s AI-native infrastructure.
+            AI-native infrastructure.
             <br />
-            Hyderabad, India.
+            Four products. One engine.
           </p>
 
           <ul className="flex gap-5">
@@ -154,7 +154,7 @@ export default function Footer() {
       <div className="border-t border-content/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-5 sm:flex-row">
           <p className="font-jetbrains text-[11px] tracking-wide text-content-faint">
-            &copy; 2026 Koovis AI Pvt Ltd. India.
+            &copy; 2026 Koovis AI Pvt Ltd.
           </p>
           <div className="flex gap-4">
             <Link

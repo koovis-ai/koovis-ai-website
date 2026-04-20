@@ -9,7 +9,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Koovis AI — AI Infrastructure for Founders, Marketers, Researchers, Filmmakers",
   description:
-    "Koovis AI builds four AI products under one brand. Open-source agent workforce, Indian-language UGC ads, equity research, and cinema pre-visualization. Built in India, running globally.",
+    "Koovis AI builds four AI products on a shared engine. An open-source agent workforce, Indian-language UGC ads, equity research, and cinema pre-visualization.",
   alternates: { canonical: "https://www.koovis.ai" },
 };
 
@@ -63,15 +63,15 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto max-w-5xl px-5 sm:px-6 text-center">
           <AnimateIn>
             <h1 className="font-serif text-[clamp(2rem,6vw,4.5rem)] font-semibold leading-[1.15] tracking-tight text-content">
-              India&apos;s AI-native{" "}
+              AI-native{" "}
               <span className="text-accent italic">infrastructure.</span>
             </h1>
           </AnimateIn>
 
           <AnimateIn delay={0.15}>
             <p className="mx-auto mt-6 sm:mt-8 max-w-2xl text-base sm:text-lg leading-relaxed text-content-muted">
-              Four products. One engine. One company. Built in India, running globally —
-              for founders, marketers, researchers, and filmmakers.
+              Four products. One engine. For founders, marketers, researchers,
+              and filmmakers.
             </p>
           </AnimateIn>
 
@@ -247,8 +247,8 @@ export default function HomePage() {
               <p className="mt-6 text-base leading-relaxed text-content-muted">
                 Koovis AI is built by Rajesh Kolachana. 11 years in ML engineering,
                 7 at Amazon (Senior Data Scientist), IIT Roorkee + IISc Bangalore,
-                GATE AIR 5. Koovis AI Pvt Ltd (Hyderabad, India) + Koovis AI LLC (Delaware, USA).
-                Currently solo — when we hire, it&apos;s because a specific constraint demands it.
+                GATE AIR 5. Currently solo — when we hire, it&apos;s because a
+                specific constraint demands it.
               </p>
             </AnimateIn>
             <AnimateIn delay={0.3}>

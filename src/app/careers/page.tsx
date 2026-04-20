@@ -130,8 +130,9 @@ export default function CareersPage() {
                 <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent flex-shrink-0" />
                 <span>
                   <strong className="text-content">Immediate remote-first global hiring.</strong>{" "}
-                  We&apos;re India-based (Hyderabad HQ + Delaware LLC). First
-                  hires will likely be India-based for collaboration density.
+                  Our HQ is in Hyderabad. First hires will likely be
+                  Hyderabad-based for collaboration density, with global
+                  hiring opening up as we scale.
                 </span>
               </li>
             </ul>

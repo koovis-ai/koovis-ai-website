@@ -8,7 +8,7 @@ import SectionTitle from "@/components/SectionTitle";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Koovis AI is a product company founded by Rajesh Kolachana — 11 years in ML engineering, 7 at Amazon. Based in Hyderabad, India. Building AI products that work.",
+    "Koovis AI is a product company founded by Rajesh Kolachana — 11 years in ML engineering, 7 at Amazon. Four AI products on a shared engine.",
 };
 
 const principles = [
@@ -62,10 +62,9 @@ export default function AboutPage() {
 
           <AnimateIn delay={0.1}>
             <p className="mt-5 text-base leading-relaxed text-content-muted">
-              We&apos;re a product company, not an agency. Koovis AI Pvt Ltd is
-              incorporated in Hyderabad, India (March 2026), with Koovis AI LLC
-              registered in Delaware, USA. We build our own AI products, use
-              them daily, and iterate based on what we learn from real usage.
+              We&apos;re a product company, not an agency. We build our own AI
+              products, use them daily, and iterate based on what we learn from
+              real usage.
             </p>
           </AnimateIn>
 
@@ -129,9 +128,6 @@ export default function AboutPage() {
                   </h2>
                   <p className="mt-1 font-jetbrains text-xs font-medium uppercase tracking-[0.2em] text-accent">
                     Founder &amp; CEO
-                  </p>
-                  <p className="mt-1 text-sm text-content-dim">
-                    Hyderabad, India
                   </p>
                 </div>
               </div>

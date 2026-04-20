@@ -113,8 +113,9 @@ const faqs = [
     q: "Where are you based? What's the legal entity?",
     a: (
       <>
-        Koovis AI Pvt Ltd, incorporated in March 2026 and based in Hyderabad,
-        India. Founder and CEO: Rajesh Kolachana. See the{" "}
+        Koovis AI is headquartered in Hyderabad. The legal entity is Koovis AI
+        Pvt Ltd (incorporated March 2026). Founder and CEO: Rajesh Kolachana.
+        See the{" "}
         <Link href="/about" className="text-accent hover:opacity-80">
           About page
         </Link>{" "}
