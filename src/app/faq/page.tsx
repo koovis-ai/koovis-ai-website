@@ -43,16 +43,16 @@ const faqs = [
     q: "Is WealthPilot open to customers?",
     a: (
       <>
-        WealthPilot pivoted in April 2026 from systematic trading to an AI
-        research platform for Indian equity markets. MVP C (productized
-        deep-dive research on Indian listed companies for family offices,
-        boutique PMS, and RIAs) is shipping now at &#8377;50K&ndash;5L per
-        report. MVP A (B2B research copilot SaaS) is in spec phase, launching
-        later in 2026. Our validated 5-year OOS ablation paper (M1_NoRegimeNoVolAdj,
-        Sharpe 0.96, 8/8 gates) is in submission to Pacific-Basin Finance
-        Journal. Join the waitlist on the{" "}
-        <Link href="/products" className="text-accent hover:opacity-80">
-          Products
+        Yes. WealthPilot Research is an AI-assisted research platform for
+        Indian equity markets. Productized deep-dive research reports on
+        Indian listed companies for family offices, boutique PMS, and RIAs are
+        shipping now at &#8377;50K&ndash;5L per report, with monthly retainers
+        available. A B2B research copilot SaaS for research desks is in spec
+        phase, launching later in 2026. Our 5-year OOS ablation paper (Sharpe
+        0.96, 8/8 validation gates) is in submission to Pacific-Basin Finance
+        Journal. Learn more on the{" "}
+        <Link href="/research" className="text-accent hover:opacity-80">
+          Research
         </Link>{" "}
         page. WealthPilot is research, not investment advice &mdash; we do not
         run money on behalf of others.
@@ -81,7 +81,7 @@ const faqs = [
         to shipping Koovis Workforce, Pulse, WealthPilot, and Studios. If you
         have a specific need that overlaps with our product work (e.g., an
         enterprise evaluation of Koovis Workforce, or commissioning deep-dive
-        equity research via WealthPilot MVP C), reach out via our{" "}
+        equity research from WealthPilot), reach out via our{" "}
         <Link href="/contact" className="text-accent hover:opacity-80">
           Contact page
         </Link>

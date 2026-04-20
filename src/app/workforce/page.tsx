@@ -227,8 +227,8 @@ const faqs = [
       <>
         The Trust Ladder is designed to prevent this. L0 = every action is a proposal you approve. Reversibility
         by default means the blast radius of a bad action is a PR you reject, not production downtime. Sensitive
-        actions (git push main, DB delete, email send) always require approval. In 8 months of production use
-        (internal dogfood since March 2026), zero catastrophic agent failures.
+        actions (git push main, DB delete, email send) always require approval. In 8 months of in-house
+        production use since March 2026, zero catastrophic agent failures.
       </>
     ),
   },
@@ -237,10 +237,10 @@ const faqs = [
     a: (
       <>
         <ul className="mt-2 ml-5 list-disc space-y-1.5">
-          <li><strong>Now:</strong> Closed Alpha (20-30 paying users at $99/mo for early feedback)</li>
+          <li><strong>Now:</strong> Closed Alpha (early-access pricing for the first cohort of founders)</li>
           <li><strong>Month 2:</strong> Private Beta at full pricing tiers</li>
-          <li><strong>Month 3:</strong> Public launch with comparative benchmark paper on arXiv</li>
-          <li><strong>Month 4-6:</strong> Team features, plugin marketplace, first vertical tier (PA for Indian Founders)</li>
+          <li><strong>Month 3:</strong> Public launch with comparative agent-framework benchmark paper on arXiv</li>
+          <li><strong>Month 4-6:</strong> Team features, plugin marketplace, regional vertical editions</li>
           <li><strong>Month 9-12:</strong> Enterprise tier (SSO, audit retention, on-prem), native mobile</li>
         </ul>
         See full plan on our <Link href="/blog" className="text-accent hover:opacity-80">blog</Link>.

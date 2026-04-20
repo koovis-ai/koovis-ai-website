@@ -122,7 +122,7 @@ export default function PulsePage() {
           <AnimateIn>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/[0.05] px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-amber-400">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-amber-400" />
-              In pilot · First paid customers Q2 2026
+              Early access · Taking pilot inquiries
             </div>
           </AnimateIn>
 
@@ -158,9 +158,8 @@ export default function PulsePage() {
         <div className="mx-auto max-w-4xl px-5 sm:px-6">
           <AnimateIn>
             <p className="text-center text-sm leading-relaxed text-content-muted">
-              Built by <strong className="text-content">Raj</strong> — solo founder, 11 years applied ML/AI.
-              Shipped 54K LOC + 1,260 tests in 8 days for WealthPilot Phase 1. The pipeline behind Pulse is also
-              used for Tollywood pre-viz at{" "}
+              Built by <strong className="text-content">Raj</strong> — solo founder, 11 years applied ML/AI
+              (7 at Amazon). The pipeline behind Pulse is also used for Tollywood pre-viz at{" "}
               <Link href="/studios" className="text-accent hover:opacity-80">
                 koovis.ai/studios
               </Link>

@@ -36,7 +36,7 @@ const comparison = [
     forWho: "Family offices, boutique PMS, independent RIAs, AMC research desks",
     status: "In Development",
     statusColor: "bg-amber-400",
-    access: "MVP C productized research shipping. Join waitlist.",
+    access: "Productized research reports shipping. Join waitlist.",
     cta: { label: "Jump to waitlist", href: "#wealthpilot", external: false },
   },
   {
@@ -110,7 +110,7 @@ const wpFeatures = [
   {
     icon: Activity,
     title: "B2B Research Copilot",
-    desc: "MVP A: AI research SaaS for RIAs, PMS analysts, AMC desks. Launching 2026.",
+    desc: "AI research SaaS for RIAs, PMS analysts, AMC desks. Launching 2026.",
   },
 ];
 
@@ -350,7 +350,7 @@ export default function ProductsPage() {
 
                 <div className="mt-10 flex items-center gap-2 text-sm text-content-muted">
                   <span className="pulse-dot inline-block h-2 w-2 rounded-full bg-amber-400" />
-                  MVP C productized research shipping &mdash; MVP A (B2B SaaS) in spec
+                  Productized research reports shipping &mdash; B2B research SaaS in spec
                 </div>
 
                 <div className="mt-6 max-w-md">

@@ -73,7 +73,7 @@ const faqs = [
   },
   {
     q: "Is this Indian equities only?",
-    a: "Currently yes. Indian mid-cap + select large-cap coverage. Other markets on request (priced higher due to lower internal tooling).",
+    a: "Indian mid-cap + select large-cap coverage is our primary focus. Other markets available on request at bespoke pricing.",
   },
 ];
 
@@ -89,7 +89,7 @@ export default function ResearchPage() {
           <AnimateIn>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/[0.05] px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-amber-400">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-amber-400" />
-              MVP C shipping · First paid reports Q2 2026
+              Now accepting research commissions
             </div>
           </AnimateIn>
 
@@ -259,7 +259,7 @@ export default function ResearchPage() {
             <div className="mt-12 rounded-2xl border border-dashed border-content/20 bg-content/[0.01] p-12 text-center">
               <FileSearch size={32} className="mx-auto text-accent/60" strokeWidth={1.5} />
               <p className="mt-4 text-sm text-content-dim">
-                First sample report in preparation. Email-gated PDF available in Q2 2026.
+                First sample report in preparation. Subscribe below to be notified when the PDF is available.
               </p>
               <div className="mt-6">
                 <Button href="#pricing" variant="outline">

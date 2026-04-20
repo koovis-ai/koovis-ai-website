@@ -37,7 +37,7 @@ const researchPapers = [
   },
   {
     title: "Character Consistency in Long-Form AI Video (Paper 2)",
-    status: "Phase 1 · draft later 2026",
+    status: "Draft later 2026",
     venues: "arXiv → CVPR 2027 workshop",
     desc: "Asset-first strategy, cascading generation, reference-image best practices for multi-character feature-length output.",
   },
@@ -52,15 +52,15 @@ const researchPapers = [
 const faqs = [
   {
     q: "Can I commission a pre-viz for my film?",
-    a: "Not a full pre-viz yet — Studios is in Phase 0 (proof of concept). Demo v2 (Baahubali Coronation, 240 seconds) is shipping. If you're a Telugu producer or production house interested in early engagements, join the waitlist and we'll reach out when Phase 1 opens.",
+    a: "Not yet as a full commission. We're in early engagements and shipping Demo v2 (Baahubali Coronation, 240 seconds). If you're a Telugu producer or production house interested in early collaboration, join the waitlist and we'll reach out when productized offerings open.",
   },
   {
     q: "What language is the pre-viz in?",
-    a: "Telugu first (hero dialogue via Sarvam Bulbul). Multi-language roadmap: Tamil, Kannada, Malayalam, Hindi, Bengali, Marathi in Phase 3. We optimize for Indian-language fidelity; Western tools are English-first.",
+    a: "Telugu first (hero dialogue via Sarvam Bulbul). Multi-language roadmap: Tamil, Kannada, Malayalam, Hindi, Bengali, Marathi planned. We optimize for Indian-language fidelity; Western tools are English-first.",
   },
   {
     q: "What does this cost?",
-    a: "Phase 0 pricing: ₹3-15 Lakhs per pre-viz project (at or near cost). Phase 1+ productized: ₹5-25L tiered. For reference: traditional pre-production is ₹5-50 Crore of production commitment to validate story.",
+    a: "Early-engagement pricing: ₹3-15 Lakhs per pre-viz project. Productized tiers (₹5-25L) will follow once we open general availability. For reference: traditional pre-production is ₹5-50 Crore of production commitment to validate story.",
   },
   {
     q: "What do you publish?",
@@ -91,7 +91,7 @@ export default function StudiosPage() {
           <AnimateIn>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/[0.05] px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-amber-400">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-amber-400" />
-              Demo v2 shipping · Research/EB-1A track
+              Demo v2 in production
             </div>
           </AnimateIn>
 
@@ -237,8 +237,8 @@ export default function StudiosPage() {
           </AnimateIn>
           <AnimateIn delay={0.2}>
             <p className="mt-6 text-base leading-relaxed text-content-muted">
-              Phase 0 pricing: ₹3-15 Lakhs per pre-viz (at or near cost). Phase 1+ tiered. We&apos;re selecting
-              1-2 tier-1 Tollywood engagements for 2026.
+              Early-engagement pricing: ₹3-15 Lakhs per pre-viz. Productized tiers coming later in 2026.
+              We&apos;re selecting 1-2 tier-1 Tollywood engagements for 2026.
             </p>
           </AnimateIn>
 

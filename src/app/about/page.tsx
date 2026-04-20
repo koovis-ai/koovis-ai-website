@@ -237,7 +237,7 @@ export default function AboutPage() {
                   Koovis AI is the bet. It&apos;s early, and there&apos;s a lot
                   left to build. But the Workforce engine is running in
                   production, WealthPilot&apos;s 5-year OOS ablation paper is in
-                  submission, Pulse is preparing its first paid pilots, and
+                  submission, Pulse is taking its first customer pilots, and
                   Studios is shipping Demo v2. Ask me again in a year.
                 </p>
               </AnimateIn>
