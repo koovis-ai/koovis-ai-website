@@ -221,7 +221,7 @@ koovis-ai-website/
 
 ```bash
 # Just push to main — Vercel auto-deploys
-cd ~/Desktop/Projects/koovis-ai-branding/koovis-ai-website
+cd "${KOOVIS_HOME:-$HOME/koovis-ai}"/koovis-ai-website
 git add -A && git commit -m "Update: description" && git push
 # Vercel builds and deploys automatically (~1-2 min)
 ```
@@ -229,7 +229,7 @@ git add -A && git commit -m "Update: description" && git push
 ### Local Development
 
 ```bash
-cd ~/Desktop/Projects/koovis-ai-branding/koovis-ai-website
+cd "${KOOVIS_HOME:-$HOME/koovis-ai}"/koovis-ai-website
 npm install
 npm run dev
 # Open http://localhost:3000
