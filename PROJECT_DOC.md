@@ -280,6 +280,6 @@ npm run dev
 | Document | Location | Purpose |
 |----------|----------|---------|
 | Website Blueprint | `Koovis_AI_Website_Blueprint.md` (in repo) | Architecture and design decisions |
-| koovis-ai BLUEPRINT | `koovis-hq/projects/koovis-ai/BLUEPRINT.md` | Koovis AI business strategy |
-| koovis-ai DECISIONS | `koovis-hq/projects/koovis-ai/DECISIONS.md` | Decision log |
+| koovis-ai BLUEPRINT | `koovis-hq/docs/initiatives/koovis-ai/BLUEPRINT.md` | Koovis AI business strategy |
+| koovis-ai DECISIONS | `koovis-hq/docs/initiatives/koovis-ai/DECISIONS.md` | Decision log |
 | koovis-hq PROJECT_DOC | `koovis-hq/PROJECT_DOC.md` | Central infrastructure reference |

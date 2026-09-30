@@ -6,7 +6,7 @@ Marketing website for Koovis AI at https://www.koovis.ai. Built with Next.js 14 
 
 **Positioning (as shipped 2026-04-20 per D43):** Pulse-anchored multi-product site. Homepage leads with Pulse outcome H1 ("Turn one brief into 150 UGC ad variants..."); Workforce / Research / Studios surface as tiles below. Global company framing — no "India's AI-native" or "India-origin" in marketing copy. Product-level India references stay where functionally required (Pulse Indian-language UGC, WealthPilot Indian equity coverage, Studios Indian cinema). Legal entity (Koovis AI Pvt Ltd / Koovis AI LLC) stays in `/privacy` + `/terms` + schema.org + `/papers` citations only.
 
-**Canonical spec:** `koovis-hq/projects/koovis-ai-website/WEBSITE_REFRESH_SPEC.md` (SHIPPED 2026-04-20).
+**Canonical spec:** `koovis-hq/docs/archive/2026-09-30-website-refresh/WEBSITE_REFRESH_SPEC.md` (SHIPPED 2026-04-20; archived 2026-09-30).
 **Canonical decision log entry:** D43 in `koovis-hq/docs/blueprints/DECISIONS.md`.
 
 **Unified rename:** All content uses "Koovis Workforce" (never "Koovis PA"). Founder name standardized to "Rajesh Kolachana" on public surfaces.
@@ -97,8 +97,8 @@ npm run lint           # ESLint
 Claude Code reads satellite repo files directly when context is needed (no auto-mirroring).
 
 ### Canonical in koovis-hq (use MCP to update)
-- **Blueprint:** `koovis-hq/projects/koovis-ai/BLUEPRINT.md` — Use MCP `update_blueprint_section()`
-- **Decisions:** `koovis-hq/projects/koovis-ai/DECISIONS.md` — Use MCP `append_decision()`
+- **Blueprint:** `koovis-hq/docs/initiatives/koovis-ai/BLUEPRINT.md` — Use MCP `update_blueprint_section()`
+- **Decisions:** `koovis-hq/docs/initiatives/koovis-ai/DECISIONS.md` — Use MCP `append_decision()`
 
 ### End-of-Session Protocol
 Before ending any work session, call MCP `sync_from_conversation()` with:
