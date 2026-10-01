@@ -70,13 +70,10 @@ export default function AboutPage() {
 
           <AnimateIn delay={0.15}>
             <p className="mt-5 text-base leading-relaxed text-content-muted">
-              Four products, one engine. <strong className="text-content">Koovis Workforce</strong>{" "}
+              Three products, one engine. <strong className="text-content">Koovis Workforce</strong>{" "}
               (autonomous AI workforce for founders) &mdash; MIT-licensed engine
               running in production since March 2026. <strong className="text-content">Koovis Pulse</strong>{" "}
               (Indian-language AI UGC ads for D2C brands).{" "}
-              <strong className="text-content">WealthPilot Research</strong>{" "}
-              (ablation-first research on Indian listed companies, 5-year OOS
-              validated).{" "}
               <strong className="text-content">Koovis Studios</strong>{" "}
               (AI pre-visualization for Telugu cinema and beyond). Different
               domains, same philosophy &mdash; build things that actually work
@@ -257,7 +254,7 @@ export default function AboutPage() {
                 See what we&apos;re <em>building.</em>
               </SectionTitle>
               <p className="mt-4 text-base text-content-muted">
-                Four products, one engine. Pick the one that fits your work.
+                Three products, one engine. Pick the one that fits your work.
               </p>
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                 <Button href="/" size="lg">

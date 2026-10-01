@@ -6,7 +6,6 @@ import WaitlistForm from "./WaitlistForm";
 const productLinks = [
   { href: "/workforce", label: "Koovis Workforce" },
   { href: "/pulse", label: "Koovis Pulse" },
-  { href: "/research", label: "WealthPilot Research" },
   { href: "/studios", label: "Koovis Studios" },
 ];
 

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Megaphone, Bot, TrendingUp, Clapperboard, Check, Github } from "lucide-react";
+import { ArrowRight, Megaphone, Bot, Clapperboard, Check, Github } from "lucide-react";
 import AnimateIn from "@/components/AnimateIn";
 import Button from "@/components/Button";
 import SectionLabel from "@/components/SectionLabel";
@@ -64,27 +64,6 @@ const products: ProductPricing[] = [
       "14-day trial, cancel anytime",
     ],
     cta: { label: "Join the alpha cohort", href: "/workforce" },
-  },
-  {
-    icon: TrendingUp,
-    name: "WealthPilot Research",
-    href: "/research",
-    tagline: "Ablation-first research on Indian listed companies",
-    status: "Accepting commissions",
-    statusColor: "bg-green-400",
-    tiers: [
-      { label: "Single report", price: "₹50K – ₹5L", note: "Per-company deep-dive, 2-3 week turnaround" },
-      { label: "Monthly retainer", price: "₹1L – ₹10L / mo", note: "Ongoing coverage + priority requests" },
-      { label: "Enterprise research", price: "Custom", note: "Family office / AMC desks / bespoke scope" },
-    ],
-    includes: [
-      "Ablation-first methodology (alternatives ruled out)",
-      "DCF + multiples + sensitivity tables",
-      "Methodology appendix, reproducible",
-      "PDF + raw data delivered via shared Drive",
-      "GST-compliant invoicing, Net 15",
-    ],
-    cta: { label: "Request sample report", href: "/research#pricing" },
   },
   {
     icon: Clapperboard,

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ArrowRight, Bot, Megaphone, TrendingUp, Clapperboard, FileText, Github, Play } from "lucide-react";
+import { ArrowRight, Bot, Megaphone, Clapperboard, FileText, Github, Play } from "lucide-react";
 import AnimateIn from "@/components/AnimateIn";
 import Button from "@/components/Button";
 import SectionLabel from "@/components/SectionLabel";
@@ -35,17 +35,6 @@ const products = [
     statusColor: "bg-accent",
     href: "/workforce",
     cta: "Join the alpha cohort",
-  },
-  {
-    icon: TrendingUp,
-    name: "WealthPilot Research",
-    tagline: "Ablation-first research on Indian listed companies.",
-    desc: "For family offices, boutique PMS, RIAs, AMC research desks. 5-year OOS validated methodology.",
-    price: "From ₹50K / report",
-    status: "Now accepting research commissions",
-    statusColor: "bg-green-400",
-    href: "/research",
-    cta: "Request sample report",
   },
   {
     icon: Clapperboard,
@@ -87,8 +76,7 @@ export default function HomePage() {
           <AnimateIn delay={0.15}>
             <p className="mx-auto mt-6 sm:mt-8 max-w-2xl text-base sm:text-lg leading-relaxed text-content-muted">
               AI-native creative infrastructure for D2C brands. Part of Koovis AI —
-              also powering <Link href="/workforce" className="text-content hover:text-accent">agent workforces</Link>,{" "}
-              <Link href="/research" className="text-content hover:text-accent">equity research</Link>, and{" "}
+              also powering <Link href="/workforce" className="text-content hover:text-accent">agent workforces</Link> and{" "}
               <Link href="/studios" className="text-content hover:text-accent">cinema pre-viz</Link>.
             </p>
           </AnimateIn>

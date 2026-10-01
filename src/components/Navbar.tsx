@@ -10,7 +10,6 @@ import ThemeToggle from "./ThemeToggle";
 const navLinks = [
   { href: "/pulse", label: "Pulse" },
   { href: "/workforce", label: "Workforce" },
-  { href: "/research", label: "Research" },
   { href: "/studios", label: "Studios" },
   { href: "/papers", label: "Papers" },
   { href: "/pricing", label: "Pricing" },

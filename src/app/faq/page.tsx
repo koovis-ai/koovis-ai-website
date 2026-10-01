@@ -9,7 +9,7 @@ import SectionTitle from "@/components/SectionTitle";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Frequently asked questions about Koovis AI products — Koovis Workforce, Koovis Pulse, WealthPilot, Koovis Studios — data handling, and the company.",
+    "Frequently asked questions about Koovis AI products — Koovis Workforce, Koovis Pulse, Koovis Studios — data handling, and the company.",
   alternates: { canonical: "https://www.koovis.ai/faq" },
 };
 
@@ -24,34 +24,13 @@ const faqs = [
         <a href="mailto:info@koovis.ai?subject=Koovis%20Workforce%20early%20access" className="text-accent hover:opacity-80">
           info@koovis.ai
         </a>
-        . WealthPilot (AI
-        research platform), Koovis Pulse (Indian-language AI UGC ads for D2C
-        brands), and Koovis Studios (AI pre-viz for Telugu cinema) are in
+        . Koovis Pulse (Indian-language AI UGC ads for D2C
+        brands) and Koovis Studios (AI pre-viz for Telugu cinema) are in
         active development &mdash; join the waitlist on our{" "}
         <Link href="/products" className="text-accent hover:opacity-80">
           Products
         </Link>{" "}
         page to be notified when they launch.
-      </>
-    ),
-  },
-  {
-    q: "Is WealthPilot open to customers?",
-    a: (
-      <>
-        Yes. WealthPilot Research is an AI-assisted research platform for
-        Indian equity markets. Productized deep-dive research reports on
-        Indian listed companies for family offices, boutique PMS, and RIAs are
-        shipping now at &#8377;50K&ndash;5L per report, with monthly retainers
-        available. A B2B research copilot SaaS for research desks is in spec
-        phase, launching later in 2026. Our 5-year OOS ablation paper (Sharpe
-        0.96, 8/8 validation gates) is in submission to Pacific-Basin Finance
-        Journal. Learn more on the{" "}
-        <Link href="/research" className="text-accent hover:opacity-80">
-          Research
-        </Link>{" "}
-        page. WealthPilot is research, not investment advice &mdash; we do not
-        run money on behalf of others.
       </>
     ),
   },
@@ -74,10 +53,9 @@ const faqs = [
     a: (
       <>
         Not a focus. Koovis AI is a product company &mdash; our bandwidth goes
-        to shipping Koovis Workforce, Pulse, WealthPilot, and Studios. If you
+        to shipping Koovis Workforce, Pulse, and Studios. If you
         have a specific need that overlaps with our product work (e.g., an
-        enterprise evaluation of Koovis Workforce, or commissioning deep-dive
-        equity research from WealthPilot), reach out via our{" "}
+        enterprise evaluation of Koovis Workforce), reach out via our{" "}
         <Link href="/contact" className="text-accent hover:opacity-80">
           Contact page
         </Link>
