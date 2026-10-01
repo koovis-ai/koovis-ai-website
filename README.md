@@ -1,6 +1,6 @@
 # Koovis AI Website
 
-The official website for [Koovis AI](https://www.koovis.ai) — AI product development for startups, founded by Rajesh Kolachana.
+The official website for [Koovis AI](https://www.koovis.ai) — the site of Koovis Studios, an AI film studio founded by Rajesh Kolachana.
 
 ## Tech Stack
 
@@ -64,8 +64,7 @@ src/
   app/
     page.tsx              # Homepage
     about/page.tsx        # About / founder bio
-    services/page.tsx     # Service offerings
-    products/page.tsx     # Products (WealthPilot)
+    studios/page.tsx      # Films: slate + how they're made
     blog/page.tsx         # Blog listing
     blog/[slug]/page.tsx  # Blog post (MDX)
     contact/page.tsx      # Contact form

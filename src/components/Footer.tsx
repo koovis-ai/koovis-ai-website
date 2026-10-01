@@ -4,17 +4,13 @@ import Link from "next/link";
 import WaitlistForm from "./WaitlistForm";
 
 const productLinks = [
-  { href: "/workforce", label: "Koovis Workforce" },
-  { href: "/pulse", label: "Koovis Pulse" },
-  { href: "/studios", label: "Koovis Studios" },
+  { href: "/studios", label: "Our films" },
+  { href: "/studios#how", label: "How we make them" },
 ];
 
 const navLinks = [
-  { href: "/pricing", label: "Pricing" },
-  { href: "/papers", label: "Papers" },
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
-  { href: "/careers", label: "Careers" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -47,11 +43,10 @@ export default function Footer() {
         <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-10 md:flex-row md:items-center md:justify-between md:gap-12">
           <div className="md:max-w-lg">
             <h3 className="font-serif text-xl font-semibold text-content">
-              Updates when we ship
+              Hear when a film is out
             </h3>
             <p className="mt-2 text-sm text-content-muted">
-              Low-volume. Product launches, published papers, meaningful
-              milestones. Roughly 1-2 emails a month.
+              One email per release. Nothing else.
             </p>
           </div>
           <div className="md:flex-1 md:max-w-md">
@@ -105,7 +100,7 @@ export default function Footer() {
         {/* Column 2: Products */}
         <div>
           <h3 className="font-jetbrains text-[11px] font-semibold uppercase tracking-[0.2em] text-content-dim mb-5">
-            Products
+            Koovis Studios
           </h3>
           <ul className="flex flex-col gap-3">
             {productLinks.map((link) => (

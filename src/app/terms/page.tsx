@@ -50,9 +50,9 @@ export default function TermsPage() {
             Description of services
           </h2>
           <p className="mt-3 text-base leading-relaxed text-content-muted">
-            Koovis AI builds and operates AI products and provides AI
-            engineering consulting services. Our website provides information
-            about our company, products, blog content, and a contact form.
+            Koovis AI is a film studio that makes original films, shorts and
+            series using AI tools. Our website provides information about our
+            company and our films, blog content, and a contact form.
           </p>
 
           <h2 className="mt-10 text-lg font-semibold text-content">

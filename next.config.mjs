@@ -2,15 +2,22 @@
 const nextConfig = {
   async redirects() {
     return [
-      { source: "/services", destination: "/workforce", permanent: true },
-      { source: "/services/:path*", destination: "/workforce", permanent: true },
+      // Koovis AI became a film studio on 2026-10-01 (koovis-hq D47). Retired pages go home.
+      { source: "/pulse", destination: "/", permanent: true },
+      { source: "/services", destination: "/", permanent: true },
+      { source: "/services/:path*", destination: "/", permanent: true },
+      { source: "/pricing", destination: "/", permanent: true },
+      { source: "/careers", destination: "/", permanent: true },
+      { source: "/faq", destination: "/", permanent: true },
       { source: "/products", destination: "/", permanent: true },
-      { source: "/products/wealthpilot", destination: "/", permanent: true },
-      // WealthPilot archived 2026-09-28 (koovis-hq D45): temporary, so a revival can reuse /research
+      { source: "/products/studios", destination: "/studios", permanent: true },
+      { source: "/products/:path*", destination: "/", permanent: true },
+      // Temporary: Workforce is dormant (D47.3); /papers may return with film research.
+      { source: "/workforce", destination: "/", permanent: false },
+      { source: "/workforce/:path*", destination: "/", permanent: false },
+      { source: "/papers", destination: "/", permanent: false },
       { source: "/research", destination: "/", permanent: false },
       { source: "/research/:path*", destination: "/", permanent: false },
-      { source: "/products/studios", destination: "/studios", permanent: true },
-      { source: "/products/pa", destination: "/workforce", permanent: true },
     ];
   },
 };

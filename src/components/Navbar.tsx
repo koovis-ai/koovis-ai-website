@@ -8,11 +8,8 @@ import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
-  { href: "/pulse", label: "Pulse" },
-  { href: "/workforce", label: "Workforce" },
-  { href: "/studios", label: "Studios" },
-  { href: "/papers", label: "Papers" },
-  { href: "/pricing", label: "Pricing" },
+  { href: "/studios", label: "Films" },
+  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
 ];
 
@@ -90,10 +87,10 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <ThemeToggle />
           <Link
-            href="/workforce"
+            href="/studios"
             className="hidden lg:inline-flex items-center rounded-full bg-accent px-5 py-2 text-sm font-medium tracking-wide uppercase text-accent-on transition-all duration-200 hover:brightness-110"
           >
-            Workforce
+            Films
           </Link>
           <Link
             href="/contact"
@@ -179,11 +176,11 @@ export default function Navbar() {
                 className="mt-8 flex flex-col items-center gap-4"
               >
                 <Link
-                  href="/workforce"
+                  href="/studios"
                   onClick={() => setMobileOpen(false)}
                   className="inline-flex items-center rounded-full bg-accent px-8 py-3 text-sm font-medium tracking-widest uppercase text-accent-on transition-all hover:brightness-110"
                 >
-                  Workforce
+                  Films
                 </Link>
                 <Link
                   href="/contact"

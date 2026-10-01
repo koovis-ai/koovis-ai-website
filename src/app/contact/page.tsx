@@ -9,7 +9,7 @@ import CalendlyEmbed from "@/components/CalendlyEmbed";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Koovis AI. Product inquiries, partnerships, and general questions.",
+    "Get in touch with Koovis Studios. Casting, crew, festivals, press and general questions.",
 };
 
 const contactInfo = [
@@ -51,8 +51,8 @@ export default function ContactPage() {
         </AnimateIn>
         <AnimateIn delay={0.2}>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-content-muted">
-            Product question? Partnership idea? Or just want to say hi? Send us
-            a message.
+            Actor, sound designer or composer? Programming a festival? Press,
+            or just want to say hi? Send us a message.
           </p>
         </AnimateIn>
 

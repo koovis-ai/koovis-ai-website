@@ -8,25 +8,25 @@ import SectionTitle from "@/components/SectionTitle";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Koovis AI is a product company founded by Rajesh Kolachana — 11 years in ML engineering, 7 at Amazon. Four AI products on a shared engine.",
+    "Koovis AI is a film studio founded by Rajesh Kolachana. Original films, shorts and series, written and performed by people and made with AI.",
 };
 
 const principles = [
   {
-    title: "Ship, Don\u2019t Demo",
-    desc: "A working product in production teaches you more in a week than a prototype teaches you in a year. We ship first, polish second, and learn from every deployment.",
+    title: "Story First",
+    desc: "Every film starts with an original script. If the story doesn\u2019t work on the page, no amount of rendering will save it.",
   },
   {
-    title: "Honest Architecture",
-    desc: "Not every problem needs ML. Sometimes the best solution is a well-crafted SQL query. We pick the simplest tool that actually solves the problem \u2014 ego aside.",
+    title: "Real Performances",
+    desc: "People act every scene. The performance is filmed for real and leads the shots we generate around it.",
   },
   {
-    title: "Own the Outcome",
-    desc: "Every product we build is something we use ourselves, every day. That\u2019s the bar. If it doesn\u2019t make our own lives better, it\u2019s not ready for anyone else.",
+    title: "Honest About AI",
+    desc: "Every release says how it was made. Everyone who appears on screen has signed a release.",
   },
   {
-    title: "Build in Public",
-    desc: "We share what works, what breaks, and what we learn along the way. It\u2019s slower than slick marketing, but it builds the kind of trust you can\u2019t buy.",
+    title: "Restraint",
+    desc: "Hard subjects are handled with care. We show consequences, not spectacle, and take advice from people who know the subject.",
   },
 ];
 
@@ -51,33 +51,25 @@ export default function AboutPage() {
         <div className="mx-auto max-w-3xl px-5 sm:px-6">
           <AnimateIn>
             <p className="text-base leading-relaxed text-content-muted">
-              Koovis AI exists because of a simple frustration: the gap between
-              what AI can do in a demo and what it actually does in production is
-              enormous. After years of watching promising AI projects die in the
-              &ldquo;last mile&rdquo; &mdash; the monitoring, the failover, the
-              operational discipline &mdash; we decided to build products that
-              cross that gap ourselves.
+              Koovis AI is a film studio. Under the name Koovis Studios we make
+              our own films, shorts and series, written from scratch. AI lets a
+              small team put stories on screen that would otherwise need a full
+              crew and a large budget.
             </p>
           </AnimateIn>
 
           <AnimateIn delay={0.1}>
             <p className="mt-5 text-base leading-relaxed text-content-muted">
-              We&apos;re a product company, not an agency. We build our own AI
-              products, use them daily, and iterate based on what we learn from
-              real usage.
+              We don&apos;t make films for clients. Every story is ours, and so is
+              the responsibility for how it&apos;s told.
             </p>
           </AnimateIn>
 
           <AnimateIn delay={0.15}>
             <p className="mt-5 text-base leading-relaxed text-content-muted">
-              Three products, one engine. <strong className="text-content">Koovis Workforce</strong>{" "}
-              (autonomous AI workforce for founders) &mdash; MIT-licensed engine
-              running in production since March 2026. <strong className="text-content">Koovis Pulse</strong>{" "}
-              (Indian-language AI UGC ads for D2C brands).{" "}
-              <strong className="text-content">Koovis Studios</strong>{" "}
-              (AI pre-visualization for Telugu cinema and beyond). Different
-              domains, same philosophy &mdash; build things that actually work
-              when nobody&apos;s watching.
+              People write the scripts and perform the scenes. Several AI models
+              render the shots around those performances. A sound designer and a
+              composer finish each film.
             </p>
           </AnimateIn>
         </div>
@@ -93,11 +85,9 @@ export default function AboutPage() {
           </AnimateIn>
           <AnimateIn delay={0.1}>
             <p className="mt-6 text-base leading-relaxed text-content-muted">
-              We want to build AI products that people quietly rely on every day.
-              Not the flashiest tools in someone&apos;s demo reel. Not the most
-              hyped product on launch day. The ones that just work &mdash;
-              reliably, consistently &mdash; and earn trust over time through
-              performance, not promises.
+              Films that people remember for the story, not for how they were
+              made. Starting with short films and a micro-series, and growing
+              into longer work as the craft and the tools allow.
             </p>
           </AnimateIn>
         </div>
@@ -124,7 +114,7 @@ export default function AboutPage() {
                     Rajesh Kolachana
                   </h2>
                   <p className="mt-1 font-jetbrains text-xs font-medium uppercase tracking-[0.2em] text-accent">
-                    Founder &amp; CEO
+                    Founder &middot; Writer, director, actor
                   </p>
                 </div>
               </div>
@@ -189,25 +179,20 @@ export default function AboutPage() {
                   Why I left
                 </h3>
                 <p className="mt-3 text-base leading-relaxed text-content-muted">
-                  After 11 years in the industry &mdash; building systems for
-                  other people&apos;s products &mdash; I wanted to build my own.
-                  To apply everything I learned at Amazon scale, use it myself
-                  every day, and see if one person with the right tools and the
-                  right discipline can ship things that matter.
+                  After 11 years in the industry, building systems for other
+                  people&apos;s products, I wanted to make my own work. Film is
+                  where I landed: AI finally makes it possible to tell a story on
+                  screen without a studio behind you, and the engineering
+                  discipline turns out to matter as much on a film as in production ML.
                 </p>
                 <p className="mt-4 text-base leading-relaxed text-content-muted">
-                  Koovis is intentionally small. Solo for now; when I hire,
-                  it&apos;s because a specific constraint demands it, not
-                  because growth metrics say so. I publish negative findings
-                  alongside positive ones. I open-source our core engine because
-                  the best infrastructure compounds when others can run it too.
+                  I write, direct and act in Koovis films. Actors, a sound
+                  designer and a composer join each production. Koovis stays
+                  small on purpose: the story decides what each film needs.
                 </p>
                 <p className="mt-4 text-base leading-relaxed text-content font-medium">
-                  Koovis AI is the bet. It&apos;s early, and there&apos;s a lot
-                  left to build. But the Workforce engine is running in
-                  production, WealthPilot&apos;s 5-year OOS ablation paper is in
-                  submission, Pulse is taking its first customer pilots, and
-                  Studios is shipping Demo v2. Ask me again in a year.
+                  It&apos;s early. Our first short film is in development. Ask me
+                  again when it&apos;s out.
                 </p>
               </AnimateIn>
             </div>
@@ -251,14 +236,14 @@ export default function AboutPage() {
           <AnimateIn>
             <div className="rounded-2xl border border-content/[0.06] bg-content/[0.02] p-10 text-center">
               <SectionTitle>
-                See what we&apos;re <em>building.</em>
+                See what we&apos;re <em>making.</em>
               </SectionTitle>
               <p className="mt-4 text-base text-content-muted">
-                Three products, one engine. Pick the one that fits your work.
+                Our slate, and how each film is made.
               </p>
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-                <Button href="/" size="lg">
-                  See all products <ArrowRight size={16} />
+                <Button href="/studios" size="lg">
+                  See the films <ArrowRight size={16} />
                 </Button>
                 <Button href="/contact" variant="outline" size="lg">
                   Get in touch <ArrowRight size={16} />

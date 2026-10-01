@@ -1,51 +1,38 @@
 import type { Metadata } from "next";
-import { ArrowRight, Bot, Megaphone, Clapperboard, FileText, Github, Play } from "lucide-react";
+import { ArrowRight, Clapperboard, PenLine, Users, AudioLines } from "lucide-react";
 import AnimateIn from "@/components/AnimateIn";
 import Button from "@/components/Button";
 import SectionLabel from "@/components/SectionLabel";
 import SectionTitle from "@/components/SectionTitle";
-import Link from "next/link";
+import WaitlistForm from "@/components/WaitlistForm";
 
 export const metadata: Metadata = {
-  title: "Koovis AI — AI Infrastructure for Founders, Marketers, Researchers, Filmmakers",
+  title: "Koovis Studios — Original Films Made with AI",
   description:
-    "Koovis AI builds four AI products on a shared engine. An open-source agent workforce, Indian-language UGC ads, equity research, and cinema pre-visualization.",
+    "Koovis AI is a film studio. We write, perform and direct original films, shorts and series, and use AI to make them. Our first short is in development.",
   alternates: { canonical: "https://www.koovis.ai" },
 };
 
-const products = [
+const craft = [
   {
-    icon: Megaphone,
-    name: "Koovis Pulse",
-    tagline: "150 Hindi / Telugu / Tamil UGC ad variants in 48 hours.",
-    desc: "For D2C brands running 30-150 creative tests per month. Same engine that runs Koovis AI internally, applied to UGC ads.",
-    price: "From ₹2L / batch",
-    status: "Early access · Taking pilot inquiries",
-    statusColor: "bg-green-400",
-    href: "/pulse",
-    cta: "Book a 15-min Pulse call",
+    icon: PenLine,
+    title: "Written by people",
+    desc: "Every film starts as an original script, written from scratch. AI helps us test structure; the words on screen are ours.",
   },
   {
-    icon: Bot,
-    name: "Koovis Workforce",
-    tagline: "Autonomous AI workforce for founders.",
-    desc: "Multi-domain agents (coding, research, content, ops, strategy). Trust Ladder approvals. MIT-licensed engine + hosted SaaS.",
-    price: "Free (OSS) or from $199/mo",
-    status: "Launching Q3 2026",
-    statusColor: "bg-accent",
-    href: "/workforce",
-    cta: "Join the alpha cohort",
+    icon: Users,
+    title: "Performed by people",
+    desc: "Real performances anchor every scene. They are filmed for real and used as the reference for the shots we generate.",
   },
   {
     icon: Clapperboard,
-    name: "Koovis Studios",
-    tagline: "AI pre-visualization for Indian cinema.",
-    desc: "Screenplay to rough cut. Multi-character shot handling with reference-image binding. Demo v2 in production.",
-    price: "Early engagement ₹3-15L",
-    status: "Demo v2 in production",
-    statusColor: "bg-amber-400",
-    href: "/studios",
-    cta: "Book Tollywood intro",
+    title: "Made with AI",
+    desc: "We generate and select shots across several AI models, and keep every prompt and reference so any shot can be remade.",
+  },
+  {
+    icon: AudioLines,
+    title: "Finished by craftspeople",
+    desc: "Sound design, mixing and the score are done by human artists. Every release carries an AI-generation disclosure.",
   },
 ];
 
@@ -60,222 +47,82 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto max-w-5xl px-5 sm:px-6 text-center">
           <AnimateIn>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/[0.05] px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-accent">
-              <Megaphone size={12} /> Pulse · Early access
+              <Clapperboard size={12} /> Koovis Studios
             </div>
           </AnimateIn>
 
           <AnimateIn delay={0.05}>
             <h1 className="font-serif text-[clamp(2rem,6vw,4.5rem)] font-semibold leading-[1.1] tracking-tight text-content">
-              Turn one brief into{" "}
-              <span className="text-accent italic">150 UGC ad variants.</span>
-              <br />
-              In 48 hours. In three Indian languages.
+              Original films,{" "}
+              <span className="text-accent italic">made with AI.</span>
             </h1>
           </AnimateIn>
 
           <AnimateIn delay={0.15}>
             <p className="mx-auto mt-6 sm:mt-8 max-w-2xl text-base sm:text-lg leading-relaxed text-content-muted">
-              AI-native creative infrastructure for D2C brands. Part of Koovis AI —
-              also powering <Link href="/workforce" className="text-content hover:text-accent">agent workforces</Link> and{" "}
-              <Link href="/studios" className="text-content hover:text-accent">cinema pre-viz</Link>.
+              We write, perform and direct our own films, shorts and series, and
+              use AI to bring them to the screen. Our first short is in development.
             </p>
           </AnimateIn>
 
           <AnimateIn delay={0.25}>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href="/pulse#samples" size="lg">
-                <Play size={16} /> Get samples
+              <Button href="/studios" size="lg">
+                See what we&apos;re making <ArrowRight size={16} />
               </Button>
-              <Button href="/pulse#pricing" variant="outline" size="lg">
-                Book a call <ArrowRight size={16} />
+              <Button href="/contact" variant="outline" size="lg">
+                Get in touch <ArrowRight size={16} />
               </Button>
             </div>
           </AnimateIn>
         </div>
       </section>
 
-      {/* ==================== FOUNDER QUOTE + METRICS ==================== */}
-      <section className="border-t border-content/10 bg-content/[0.02] py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-5 sm:px-6">
-          {/* Founder quote — centered, wide */}
-          <AnimateIn delay={0.05}>
-            <div className="mx-auto max-w-3xl text-center">
-              <blockquote className="font-serif text-xl sm:text-2xl lg:text-3xl leading-relaxed text-content">
-                &ldquo;Pulse runs on the engine I&apos;ve used to run 4 Koovis AI
-                products solo for 8 months. Same reliability, applied to D2C
-                creative. This isn&apos;t demo-ware.&rdquo;
-              </blockquote>
-              <p className="mt-6 text-sm text-content-muted">
-                <span className="font-medium text-content">Rajesh Kolachana</span>{" "}
-                <span className="text-content-dim">· Founder, Koovis AI</span>
-              </p>
-            </div>
-          </AnimateIn>
-
-          {/* Stats strip — 4 equal tiles */}
-          <AnimateIn delay={0.15}>
-            <div className="mt-14 sm:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
-              {[
-                { value: "48hr", label: "Turnaround per batch" },
-                { value: "150", label: "Variants per batch" },
-                { value: "3", label: "Indian languages" },
-                { value: "₹2L", label: "Starting price" },
-              ].map((m) => (
-                <div
-                  key={m.label}
-                  className="rounded-2xl border border-content/[0.06] bg-content/[0.02] p-5 sm:p-6 text-center"
-                >
-                  <p className="font-jetbrains text-3xl sm:text-4xl font-semibold text-accent">
-                    {m.value}
-                  </p>
-                  <p className="mt-2 text-xs sm:text-sm leading-snug text-content-dim">
-                    {m.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </AnimateIn>
-        </div>
-      </section>
-
-      {/* ==================== PRODUCTS ==================== */}
-      <section id="products" className="border-t border-content/10 py-16 sm:py-24 lg:py-32">
+      {/* ==================== HOW WE WORK ==================== */}
+      <section className="border-t border-content/10 py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-6">
           <AnimateIn>
-            <SectionLabel>Four products · One engine</SectionLabel>
+            <SectionLabel>How we make films</SectionLabel>
           </AnimateIn>
           <AnimateIn delay={0.1}>
             <SectionTitle className="mt-5">
-              What we <em>ship.</em>
+              The story leads. The tools <em>follow.</em>
             </SectionTitle>
           </AnimateIn>
-          <AnimateIn delay={0.2}>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-content-muted">
-              Pulse is the current revenue anchor. The same engine powers three
-              more products, each with its own buyer and its own conversion path.
-            </p>
-          </AnimateIn>
 
-          <div className="mt-12 sm:mt-16 grid gap-6 md:grid-cols-2">
-            {products.map((product, i) => (
-              <AnimateIn key={product.name} delay={0.1 + i * 0.08}>
-                <Link href={product.href} className="block h-full">
-                  <div className="group relative h-full overflow-hidden rounded-2xl border border-content/[0.06] bg-content/[0.02] transition-all duration-300 hover:border-accent/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/5">
-                    <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-accent/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                    <div className="p-6 sm:p-8">
-                      <div className="flex items-center justify-between">
-                        <product.icon size={30} className="text-accent" strokeWidth={1.5} />
-                        <span className="flex items-center gap-2 text-xs text-content-dim">
-                          <span className={`inline-block h-2 w-2 rounded-full ${product.statusColor}`} />
-                          {product.status}
-                        </span>
-                      </div>
-
-                      <h3 className="mt-5 text-xl sm:text-2xl font-semibold text-content">
-                        {product.name}
-                      </h3>
-                      <p className="mt-2 font-serif text-base italic text-content-muted">
-                        {product.tagline}
-                      </p>
-                      <p className="mt-4 text-sm leading-relaxed text-content-dim">
-                        {product.desc}
-                      </p>
-
-                      <div className="mt-5 inline-flex items-center rounded-full border border-content/10 bg-content/[0.03] px-3 py-1 text-xs font-jetbrains text-content-muted">
-                        {product.price}
-                      </div>
-
-                      <div className="mt-6 flex items-center gap-2 text-sm font-medium text-accent opacity-70 transition-opacity group-hover:opacity-100">
-                        {product.cta} <ArrowRight size={14} />
-                      </div>
-                    </div>
-                  </div>
-                </Link>
+          <div className="mt-12 sm:mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {craft.map((item, i) => (
+              <AnimateIn key={item.title} delay={0.1 + i * 0.08}>
+                <div className="h-full rounded-2xl border border-content/[0.06] bg-content/[0.02] p-6 sm:p-8">
+                  <item.icon size={28} className="text-accent" strokeWidth={1.5} />
+                  <h3 className="mt-5 text-lg font-semibold text-content">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-content-dim">{item.desc}</p>
+                </div>
               </AnimateIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ==================== RESEARCH + OSS ==================== */}
-      <section className="border-t border-content/10 bg-content/[0.02] py-16 sm:py-24 lg:py-32">
-        <div className="mx-auto max-w-5xl px-5 sm:px-6">
-          <AnimateIn>
-            <SectionLabel>Research + open source</SectionLabel>
-          </AnimateIn>
-          <AnimateIn delay={0.1}>
-            <SectionTitle className="mt-5">
-              We publish negative findings. We open-source our <em>core.</em>
-            </SectionTitle>
-          </AnimateIn>
-          <AnimateIn delay={0.2}>
-            <p className="mt-6 max-w-3xl text-base leading-relaxed text-content-muted">
-              When our own approaches don&apos;t work, we say so with numbers. Five
-              papers across agent-framework benchmarks, Indian mid-cap momentum
-              ablation, AI video model benchmarking, and Indian-language TTS. The
-              Koovis Workforce engine is MIT-licensed.
-            </p>
-          </AnimateIn>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            <AnimateIn delay={0.25}>
-              <Link href="/papers" className="group block h-full">
-                <div className="h-full rounded-2xl border border-content/[0.06] bg-content/[0.02] p-6 sm:p-8 transition-colors hover:border-accent/30">
-                  <FileText size={28} className="text-accent" strokeWidth={1.5} />
-                  <h3 className="mt-5 text-lg font-semibold text-content">Research papers</h3>
-                  <p className="mt-2 text-sm text-content-muted">
-                    Five papers — published and in submission. arXiv + SSRN. Pacific-Basin
-                    Finance Journal, ACM MM 2026, CVPR workshop targets.
-                  </p>
-                  <div className="mt-4 flex items-center gap-2 text-sm font-medium text-accent opacity-70 transition-opacity group-hover:opacity-100">
-                    Browse papers <ArrowRight size={14} />
-                  </div>
-                </div>
-              </Link>
-            </AnimateIn>
-
-            <AnimateIn delay={0.3}>
-              <a
-                href="https://github.com/koovis-ai/koovis-workforce"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block h-full"
-              >
-                <div className="h-full rounded-2xl border border-content/[0.06] bg-content/[0.02] p-6 sm:p-8 transition-colors hover:border-accent/30">
-                  <Github size={28} className="text-accent" strokeWidth={1.5} />
-                  <h3 className="mt-5 text-lg font-semibold text-content">Open-source engine</h3>
-                  <p className="mt-2 text-sm text-content-muted">
-                    The Koovis Workforce engine — MIT-licensed. Run it yourself,
-                    self-host, or fork it.
-                  </p>
-                  <div className="mt-4 flex items-center gap-2 text-sm font-medium text-accent opacity-70 transition-opacity group-hover:opacity-100">
-                    github.com/koovis-ai/koovis-workforce <ArrowRight size={14} />
-                  </div>
-                </div>
-              </a>
-            </AnimateIn>
-          </div>
-        </div>
-      </section>
-
       {/* ==================== FOUNDER ==================== */}
-      <section className="border-t border-content/10 py-16 sm:py-24 lg:py-32">
+      <section className="border-t border-content/10 bg-content/[0.02] py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-4xl px-5 sm:px-6">
           <div className="border-l-2 border-accent/40 pl-8 sm:pl-12">
             <AnimateIn>
-              <SectionLabel>Who builds this</SectionLabel>
+              <SectionLabel>Who makes these films</SectionLabel>
             </AnimateIn>
             <AnimateIn delay={0.1}>
               <SectionTitle className="mt-5">
-                One founder. Four products. <em>One engine.</em>
+                Written, directed and <em>performed.</em>
               </SectionTitle>
             </AnimateIn>
             <AnimateIn delay={0.2}>
               <p className="mt-6 text-base leading-relaxed text-content-muted">
-                Koovis AI is built by Rajesh Kolachana. 11 years in ML engineering,
-                7 at Amazon (Senior Data Scientist), IIT Roorkee + IISc Bangalore,
-                GATE AIR 5. Currently solo — when we hire, it&apos;s because a
-                specific constraint demands it.
+                Koovis Studios is led by Rajesh Kolachana, who writes, directs and
+                acts in its films. Before films he spent 11 years in machine
+                learning, seven of them at Amazon. He studied at IIT Roorkee and
+                IISc Bangalore. Actors, a sound designer and a composer join each
+                production.
               </p>
             </AnimateIn>
             <AnimateIn delay={0.3}>
@@ -289,26 +136,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ==================== FINAL CTA ==================== */}
-      <section className="border-t border-content/10 bg-content/[0.02] py-16 sm:py-24">
+      {/* ==================== UPDATES ==================== */}
+      <section className="border-t border-content/10 py-16 sm:py-24">
         <div className="mx-auto max-w-3xl px-5 sm:px-6">
           <AnimateIn>
             <div className="rounded-2xl border border-content/[0.06] bg-content/[0.02] p-10 sm:p-12 text-center">
-              <Megaphone size={32} className="mx-auto text-accent/60" strokeWidth={1.5} />
+              <Clapperboard size={32} className="mx-auto text-accent/60" strokeWidth={1.5} />
               <h3 className="mt-4 font-serif text-2xl sm:text-3xl font-semibold text-content">
-                Running creative tests weekly?
+                Hear when the first film is out.
               </h3>
               <p className="mt-3 text-base text-content-muted">
-                Pulse can deliver 150 Hindi / Telugu / Tamil UGC ad variants in 48
-                hours from one brief, starting at ₹2L per batch.
+                One email when we release something. No more than that.
               </p>
-              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-                <Button href="/pulse#samples" size="lg">
-                  <Play size={16} /> Get Pulse samples
-                </Button>
-                <Button href="/pulse#pricing" variant="outline" size="lg">
-                  Book a 15-min call <ArrowRight size={16} />
-                </Button>
+              <div className="mx-auto mt-8 max-w-md">
+                <WaitlistForm
+                  product="newsletter"
+                  buttonLabel="Notify me"
+                  successMessage="Thanks. We'll write when there's a film to watch."
+                  compact
+                />
               </div>
             </div>
           </AnimateIn>

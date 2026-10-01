@@ -8,12 +8,11 @@
 
 ### What It Does
 
-The Koovis AI website is a marketing site that:
-- Presents services (Custom AI Product Development, AI Architecture & Strategy, ML Infrastructure & Operations)
-- Showcases products and founder background
+The Koovis AI website is the public site of Koovis Studios, the company's film studio (koovis-hq D47). It:
+- Presents the studio, its slate and how its films are made (`/`, `/studios`, `/about`)
 - Publishes blog posts via MDX (static generation)
 - Accepts contact form submissions (→ email via Resend)
-- Handles newsletter signups (→ Beehiiv API)
+- Handles release-notification signups (`/api/waitlist`, product `newsletter` or `studios` → Resend)
 - Generates dynamic OG images for social sharing
 
 ### Architecture
@@ -24,12 +23,12 @@ The Koovis AI website is a marketing site that:
 │                                                      │
 │  Next.js 14 (App Router) ──► Vercel (auto-deploy)   │
 │       │                                              │
-│  Pages: /, /about, /services, /products,            │
-│         /blog, /blog/[slug], /contact               │
+│  Pages: /, /studios, /about, /blog, /blog/[slug],   │
+│         /contact, /privacy, /terms                  │
 │                                                      │
 │  API Routes:                                         │
 │  /api/contact  ──► Resend (email)                   │
-│  /api/newsletter ──► Beehiiv (subscriber API)       │
+│  /api/waitlist ──► Resend (release notifications)   │
 │                                                      │
 │  Monitoring: koovis-hq monitor.py (every 15 min)    │
 └────────────────────────────────────────────────────┘
@@ -168,8 +167,7 @@ koovis-ai-website/
 │   │   ├── sitemap.ts            ← Dynamic sitemap.xml
 │   │   ├── opengraph-image.tsx   ← Dynamic OG image (Edge runtime)
 │   │   ├── about/page.tsx        ← About page
-│   │   ├── services/page.tsx     ← Services page
-│   │   ├── products/page.tsx     ← Products page
+│   │   ├── studios/page.tsx      ← Films: slate + how they're made
 │   │   ├── contact/page.tsx      ← Contact form page
 │   │   ├── blog/page.tsx         ← Blog listing
 │   │   ├── blog/[slug]/page.tsx  ← Dynamic blog post

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 export const siteConfig = {
   name: "Koovis AI",
-  title: "Koovis AI — We Build AI Products That Work",
+  title: "Koovis Studios — Original Films Made with AI",
   description:
-    "Koovis AI builds production-grade AI products — Koovis Workforce (autonomous AI workforce), Koovis Pulse (Indian-language AI UGC for D2C brands), and Koovis Studios (AI pre-viz for Telugu cinema). Founded by Rajesh Kolachana.",
+    "Koovis AI is a film studio. Under the name Koovis Studios it writes, performs and directs original films, shorts and series, and uses AI to make them. Founded by Rajesh Kolachana.",
   url: "https://www.koovis.ai",
   ogImage: "https://www.koovis.ai/og-image.png",
   author: "Rajesh Kolachana",
@@ -19,17 +19,12 @@ export const sharedMetadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    "AI products",
-    "autonomous AI workforce",
-    "AI agents for founders",
-    "Indian-language AI UGC",
-    "AI pre-visualization",
-    "multi-agent orchestration",
-    "machine learning",
-    "production ML systems",
+    "AI film studio",
+    "AI filmmaking",
+    "original short films",
+    "AI short film",
+    "micro-series",
     "Koovis AI",
-    "Koovis Workforce",
-    "Koovis Pulse",
     "Koovis Studios",
     "Rajesh Kolachana",
   ],
@@ -86,7 +81,7 @@ export const jsonLd = {
     founder: {
       "@type": "Person",
       name: "Rajesh Kolachana",
-      jobTitle: "Founder & CEO",
+      jobTitle: "Founder, writer and director",
       url: siteConfig.url + "/about",
     },
     address: {
@@ -105,7 +100,7 @@ export const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Rajesh Kolachana",
-    jobTitle: "Founder & CEO, Koovis AI",
+    jobTitle: "Founder, Koovis AI; writer, director and actor",
     url: siteConfig.url + "/about",
     worksFor: {
       "@type": "Organization",
@@ -122,6 +117,8 @@ export const jsonLd = {
       },
     ],
     knowsAbout: [
+      "Filmmaking",
+      "Screenwriting",
       "Machine Learning",
       "Artificial Intelligence",
       "Data Science",

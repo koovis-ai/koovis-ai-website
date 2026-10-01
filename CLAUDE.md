@@ -4,14 +4,23 @@
 
 Marketing website for Koovis AI at https://www.koovis.ai. Built with Next.js 14 (App Router), deployed via Vercel on git push.
 
-**Positioning (as shipped 2026-04-20 per D43):** Pulse-anchored multi-product site. Homepage leads with Pulse outcome H1 ("Turn one brief into 150 UGC ad variants..."); Workforce / Research / Studios surface as tiles below. Global company framing — no "India's AI-native" or "India-origin" in marketing copy. Product-level India references stay where functionally required (Pulse Indian-language UGC, WealthPilot Indian equity coverage, Studios Indian cinema). Legal entity (Koovis AI Pvt Ltd / Koovis AI LLC) stays in `/privacy` + `/terms` + schema.org + `/papers` citations only.
+**Positioning (2026-10-01, koovis-hq D47):** the site of **Koovis Studios**, the film studio of
+Koovis AI Pvt Ltd. Original films, shorts and series, written and performed by people and made with
+AI. Pages: home, `/studios` (slate + how films are made), `/about`, `/blog`, `/contact`, `/privacy`,
+`/terms`. Pulse, Workforce, pricing, services, products, careers, FAQ and papers were removed and
+redirect home (`next.config.mjs`); Workforce and papers use temporary redirects.
 
-**Canonical spec:** `koovis-hq/docs/archive/2026-09-30-website-refresh/WEBSITE_REFRESH_SPEC.md` (SHIPPED 2026-04-20; archived 2026-09-30).
-**Canonical decision log entry:** D43 in `koovis-hq/docs/blueprints/DECISIONS.md`.
+**Public-surface rules (D43.3, D52, D58):**
+- No internal codes, phase labels, revenue-timing claims, productivity stats or immigration strategy.
+- No "in submission" or "forthcoming" claims unless true.
+- Never mention or show the Baahubali pipeline test; no recreations of existing films.
+- Don't announce a film's subject, cast or date until Raj approves it.
+- Founder name is "Rajesh Kolachana"; public email is `info@koovis.ai` (never admin@).
+- Don't link social handles until they exist (br-01, br-03 YouTube via qe-04).
+- This repo is **public** and `main` deploys to production. Change copy on a branch; Raj approves the
+  Vercel preview before merge.
 
-**Unified rename:** All content uses "Koovis Workforce" (never "Koovis PA"). Founder name standardized to "Rajesh Kolachana" on public surfaces.
-
-**Features:** 4 product landing pages (`/workforce`, `/pulse`, `/research`, `/studios`), research index (`/papers`), cross-product pricing (`/pricing`), trust/security page for Workforce (`/workforce/security`), careers skeleton, blog (MDX), contact form (Resend), newsletter signup via `/api/waitlist` with `product="newsletter"`.
+**Decision log:** koovis-hq `docs/blueprints/DECISIONS.md` (D43.3, D47, D52, D58).
 
 ## Tech Stack
 
@@ -21,57 +30,25 @@ Marketing website for Koovis AI at https://www.koovis.ai. Built with Next.js 14 
 - Vercel (auto-deploy on push to `main`)
 - No external newsletter service — newsletter signups route through `/api/waitlist` with `product="newsletter"` and land in the same Resend inbox
 
-## Project Structure (as shipped)
+## Project Structure
 
 ```
 src/app/
-├── page.tsx                  <- Homepage (Pulse-anchored V2 hero)
-├── about/                    <- Founder + thesis (Amazon metrics table dropped)
-├── careers/                  <- Hiring philosophy (not actively hiring)
-├── contact/                  <- Contact form + Calendly
-├── faq/                      <- General FAQ
-├── pricing/                  <- Cross-product pricing overview (client component)
-├── papers/                   <- Research papers index (5 papers)
-├── privacy/                  <- Legal entity named
-├── terms/                    <- Legal entity named
+├── page.tsx                  <- Home: studio hero, how we make films, founder, release signup
+├── studios/                  <- Slate (Short #1, micro-series) + pipeline
+├── about/                    <- Studio story, founder bio, principles
 ├── blog/                     <- Blog listing + [slug] MDX
-├── pulse/                    <- Koovis Pulse landing (revenue anchor; samples above-the-fold)
-├── research/                 <- WealthPilot Research landing (concrete sample-report preview)
-├── studios/                  <- Koovis Studios landing (demo v2 status)
-├── workforce/
-│   ├── page.tsx              <- Koovis Workforce landing (trust signals strip + link to /security)
-│   └── security/page.tsx     <- Trust Ladder + compliance roadmap (client component)
-├── services/                 <- Legacy; 301 redirects to /workforce via next.config.mjs
-├── products/                 <- Legacy; 301 redirects to /
+├── contact/                  <- Contact form (casting, crew, festivals, press)
+├── privacy/, terms/          <- Legal entity named
 └── api/
     ├── contact/              <- Resend email forward
-    └── waitlist/             <- Resend email forward; accepts product=pulse|workforce|research|studios|wealthpilot|newsletter
+    └── waitlist/             <- Resend email forward; product=studios|newsletter
 
-src/components/
-├── AnimateIn.tsx             <- Framer-motion scroll-triggered animation wrapper
-├── Button.tsx                <- Primary/outline/ghost variants
-├── CalendlyEmbed.tsx
-├── ContactForm.tsx
-├── Footer.tsx                <- Newsletter signup strip + 4-col grid + copyright
-├── Navbar.tsx                <- Nav order: Pulse / Workforce / Research / Studios / Papers / Pricing / About
-├── Providers.tsx             <- Theme provider + analytics
-├── SectionLabel.tsx
-├── SectionTitle.tsx
-├── ThemeToggle.tsx
-└── WaitlistForm.tsx          <- Accepts compact mode + customizable placeholder/button/success copy
+src/components/               <- AnimateIn, Button, ContactForm, Footer, Navbar (Films / Blog / About),
+                                 SectionLabel, SectionTitle, ThemeToggle, WaitlistForm, Providers
+src/lib/metadata.ts           <- Site title/description, keywords, JSON-LD
+next.config.mjs               <- Redirects for retired pages
 ```
-
-### 301 Redirects (next.config.mjs)
-
-- `/services*` → `/workforce`
-- `/products` → `/`
-- `/products/wealthpilot` → `/research`
-- `/products/studios` → `/studios`
-- `/products/pa` → `/workforce`
-
-### Client-component pages
-
-`/pricing` and `/workforce/security` use `"use client"` to bypass a Next.js 14 RSC serialization quirk with dynamic icon references in nested array maps. Both pages still statically prerender; the client directive just changes the hydration strategy.
 
 ## Commands
 
