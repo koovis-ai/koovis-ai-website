@@ -19,16 +19,12 @@ const faqs = [
     a: (
       <>
         <strong>Koovis Workforce</strong>, our autonomous AI workforce for
-        founders, is live in production at{" "}
-        <a
-          href="https://pa.koovis.ai"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-accent hover:opacity-80"
-        >
-          pa.koovis.ai
-        </a>{" "}
-        (public launch at workforce.koovis.ai coming 2026). WealthPilot (AI
+        founders, is in private preview (public launch at workforce.koovis.ai
+        coming 2026). To request early access, email{" "}
+        <a href="mailto:info@koovis.ai?subject=Koovis%20Workforce%20early%20access" className="text-accent hover:opacity-80">
+          info@koovis.ai
+        </a>
+        . WealthPilot (AI
         research platform), Koovis Pulse (Indian-language AI UGC ads for D2C
         brands), and Koovis Studios (AI pre-viz for Telugu cinema) are in
         active development &mdash; join the waitlist on our{" "}
@@ -90,7 +86,7 @@ const faqs = [
     ),
   },
   {
-    q: "How is my data handled on Koovis Workforce (pa.koovis.ai)?",
+    q: "How is my data handled on Koovis Workforce?",
     a: (
       <>
         Koovis Workforce routes your messages across 5 providers (Claude,

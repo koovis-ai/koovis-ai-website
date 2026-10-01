@@ -25,10 +25,10 @@ const comparison = [
     name: "Koovis Workforce",
     tagline: "Autonomous AI workforce for founders",
     forWho: "Multi-product founders, AI-first small agencies",
-    status: "Live",
-    statusColor: "bg-green-400",
-    access: "In production at pa.koovis.ai; public launch at workforce.koovis.ai coming 2026",
-    cta: { label: "Try Koovis Workforce", href: "https://pa.koovis.ai", external: true },
+    status: "Private preview",
+    statusColor: "bg-amber-400",
+    access: "Private preview. Public launch at workforce.koovis.ai coming 2026",
+    cta: { label: "Request early access", href: "mailto:info@koovis.ai?subject=Koovis%20Workforce%20early%20access", external: false },
   },
   {
     name: "WealthPilot",
@@ -257,7 +257,7 @@ export default function ProductsPage() {
                   content, operations, and strategy. Cross-project context,
                   credit-aware routing across 5 providers, and a Trust Ladder
                   that makes autonomy actually safe. Open-source MIT engine +
-                  hosted SaaS. In production since March 2026.
+                  hosted SaaS. In private preview.
                 </p>
 
                 <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -283,16 +283,12 @@ export default function ProductsPage() {
                 </div>
 
                 <div className="mt-10 flex flex-wrap items-center gap-6">
-                  <Button
-                    href="https://pa.koovis.ai"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Open Koovis <ArrowRight size={16} />
+                  <Button href="mailto:info@koovis.ai?subject=Koovis%20Workforce%20early%20access">
+                    Request early access <ArrowRight size={16} />
                   </Button>
                   <span className="flex items-center gap-2 text-sm text-content-muted">
-                    <span className="pulse-dot inline-block h-2 w-2 rounded-full bg-green-400" />
-                    Live at pa.koovis.ai
+                    <span className="inline-block h-2 w-2 rounded-full bg-amber-400" />
+                    Private preview
                   </span>
                 </div>
               </div>

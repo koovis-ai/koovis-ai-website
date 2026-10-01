@@ -262,8 +262,8 @@ export default function WorkforcePage() {
         <div className="relative z-10 mx-auto max-w-4xl px-5 sm:px-6 text-center">
           <AnimateIn>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/[0.05] px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-accent">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-green-400" />
-              Live · In production since March 2026
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-amber-400" />
+              Private preview · Public launch 2026
             </div>
           </AnimateIn>
 

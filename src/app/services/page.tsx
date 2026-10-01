@@ -248,17 +248,12 @@ export default function WhatWeDoPage() {
                 See it in <em>action.</em>
               </SectionTitle>
               <p className="mt-4 text-base text-content-muted">
-                Koovis Workforce is live in production &mdash; our engineering
+                Koovis Workforce is in private preview &mdash; our engineering
                 philosophy, running as an autonomous AI workforce.
               </p>
               <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-                <Button
-                  href="https://pa.koovis.ai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  size="lg"
-                >
-                  Try Koovis Workforce <ArrowRight size={16} />
+                <Button href="mailto:info@koovis.ai?subject=Koovis%20Workforce%20early%20access" size="lg">
+                  Request early access <ArrowRight size={16} />
                 </Button>
                 <Button href="/products" variant="outline" size="lg">
                   All Products <ArrowRight size={16} />
