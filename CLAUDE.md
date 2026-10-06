@@ -20,7 +20,7 @@ redirect home (`next.config.mjs`); Workforce and papers use temporary redirects.
 - This repo is **public** and `main` deploys to production. Change copy on a branch; Raj approves the
   Vercel preview before merge.
 
-**Decision log:** koovis-hq `docs/blueprints/DECISIONS.md` (D43.3, D47, D52, D58).
+**Decision log:** koovis-hq `docs/DECISIONS.md` (the only log) (D43.3, D47, D52, D58).
 
 ## Tech Stack
 
@@ -74,8 +74,8 @@ npm run lint           # ESLint
 Claude Code reads satellite repo files directly when context is needed (no auto-mirroring).
 
 ### Canonical in koovis-hq (use MCP to update)
-- **Blueprint:** `koovis-hq/docs/initiatives/koovis-ai/BLUEPRINT.md` — Use MCP `update_blueprint_section()`
-- **Decisions:** `koovis-hq/docs/initiatives/koovis-ai/DECISIONS.md` — Use MCP `append_decision()`
+- **Company plan:** `koovis-hq/docs/PLAN.md` (map: `koovis-hq/README.md`) — Use MCP `update_blueprint_section()`
+- **Decisions:** `koovis-hq/docs/DECISIONS.md` — Use MCP `append_decision()`
 
 ### End-of-Session Protocol
 Before ending any work session, call MCP `sync_from_conversation()` with:
