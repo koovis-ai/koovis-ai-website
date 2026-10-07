@@ -4,10 +4,10 @@ export const siteConfig = {
   name: "Koovis AI",
   title: "Koovis Studios — Original Films Made with AI",
   description:
-    "Koovis AI is a film studio. Under the name Koovis Studios it writes, performs and directs original films, shorts and series, and uses AI to make them. Founded by Rajesh Kolachana.",
+    "Koovis AI is a film studio. Under the name Koovis Studios it writes, performs and directs original films, shorts and series, and uses AI to make them. Founded by Raj Kolachana.",
   url: "https://www.koovis.ai",
   ogImage: "https://www.koovis.ai/og-image.png",
-  author: "Rajesh Kolachana",
+  author: "Raj Kolachana",
   twitterHandle: "@koovisai",
 };
 
@@ -26,7 +26,7 @@ export const sharedMetadata: Metadata = {
     "micro-series",
     "Koovis AI",
     "Koovis Studios",
-    "Rajesh Kolachana",
+    "Raj Kolachana",
   ],
   authors: [{ name: siteConfig.author, url: siteConfig.url }],
   creator: siteConfig.author,
@@ -80,7 +80,7 @@ export const jsonLd = {
     description: siteConfig.description,
     founder: {
       "@type": "Person",
-      name: "Rajesh Kolachana",
+      name: "Raj Kolachana",
       jobTitle: "Founder, writer and director",
       url: siteConfig.url + "/about",
     },
@@ -99,7 +99,7 @@ export const jsonLd = {
   person: {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Rajesh Kolachana",
+    name: "Raj Kolachana",
     jobTitle: "Founder, Koovis AI; writer, director and actor",
     url: siteConfig.url + "/about",
     worksFor: {

@@ -118,7 +118,7 @@ export default function HomePage() {
             </AnimateIn>
             <AnimateIn delay={0.2}>
               <p className="mt-6 text-base leading-relaxed text-content-muted">
-                Koovis Studios is led by Rajesh Kolachana, who writes, directs and
+                Koovis Studios is led by Raj Kolachana, who writes, directs and
                 acts in its films. Before films he spent 11 years in machine
                 learning, seven of them at Amazon. He studied at IIT Roorkee and
                 IISc Bangalore. Actors, a sound designer and a composer join each
