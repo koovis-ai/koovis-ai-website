@@ -4,7 +4,7 @@
 
 Marketing website for Koovis AI at https://www.koovis.ai. Built with Next.js 14 (App Router), deployed via Vercel on git push.
 
-**Positioning (2026-10-01, koovis-hq D47):** the site of **Koovis Studios**, the film studio of
+**Positioning (2026-10-01, D47):** the site of **Koovis Studios**, the film studio of
 Koovis AI Pvt Ltd. Original films, shorts and series, written and performed by people and made with
 AI. Pages: home, `/studios` (slate + how films are made), `/about`, `/blog`, `/contact`, `/privacy`,
 `/terms`. Pulse, Workforce, pricing, services, products, careers, FAQ and papers were removed and
@@ -20,7 +20,7 @@ redirect home (`next.config.mjs`); Workforce and papers use temporary redirects.
 - This repo is **public** and `main` deploys to production. Change copy on a branch; Raj approves the
   Vercel preview before merge.
 
-**Decision log:** koovis-hq `docs/DECISIONS.md` (the only log) (D43.3, D47, D52, D58).
+**Decision log:** `docs/koovis/DECISIONS.md` in the private ops repo (the only log) (D43.3, D47, D52, D58).
 
 ## Tech Stack
 
@@ -73,9 +73,9 @@ npm run lint           # ESLint
 
 Claude Code reads satellite repo files directly when context is needed (no auto-mirroring).
 
-### Canonical in koovis-hq (use MCP to update)
-- **Company plan:** `koovis-hq/docs/MASTER_BLUEPRINT.md` (map: `koovis-hq/README.md`) — Use MCP `update_blueprint_section()`
-- **Decisions:** `koovis-hq/docs/DECISIONS.md` — Use MCP `append_decision()`
+### Canonical in the private ops repo (use MCP to update)
+- **Company plan:** `docs/koovis/MASTER_BLUEPRINT.md` (map: `README.md`) — Use MCP `update_blueprint_section()`
+- **Decisions:** `docs/koovis/DECISIONS.md` — Use MCP `append_decision()`
 
 ### End-of-Session Protocol
 Before ending any work session, call MCP `sync_from_conversation()` with:

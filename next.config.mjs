@@ -2,7 +2,7 @@
 const nextConfig = {
   async redirects() {
     return [
-      // Koovis AI became a film studio on 2026-10-01 (koovis-hq D47). Retired pages go home.
+      // Koovis AI became a film studio on 2026-10-01 (D47). Retired pages go home.
       { source: "/pulse", destination: "/", permanent: true },
       { source: "/services", destination: "/", permanent: true },
       { source: "/services/:path*", destination: "/", permanent: true },

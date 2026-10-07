@@ -8,7 +8,7 @@
 
 ### What It Does
 
-The Koovis AI website is the public site of Koovis Studios, the company's film studio (koovis-hq D47). It:
+The Koovis AI website is the public site of Koovis Studios, the company's film studio (D47). It:
 - Presents the studio, its slate and how its films are made (`/`, `/studios`, `/about`)
 - Publishes blog posts via MDX (static generation)
 - Accepts contact form submissions (→ email via Resend)
@@ -30,7 +30,7 @@ The Koovis AI website is the public site of Koovis Studios, the company's film s
 │  /api/contact  ──► Resend (email)                   │
 │  /api/waitlist ──► Resend (release notifications)   │
 │                                                      │
-│  Monitoring: koovis-hq monitor.py (every 15 min)    │
+│  Monitoring: ops monitor.py (every 15 min)          │
 └────────────────────────────────────────────────────┘
 ```
 
@@ -87,7 +87,7 @@ The Koovis AI website is the public site of Koovis Studios, the company's film s
 | Resend | Email delivery (contact form) | `RESEND_API_KEY` |
 | Beehiiv API v2 | Newsletter subscriber management | `BEEHIIV_API_KEY` + `BEEHIIV_PUBLICATION_ID` |
 | Vercel Analytics | Performance + user tracking | Auto-configured |
-| koovis-hq monitor.py | Uptime monitoring (every 15 min) | None (public HTTP) |
+| ops `monitor.py` (EC2 cron) | Uptime monitoring (every 15 min) | None (public HTTP) |
 
 ---
 
@@ -117,7 +117,7 @@ N/A — No database. Static site with API routes that proxy to external services
 
 N/A — No cron jobs. The site is fully auto-deployed and externally monitored.
 
-Uptime monitoring is handled by koovis-hq (`monitor.py` every 15 min).
+Uptime monitoring is handled by the private ops repo (`monitor.py` every 15 min).
 
 ---
 
@@ -201,7 +201,7 @@ koovis-ai-website/
 
 | Check | Method | Alert |
 |-------|--------|-------|
-| Site uptime | koovis-hq `monitor.py` (every 15 min) | Telegram alert on HTTP != 200 |
+| Site uptime | ops `monitor.py` (every 15 min) | Telegram alert on HTTP != 200 |
 
 ### Log Locations
 
@@ -209,7 +209,7 @@ koovis-ai-website/
 |-----|----------|
 | Build logs | Vercel dashboard → Deployments |
 | Function logs | Vercel dashboard → Functions |
-| Uptime checks | `koovis-hq/logs/monitor.log` |
+| Uptime checks | `logs/monitor.log` in the ops repo on EC2 |
 
 ---
 
@@ -278,6 +278,5 @@ npm run dev
 | Document | Location | Purpose |
 |----------|----------|---------|
 | Website Blueprint | `Koovis_AI_Website_Blueprint.md` (in repo) | Architecture and design decisions |
-| koovis-ai BLUEPRINT | `koovis-hq/docs/initiatives/koovis-ai/BLUEPRINT.md` | Koovis AI business strategy |
-| koovis-ai DECISIONS | `koovis-hq/docs/initiatives/koovis-ai/DECISIONS.md` | Decision log |
-| koovis-hq PROJECT_DOC | `koovis-hq/PROJECT_DOC.md` | Central infrastructure reference |
+| Master blueprint | `docs/koovis/MASTER_BLUEPRINT.md` (private ops repo) | Koovis AI company plan |
+| Decisions | `docs/koovis/DECISIONS.md` (private ops repo) | Decision log |
