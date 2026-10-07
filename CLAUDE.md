@@ -15,7 +15,7 @@ redirect home (`next.config.mjs`); Workforce and papers use temporary redirects.
 - No "in submission" or "forthcoming" claims unless true.
 - Never mention or show the Baahubali pipeline test; no recreations of existing films.
 - Don't announce a film's subject, cast or date until Raj approves it.
-- Founder name is "Rajesh Kolachana"; public email is `info@koovis.ai` (never admin@).
+- Founder name is "Raj Kolachana" (D62; the legal name only in legal documents); public email is `info@koovis.ai` (never admin@).
 - Don't link social handles until they exist (br-01, br-03 YouTube via qe-04).
 - This repo is **public** and `main` deploys to production. Change copy on a branch; Raj approves the
   Vercel preview before merge.

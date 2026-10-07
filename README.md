@@ -1,6 +1,6 @@
 # Koovis AI Website
 
-The official website for [Koovis AI](https://www.koovis.ai) — the site of Koovis Studios, an AI film studio founded by Rajesh Kolachana.
+The official website for [Koovis AI](https://www.koovis.ai) — the site of Koovis Studios, an AI film studio founded by Raj Kolachana.
 
 ## Tech Stack
 
@@ -101,7 +101,7 @@ Create a new `.mdx` file in `src/content/blog/`:
 ---
 title: "Your Post Title"
 date: "2026-01-15"
-author: "Rajesh Kolachana"
+author: "Raj Kolachana"
 tag: "Engineering"
 published: true
 ---

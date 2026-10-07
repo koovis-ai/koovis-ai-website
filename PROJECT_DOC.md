@@ -241,7 +241,7 @@ npm run dev
    ---
    title: "Post Title"
    date: "2026-02-23"
-   author: "Rajesh Kolachana"
+   author: "Raj Kolachana"
    tag: "Engineering"
    excerpt: "Brief summary"
    readTime: "5 min read"
