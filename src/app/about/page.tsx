@@ -8,7 +8,7 @@ import SectionTitle from "@/components/SectionTitle";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Koovis AI is a film studio founded by Rajesh Kolachana. Original films, shorts and series, written and performed by people and made with AI.",
+    "Koovis AI is a film studio founded by Raj Kolachana. Original films, shorts and series, written and performed by people and made with AI.",
 };
 
 const principles = [
@@ -111,7 +111,7 @@ export default function AboutPage() {
                 </div>
                 <div className="text-center lg:text-left">
                   <h2 className="font-serif text-2xl font-semibold text-content">
-                    Rajesh Kolachana
+                    Raj Kolachana
                   </h2>
                   <p className="mt-1 font-jetbrains text-xs font-medium uppercase tracking-[0.2em] text-accent">
                     Founder &middot; Writer, director, actor

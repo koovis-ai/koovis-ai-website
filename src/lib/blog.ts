@@ -40,7 +40,7 @@ export function getBlogPosts(): BlogPost[] {
       title: data.title ?? slug,
       excerpt: data.excerpt ?? "",
       date: data.date ?? "",
-      author: data.author ?? "Rajesh Kolachana",
+      author: data.author ?? "Raj Kolachana",
       tag: data.tag ?? "AI",
       readTime: data.readTime ?? "5 min read",
       published: data.published !== false,
