@@ -74,7 +74,7 @@ npm run lint           # ESLint
 Claude Code reads satellite repo files directly when context is needed (no auto-mirroring).
 
 ### Canonical in koovis-hq (use MCP to update)
-- **Company plan:** `koovis-hq/docs/PLAN.md` (map: `koovis-hq/README.md`) — Use MCP `update_blueprint_section()`
+- **Company plan:** `koovis-hq/docs/MASTER_BLUEPRINT.md` (map: `koovis-hq/README.md`) — Use MCP `update_blueprint_section()`
 - **Decisions:** `koovis-hq/docs/DECISIONS.md` — Use MCP `append_decision()`
 
 ### End-of-Session Protocol
